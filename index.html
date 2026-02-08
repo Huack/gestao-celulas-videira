@@ -1,385 +1,360 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt-BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Videira - Gestão de Células</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Videira - Navegação de Telas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
                         "primary": "#d41132",
-                        "gold-accent": "#D4AF37",
-                        "background-light": "#f8f6f6",
-                        "background-dark": "#221013",
+                        "gold": "#D4AF37",
                     },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    fontFamily: { "display": ["Inter"] },
                 },
             },
         }
     </script>
     <style>
-        /* ==================== BASE STYLES ==================== */
-        .ios-safe-bottom {
-            padding-bottom: env(safe-area-inset-bottom);
-        }
-
-        .bg-overlay {
-            background: linear-gradient(to bottom, rgba(34, 16, 19, 0.4) 0%, rgba(34, 16, 19, 0.9) 100%);
-        }
-
         body {
-            min-height: max(884px, 100dvh);
-        }
-
-        /* ==================== ENTRANCE ANIMATIONS ==================== */
-
-        /* Fade in from opacity 0 to 1 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Slide up with fade */
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scale in with fade (for logo) */
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Subtle floating animation for logo */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        /* Gentle pulse glow for logo */
-        @keyframes pulseGlow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(212, 17, 50, 0.3), 0 0 40px rgba(212, 17, 50, 0.1);
-            }
-
-            50% {
-                box-shadow: 0 0 30px rgba(212, 17, 50, 0.5), 0 0 60px rgba(212, 17, 50, 0.2);
-            }
-        }
-
-        /* Ken Burns effect for background */
-        @keyframes kenBurns {
-            0% {
-                transform: scale(1) translate(0, 0);
-            }
-
-            50% {
-                transform: scale(1.08) translate(-1%, -1%);
-            }
-
-            100% {
-                transform: scale(1) translate(0, 0);
-            }
-        }
-
-        /* Shimmer effect for buttons */
-        @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-
-            100% {
-                background-position: 200% center;
-            }
-        }
-
-        /* ==================== ANIMATION CLASSES ==================== */
-
-        /* Background with Ken Burns */
-        .animate-ken-burns {
-            animation: kenBurns 25s ease-in-out infinite;
-        }
-
-        /* Logo container */
-        .animate-logo {
-            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
-                float 4s ease-in-out 1s infinite,
-                pulseGlow 3s ease-in-out 1s infinite;
-            opacity: 0;
-        }
-
-        /* Staggered entrance animations */
-        .animate-title {
-            animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: 0.3s;
-            opacity: 0;
-        }
-
-        .animate-subtitle {
-            animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: 0.5s;
-            opacity: 0;
-        }
-
-        .animate-btn-primary {
-            animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: 0.7s;
-            opacity: 0;
-        }
-
-        .animate-btn-secondary {
-            animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            animation-delay: 0.85s;
-            opacity: 0;
-        }
-
-        .animate-links {
-            animation: fadeIn 0.8s ease-out forwards;
-            animation-delay: 1s;
-            opacity: 0;
-        }
-
-        .animate-footer {
-            animation: fadeIn 0.6s ease-out forwards;
-            animation-delay: 1.2s;
-            opacity: 0;
-        }
-
-        /* ==================== HOVER & INTERACTION EFFECTS ==================== */
-
-        /* Primary button hover with gradient shimmer */
-        .btn-primary-animated {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-            background: linear-gradient(90deg, #d41132 0%, #d41132 100%);
-        }
-
-        .btn-primary-animated::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.2),
-                    transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-primary-animated:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary-animated:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(212, 17, 50, 0.4);
-        }
-
-        .btn-primary-animated:active {
-            transform: scale(0.98) translateY(0);
-        }
-
-        /* Secondary button hover with gold glow */
-        .btn-secondary-animated {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .btn-secondary-animated::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg, #D4AF37, #f5d67b, #D4AF37);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn-secondary-animated:hover {
-            background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
-        }
-
-        .btn-secondary-animated:hover::after {
-            opacity: 1;
-            animation: shimmer 2s linear infinite;
-            background-size: 200% auto;
-        }
-
-        .btn-secondary-animated:active {
-            transform: scale(0.98) translateY(0);
-        }
-
-        /* Link hover effects */
-        .link-animated {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .link-animated::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: currentColor;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .link-animated:hover::after {
-            width: 100%;
-        }
-
-        /* Icon hover effect */
-        .icon-animated {
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover .icon-animated {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        /* ==================== OVERLAY ANIMATION ==================== */
-        .overlay-animated {
-            animation: fadeIn 1.5s ease-out forwards;
-        }
-
-        /* ==================== REDUCED MOTION ==================== */
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden">
-    <!-- Main Container -->
-    <div class="relative flex h-screen w-full flex-col overflow-hidden">
-        <!-- Background Image with Ken Burns Effect -->
-        <div class="absolute inset-0 z-0 h-full w-full bg-center bg-cover bg-no-repeat animate-ken-burns"
-            data-alt="A warm group of people gathering in a cozy living room for a church cell group"
-            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_t9go3ayV4Y9PWX7Y4xqdHYvgXWRGf0W_Nkn4nE7tm0mFSmzL5idrIje9wS-GKSn4otMlT3gbhJZpACvu2h6ySuZ_5f1yrHrcQ-BNBAoCPqT7d3YR21b40arerS4rYMPAmWN4jdGKY0My6LIU6PbJmxMvRlnoHiNKoWaqKl0noyZeCHUF6JWUomzHqppty2unRTpX_LD-AxJH3ukEydpY-UKofWx0vMMWFddbKNR5odOneQwgAzF-u90kxOe3c_3I1auf6wYx17Mr');">
-            <div class="absolute inset-0 bg-overlay overlay-animated"></div>
-        </div>
+<body class="bg-gray-900 text-white min-h-screen p-6">
+    <div class="max-w-6xl mx-auto">
+        <header class="text-center mb-8">
+            <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-3xl">church</span>
+            </div>
+            <h1 class="text-2xl font-bold mb-1">Sistema de Gestão de Células</h1>
+            <p class="text-gray-400 text-sm">Navegue por todas as telas do aplicativo</p>
+        </header>
 
-        <!-- Content Layer -->
-        <div class="relative z-10 flex flex-col h-full px-6 pt-16 pb-10">
-            <!-- Logo Section -->
-            <div class="flex flex-col items-center justify-center flex-grow-[2]">
-                <!-- Logo with float and glow animation -->
-                <div
-                    class="logo-container w-24 h-24 mb-6 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 animate-logo cursor-pointer">
-                    <span class="material-symbols-outlined text-white text-6xl icon-animated"
-                        data-icon="church">church</span>
+        <!-- LOGIN -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined">login</span> Acesso
+            </h2>
+            <a href="index.html"
+                class="block p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-primary transition-all">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">lock_open</span>
+                    <span class="font-medium">Tela de Login</span>
                 </div>
+            </a>
+        </section>
 
-                <!-- Title with slide up animation -->
-                <h1 class="text-white tracking-light text-[36px] font-bold leading-tight text-center animate-title">
-                    Bem-vindo à <span class="text-primary">Videira</span>
-                </h1>
-
-                <!-- Subtitle with delayed slide up -->
-                <p
-                    class="text-white/80 text-lg font-normal leading-normal mt-3 text-center max-w-[280px] animate-subtitle">
-                    Gestão de células e comunhão na palma da sua mão.
-                </p>
+        <!-- TELAS GERAIS -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-teal-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">apps</span> Telas Gerais
+            </h2>
+            <div class="grid grid-cols-2 gap-3">
+                <a href="pages/encontrar-celula.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">map</span>
+                    <p class="text-sm font-medium">Encontrar Célula</p>
+                </a>
+                <a href="pages/perfil.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">person</span>
+                    <p class="text-sm font-medium">Perfil do Usuário</p>
+                </a>
+                <a href="pages/transferencia-membro.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">sync_alt</span>
+                    <p class="text-sm font-medium">Transferir Membro</p>
+                </a>
+                <a href="pages/aprovar-transferencias.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">swap_horiz</span>
+                    <p class="text-sm font-medium">Aprovar Transferências</p>
+                </a>
+                <a href="pages/gestao-acessos.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">admin_panel_settings</span>
+                    <p class="text-sm font-medium">Gestão de Acessos</p>
+                </a>
+                <a href="pages/mural-avisos.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">grid_view</span>
+                    <p class="text-sm font-medium">Mural de Avisos</p>
+                </a>
+                <a href="pages/checkin-celula.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">check_circle</span>
+                    <p class="text-sm font-medium">Check-in Célula</p>
+                </a>
+                <a href="pages/presenca-confirmada.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">verified</span>
+                    <p class="text-sm font-medium">Presença Confirmada</p>
+                </a>
+                <a href="pages/escala-lanche.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">restaurant</span>
+                    <p class="text-sm font-medium">Escala de Lanche</p>
+                </a>
+                <a href="pages/escala-lanche-compact.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">fastfood</span>
+                    <p class="text-sm font-medium">Escala Compacta</p>
+                </a>
+                <a href="pages/editar-celula.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">edit_note</span>
+                    <p class="text-sm font-medium">Editar Célula</p>
+                </a>
+                <a href="pages/configuracoes-lider.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">settings</span>
+                    <p class="text-sm font-medium">Config. Líder</p>
+                </a>
+                <a href="pages/configuracoes-membro.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-teal-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-teal-400 text-2xl mb-1">tune</span>
+                    <p class="text-sm font-medium">Config. Membro</p>
+                </a>
             </div>
+        </section>
 
-            <!-- Interaction Section -->
-            <div class="flex flex-col gap-4 w-full max-w-[400px] mx-auto flex-grow-0">
-                <!-- Primary Action: Entrar -->
-                <button
-                    class="btn-primary-animated flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary text-white text-lg font-bold leading-normal tracking-wide shadow-lg animate-btn-primary">
-                    <span class="truncate">Entrar</span>
-                </button>
-
-                <!-- Secondary Action: Sou Visitante -->
-                <button
-                    class="btn-secondary-animated flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-gold-accent bg-transparent text-gold-accent text-lg font-bold leading-normal tracking-wide animate-btn-secondary">
-                    <span class="truncate">Sou Visitante</span>
-                </button>
-
-                <!-- Help/Utility Links -->
-                <div class="mt-4 flex flex-col gap-2 animate-links">
-                    <p class="text-white/60 text-sm font-normal leading-normal text-center">
-                        Ainda não tem acesso?
-                        <span
-                            class="link-animated text-white font-medium cursor-pointer hover:text-primary transition-colors">
-                            Fale com seu líder
-                        </span>
-                    </p>
-                    <p
-                        class="link-animated text-white/40 text-[13px] font-normal leading-normal text-center cursor-pointer hover:text-white transition-colors inline-block mx-auto">
-                        Esqueci minha senha
-                    </p>
-                </div>
+        <!-- CADASTROS -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-emerald-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">add_circle</span> Cadastros
+            </h2>
+            <div class="grid grid-cols-2 gap-3">
+                <a href="pages/cadastro/membro.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-emerald-400 text-2xl mb-1">person_add</span>
+                    <p class="text-sm font-medium">Novo Membro</p>
+                </a>
+                <a href="pages/cadastro/celula.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-emerald-400 text-2xl mb-1">group_add</span>
+                    <p class="text-sm font-medium">Nova Célula</p>
+                </a>
+                <a href="pages/cadastro/rede.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-emerald-400 text-2xl mb-1">hub</span>
+                    <p class="text-sm font-medium">Nova Rede</p>
+                </a>
+                <a href="pages/cadastro/distrito.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-emerald-400 text-2xl mb-1">account_tree</span>
+                    <p class="text-sm font-medium">Novo Distrito</p>
+                </a>
             </div>
+        </section>
 
-            <!-- Footer / Safe Area -->
-            <div class="mt-8 ios-safe-bottom flex justify-center animate-footer">
-                <div class="w-32 h-1 bg-white/20 rounded-full"></div>
+        <!-- HOMES POR NÍVEL -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-gold flex items-center gap-2">
+                <span class="material-symbols-outlined">home</span> Telas Iniciais (por nível)
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <a href="pages/home-visitante.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-blue-500 text-2xl mb-1">waving_hand</span>
+                    <p class="text-sm font-medium">Visitante</p>
+                </a>
+                <a href="pages/home-membro.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-yellow-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-yellow-500 text-2xl mb-1">person</span>
+                    <p class="text-sm font-medium">Membro</p>
+                </a>
+                <a href="pages/home-anfitriao.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-green-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-green-500 text-2xl mb-1">house</span>
+                    <p class="text-sm font-medium">Anfitrião</p>
+                </a>
+                <a href="pages/home-lider.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-gold transition-all text-center">
+                    <span class="material-symbols-outlined text-gold text-2xl mb-1">star</span>
+                    <p class="text-sm font-medium">Líder</p>
+                </a>
+                <a href="pages/home-lider-treinamento.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-orange-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-orange-500 text-2xl mb-1">school</span>
+                    <p class="text-sm font-medium">Líder Trein.</p>
+                </a>
+                <a href="pages/home-discipulador.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-purple-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-purple-500 text-2xl mb-1">supervisor_account</span>
+                    <p class="text-sm font-medium">Discipulador</p>
+                </a>
+                <a href="pages/home-pastor-rede.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-pink-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-pink-500 text-2xl mb-1">hub</span>
+                    <p class="text-sm font-medium">Pastor Rede</p>
+                </a>
+                <a href="pages/home-lider-governo.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-red-500 transition-all text-center">
+                    <span class="material-symbols-outlined text-red-500 text-2xl mb-1">shield_person</span>
+                    <p class="text-sm font-medium">Líder Governo</p>
+                </a>
             </div>
-        </div>
+        </section>
+
+        <!-- PEDIDOS DE ORAÇÃO -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-pink-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">volunteer_activism</span> Pedidos de Oração
+            </h2>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+                <a href="pages/oracao/visitante.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <p class="text-xs font-medium">Visitante</p>
+                </a>
+                <a href="pages/oracao/anfitriao.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <p class="text-xs font-medium">Anfitrião</p>
+                </a>
+                <a href="pages/oracao/lider-treinamento.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <p class="text-xs font-medium">Líder Trein.</p>
+                </a>
+                <a href="pages/oracao/discipulador.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <p class="text-xs font-medium">Discipulador</p>
+                </a>
+                <a href="pages/oracao/pastor-rede.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <p class="text-xs font-medium">Pastor Rede</p>
+                </a>
+                <a href="pages/oracao/lider-governo.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <p class="text-xs font-medium">Líder Gov.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- NOTIFICAÇÕES -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-cyan-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">notifications</span> Notificações
+            </h2>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+                <a href="pages/notificacoes/visitante.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all text-center">
+                    <p class="text-xs font-medium">Visitante</p>
+                </a>
+                <a href="pages/notificacoes/anfitriao.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all text-center">
+                    <p class="text-xs font-medium">Anfitrião</p>
+                </a>
+                <a href="pages/notificacoes/lider-treinamento.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all text-center">
+                    <p class="text-xs font-medium">Líder Trein.</p>
+                </a>
+                <a href="pages/notificacoes/discipulador.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all text-center">
+                    <p class="text-xs font-medium">Discipulador</p>
+                </a>
+                <a href="pages/notificacoes/pastor-rede.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all text-center">
+                    <p class="text-xs font-medium">Pastor Rede</p>
+                </a>
+                <a href="pages/notificacoes/lider-governo.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-400 transition-all text-center">
+                    <p class="text-xs font-medium">Líder Gov.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- MATERIAIS -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-emerald-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">menu_book</span> Materiais para Estudo
+            </h2>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-2">
+                <a href="pages/materiais/visitante.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <p class="text-xs font-medium">Visitante</p>
+                </a>
+                <a href="pages/materiais/anfitriao.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <p class="text-xs font-medium">Anfitrião</p>
+                </a>
+                <a href="pages/materiais/lider-treinamento.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <p class="text-xs font-medium">Líder Trein.</p>
+                </a>
+                <a href="pages/materiais/discipulador.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <p class="text-xs font-medium">Discipulador</p>
+                </a>
+                <a href="pages/materiais/pastor-rede.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <p class="text-xs font-medium">Pastor Rede</p>
+                </a>
+                <a href="pages/materiais/lider-governo.html"
+                    class="p-3 bg-gray-800 rounded-lg border border-gray-700 hover:border-emerald-400 transition-all text-center">
+                    <p class="text-xs font-medium">Líder Gov.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- PAINÉIS DE GESTÃO -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-amber-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">dashboard</span> Painéis de Gestão
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <a href="pages/painel/lider.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-amber-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-amber-400 text-2xl mb-1">star</span>
+                    <p class="text-sm font-medium">Líder</p>
+                </a>
+                <a href="pages/painel/discipulador.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-purple-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-purple-400 text-2xl mb-1">supervisor_account</span>
+                    <p class="text-sm font-medium">Discipulador</p>
+                </a>
+                <a href="pages/painel/pastor-rede.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-pink-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-pink-400 text-2xl mb-1">hub</span>
+                    <p class="text-sm font-medium">Pastor Rede</p>
+                </a>
+                <a href="pages/painel/lider-governo.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-red-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-red-400 text-2xl mb-1">shield_person</span>
+                    <p class="text-sm font-medium">Líder Governo</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- FERRAMENTAS ESTRATÉGICAS (GOVERNO) -->
+        <section class="mb-8">
+            <h2 class="text-lg font-bold mb-3 text-rose-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">query_stats</span> Ferramentas Estratégicas
+            </h2>
+            <div class="grid grid-cols-2 gap-3">
+                <a href="pages/governo/analise-multiplicacao.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-rose-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-rose-400 text-2xl mb-1">donut_small</span>
+                    <p class="text-sm font-medium">Análise de Multiplicação</p>
+                </a>
+                <a href="pages/governo/potencial-crescimento.html"
+                    class="p-4 bg-gray-800 rounded-xl border border-gray-700 hover:border-rose-400 transition-all text-center">
+                    <span class="material-symbols-outlined text-rose-400 text-2xl mb-1">trending_up</span>
+                    <p class="text-sm font-medium">Potencial de Crescimento</p>
+                </a>
+            </div>
+        </section>
+
+        <footer class="text-center mt-8 text-gray-500 text-xs">
+            <p>Sistema de Gestão de Células • Igreja Videira • 50 telas</p>
+        </footer>
     </div>
 </body>
 
