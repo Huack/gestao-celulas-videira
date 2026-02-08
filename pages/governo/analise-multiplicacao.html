@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Análise de Multiplicação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "accent-gold": "#C5A059", "background-dark": "#0a0506", "surface-dark": "#1a0a0c", "card-dark": "#221013" },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .gauge-svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md px-4 pt-12 pb-4 flex items-center justify-between border-b border-white/10">
+        <button class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+        </button>
+        <h1 class="text-lg font-bold tracking-tight">Análise de Multiplicação</h1>
+        <button class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined">share</span>
+        </button>
+    </header>
+    <main class="flex-1 overflow-y-auto pb-24">
+        <!-- Hero Section: Gauge Chart -->
+        <section class="flex flex-col items-center justify-center py-8 bg-gradient-to-b from-primary/5 to-transparent">
+            <div class="relative w-[200px] h-[200px] flex items-center justify-center">
+                <svg class="gauge-svg w-full h-full" viewbox="0 0 100 100">
+                    <circle class="text-white/5" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor"
+                        stroke-width="8"></circle>
+                    <circle class="text-primary progress-ring-circle" cx="50" cy="50" fill="transparent" r="42"
+                        stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="92.36" stroke-linecap="round"
+                        stroke-width="8"></circle>
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl font-black text-white">65%</span>
+                    <span class="text-[10px] uppercase tracking-widest text-accent-gold font-bold">Meta Regional</span>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-sm text-gray-400">104 de 160 células multiplicadas</p>
+                <div
+                    class="inline-flex items-center gap-1 mt-2 px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-xs font-bold">
+                    <span class="material-symbols-outlined text-xs">trending_up</span> +12% vs mês anterior
+                </div>
+            </div>
+        </section>
+        <!-- Funnel Section -->
+        <section class="px-4 py-6">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-lg font-bold">Funil de Multiplicação</h2>
+                <span class="text-accent-gold material-symbols-outlined">info</span>
+            </div>
+            <div class="flex flex-col gap-3">
+                <!-- Level 1 -->
+                <div
+                    class="relative overflow-hidden rounded-xl bg-card-dark border border-white/5 p-4 flex items-center justify-between">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-accent-gold"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="p-2 bg-accent-gold/10 rounded-lg text-accent-gold"><span
+                                class="material-symbols-outlined">school</span></div>
+                        <div>
+                            <p class="text-sm font-medium text-white">Líderes em Treinamento</p>
+                            <p class="text-xs text-gray-500">142 Células ativas no funil</p>
+                        </div>
+                    </div>
+                    <div class="text-right"><span class="text-lg font-bold text-white">142</span>
+                        <div class="w-20 h-1.5 bg-white/10 rounded-full mt-1">
+                            <div class="h-full bg-accent-gold rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Level 2 -->
+                <div
+                    class="relative overflow-hidden rounded-xl bg-card-dark border border-white/5 p-4 flex items-center justify-between">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="p-2 bg-primary/10 rounded-lg text-primary"><span
+                                class="material-symbols-outlined">groups</span></div>
+                        <div>
+                            <p class="text-sm font-medium text-white">Células com 12+ Membros</p>
+                            <p class="text-xs text-gray-500">85 Células maduras</p>
+                        </div>
+                    </div>
+                    <div class="text-right"><span class="text-lg font-bold text-white">85</span>
+                        <div class="w-20 h-1.5 bg-white/10 rounded-full mt-1">
+                            <div class="h-full bg-primary rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Level 3 -->
+                <div
+                    class="relative overflow-hidden rounded-xl bg-card-dark border border-white/5 p-4 flex items-center justify-between">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-green-500"></div>
+                    <div class="flex items-center gap-4">
+                        <div class="p-2 bg-green-500/10 rounded-lg text-green-500"><span
+                                class="material-symbols-outlined">event_available</span></div>
+                        <div>
+                            <p class="text-sm font-medium text-white">Data Confirmada</p>
+                            <p class="text-xs text-gray-500">42 Células agendadas</p>
+                        </div>
+                    </div>
+                    <div class="text-right"><span class="text-lg font-bold text-white">42</span>
+                        <div class="w-20 h-1.5 bg-white/10 rounded-full mt-1">
+                            <div class="h-full bg-green-500 rounded-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Chart Section -->
+        <section class="px-4 py-6">
+            <h2 class="text-lg font-bold mb-6">Redes com maior crescimento</h2>
+            <div class="bg-card-dark rounded-xl border border-white/5 p-6 space-y-6">
+                <div class="space-y-2">
+                    <div class="flex justify-between text-xs font-medium uppercase tracking-wider text-gray-400">
+                        <span>Rede Radical</span><span class="text-white">28 Novas</span></div>
+                    <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary to-accent-gold rounded-full"
+                            style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-xs font-medium uppercase tracking-wider text-gray-400">
+                        <span>Rede de Casais</span><span class="text-white">22 Novas</span></div>
+                    <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary to-accent-gold rounded-full"
+                            style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-xs font-medium uppercase tracking-wider text-gray-400">
+                        <span>Rede Kids</span><span class="text-white">14 Novas</span></div>
+                    <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary to-accent-gold rounded-full"
+                            style="width: 45%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-xs font-medium uppercase tracking-wider text-gray-400">
+                        <span>Rede Universitária</span><span class="text-white">9 Novas</span></div>
+                    <div class="h-3 bg-white/5 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary to-accent-gold rounded-full"
+                            style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Grid -->
+        <section class="px-4 py-6 grid grid-cols-2 gap-4">
+            <div class="bg-card-dark p-4 rounded-xl border border-white/5">
+                <p class="text-xs text-gray-500 mb-1">Total de Membros</p>
+                <h3 class="text-xl font-bold text-white">4.281</h3>
+                <div class="mt-2 text-[10px] text-green-500 font-bold flex items-center"><span
+                        class="material-symbols-outlined text-[12px] mr-1">trending_up</span>+310 este mês</div>
+            </div>
+            <div class="bg-card-dark p-4 rounded-xl border border-white/5">
+                <p class="text-xs text-gray-500 mb-1">Média de Frequência</p>
+                <h3 class="text-xl font-bold text-white">78%</h3>
+                <div class="mt-2 text-[10px] text-accent-gold font-bold flex items-center"><span
+                        class="material-symbols-outlined text-[12px] mr-1">star</span>Meta: 85%</div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Tab Bar -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-background-dark/95 backdrop-blur-xl border-t border-white/10 px-6 py-3 pb-8 flex justify-between items-center z-50">
+        <div class="flex flex-col items-center gap-1 text-primary"><span
+                class="material-symbols-outlined">dashboard</span><span class="text-[10px] font-bold">Dashboard</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-gray-400"><span
+                class="material-symbols-outlined">description</span><span
+                class="text-[10px] font-medium">Relatórios</span></div>
+        <div class="flex flex-col items-center gap-1 text-gray-400"><span
+                class="material-symbols-outlined">hub</span><span class="text-[10px] font-medium">Redes</span></div>
+        <div class="flex flex-col items-center gap-1 text-gray-400"><span
+                class="material-symbols-outlined">person</span><span class="text-[10px] font-medium">Perfil</span></div>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Notificações - Líder em Treinamento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#C5A059",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <div>
+                    <h1 class="text-lg font-bold">Notificações</h1>
+                    <p class="text-xs text-gray-400">3 não lidas</p>
+                </div>
+            </div>
+            <button class="text-xs text-primary font-medium">Limpar</button>
+        </header>
+        <main class="px-4 py-4 space-y-3">
+            <div class="bg-accent-gold/10 border border-accent-gold/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent-gold/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-accent-gold">school</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Nova lição disponível!</p>
+                    <p class="text-xs text-gray-400 mt-1">Módulo 2: "Caráter do Líder" - Lição 5 foi liberada.</p>
+                    <button
+                        class="mt-2 px-3 py-1 bg-accent-gold/20 text-accent-gold text-xs rounded-full font-medium">Estudar
+                        agora</button>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 1 hora</span>
+                </div>
+                <div class="w-2 h-2 rounded-full bg-accent-gold shrink-0 mt-2"></div>
+            </div>
+            <div class="bg-primary/10 border border-primary/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-primary">assignment</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Designação para terça</p>
+                    <p class="text-xs text-gray-400 mt-1">Você foi escalado para conduzir o Quebra-gelo na próxima
+                        célula.</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 3 horas</span>
+                </div>
+                <div class="w-2 h-2 rounded-full bg-primary shrink-0 mt-2"></div>
+            </div>
+            <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-green-500">emoji_events</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Parabéns! Lição concluída</p>
+                    <p class="text-xs text-gray-400 mt-1">Você completou a lição 4 do CTL com 95% de aproveitamento!</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">ontem</span>
+                </div>
+                <div class="w-2 h-2 rounded-full bg-green-500 shrink-0 mt-2"></div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-start gap-3 opacity-70">
+                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-gray-400">chat</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Mensagem do seu líder</p>
+                    <p class="text-xs text-gray-400 mt-1">"Você está indo muito bem! Continue assim."</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 2 dias</span>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-lider-treinamento.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Início</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Avisos</span></a>
+            <a href="../materiais/lider-treinamento.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">school</span><span class="text-[10px]">CTL</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

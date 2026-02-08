@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cadastro de Célula - Igreja Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "gold": "#d4af37", "background-dark": "#12080a", "surface-dark": "#1c0d0f" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(10px);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen">
+    <!-- iOS Top Bar Navigation -->
+    <header
+        class="sticky top-0 z-50 bg-background-dark/80 ios-blur border-b border-primary/20 px-4 py-3 flex items-center justify-between">
+        <button class="text-primary font-medium flex items-center gap-1"><span
+                class="material-symbols-outlined !text-[24px]">chevron_left</span>Voltar</button>
+        <h1 class="text-lg font-bold tracking-tight">Nova Célula</h1>
+        <button
+            class="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20">Salvar</button>
+    </header>
+    <main class="max-w-md mx-auto p-4 space-y-6 pb-20">
+        <!-- Section: Identificação -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 px-1"><span class="material-symbols-outlined text-gold">info</span>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400">Identificação da Célula</h3>
+            </div>
+            <div class="bg-surface-dark rounded-xl border border-primary/10 overflow-hidden shadow-sm">
+                <div class="p-4 border-b border-primary/10"><label
+                        class="block text-xs font-semibold text-gray-400 mb-1">NOME DA CÉLULA</label><input
+                        class="w-full bg-transparent border-none p-0 text-lg focus:ring-0 placeholder:text-gray-700"
+                        placeholder="Ex: Célula Videira Central" type="text" /></div>
+                <div class="p-4 flex items-center gap-4">
+                    <div class="flex-1"><label
+                            class="block text-xs font-semibold text-gray-400 mb-1">REDE</label><select
+                            class="w-full bg-transparent border-none p-0 focus:ring-0 appearance-none text-primary font-medium">
+                            <option>Selecione a Rede</option>
+                            <option>Rede Kids</option>
+                            <option>Rede Radical</option>
+                            <option>Rede de Casais</option>
+                        </select></div><span class="material-symbols-outlined text-gray-400">expand_more</span>
+                </div>
+            </div>
+        </section>
+        <!-- Section: Liderança -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 px-1"><span class="material-symbols-outlined text-gold">stars</span>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400">Liderança & Hierarquia</h3>
+            </div>
+            <div
+                class="bg-surface-dark rounded-xl border border-primary/10 overflow-hidden shadow-sm divide-y divide-primary/10">
+                <button class="w-full p-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+                    <div class="text-left">
+                        <p class="text-xs font-semibold text-gray-400">DISCIPULADOR</p>
+                        <p class="text-base">Selecionar Discipulador</p>
+                    </div><span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                </button>
+                <button class="w-full p-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+                    <div class="text-left">
+                        <p class="text-xs font-semibold text-gray-400">LÍDER PRINCIPAL</p>
+                        <p class="text-base">Buscar Líder</p>
+                    </div><span class="material-symbols-outlined text-gray-400">search</span>
+                </button>
+                <button class="w-full p-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+                    <div class="text-left">
+                        <p class="text-xs font-semibold text-gray-400">LÍDER EM TREINAMENTO</p>
+                        <p class="text-base text-gray-400">Opcional</p>
+                    </div><span class="material-symbols-outlined text-gray-400">person_add</span>
+                </button>
+            </div>
+        </section>
+        <!-- Section: Reunião -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 px-1"><span class="material-symbols-outlined text-gold">event</span>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400">Agenda da Reunião</h3>
+            </div>
+            <div class="flex gap-3 overflow-x-auto pb-2 custom-scrollbar">
+                <div class="flex bg-surface-dark p-1 rounded-xl border border-primary/10">
+                    <button class="px-4 py-2 text-sm font-medium rounded-lg text-gray-400">SEG</button>
+                    <button class="px-4 py-2 text-sm font-bold rounded-lg bg-primary text-white shadow-md">TER</button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-lg text-gray-400">QUA</button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-lg text-gray-400">QUI</button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-lg text-gray-400">SEX</button>
+                    <button class="px-4 py-2 text-sm font-medium rounded-lg text-gray-400">SAB</button>
+                </div>
+            </div>
+            <div class="bg-surface-dark rounded-xl border border-primary/10 p-4 flex items-center justify-between">
+                <div><label class="block text-xs font-semibold text-gray-400 mb-1">HORÁRIO</label><span
+                        class="text-2xl font-bold tracking-tight">19:30</span></div>
+                <div class="flex gap-2"><button
+                        class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary"><span
+                            class="material-symbols-outlined">schedule</span></button></div>
+            </div>
+        </section>
+        <!-- Section: Localização -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 px-1"><span
+                    class="material-symbols-outlined text-gold">location_on</span>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-gray-400">Endereço (Anfitrião)</h3>
+            </div>
+            <div class="bg-surface-dark rounded-xl border border-primary/10 overflow-hidden shadow-sm">
+                <div class="relative h-32 w-full bg-gray-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-3"><span
+                            class="text-white text-xs font-medium flex items-center gap-1"><span
+                                class="material-symbols-outlined !text-sm">map</span>Visualizar no Mapa</span></div><img
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ97Tve-nVgV-sPwPr6MOfUbaMreL0gtKKGqA-YcL49CXsuqLKx3jwSek841Ll2LZF66_Giu3HLRBmGJtz_VdhHtZnky28nUHMnjdxBIctbORsVL2rUJh9T-ca8LOqDA4avri6MpZOtvMHoNn9g6xDgYBemYInQZfeyNZcjsbEvD67VjZFasYOmcPktK332BRQw2qRMInJwQLr8tXnQjcICLcTx1ymkEhwWjS1xjuhp8N-HK5JrjMbVqLpXyy3Qva4b1EeKkWy-uWB" />
+                </div>
+                <div class="p-4 space-y-4">
+                    <div><label class="block text-xs font-semibold text-gray-400 mb-1">ANFITRIÃO</label><input
+                            class="w-full bg-transparent border-none p-0 text-base focus:ring-0 placeholder:text-gray-600"
+                            placeholder="Nome do Anfitrião" type="text" /></div>
+                    <div class="border-t border-primary/10 pt-4"><label
+                            class="block text-xs font-semibold text-gray-400 mb-1">LOGRADOURO, NÚMERO,
+                            BAIRRO</label><textarea
+                            class="w-full bg-transparent border-none p-0 text-base focus:ring-0 placeholder:text-gray-600 resize-none"
+                            placeholder="Digite o endereço completo..." rows="2"></textarea></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Navigation -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-surface-dark/90 ios-blur border-t border-primary/20 px-6 py-2 pb-6 flex justify-between items-center">
+        <div class="flex flex-col items-center text-primary"><span
+                class="material-symbols-outlined">add_circle</span><span
+                class="text-[10px] font-bold mt-1">Cadastro</span></div>
+        <div class="flex flex-col items-center text-gray-400"><span class="material-symbols-outlined">groups</span><span
+                class="text-[10px] font-medium mt-1">Células</span></div>
+        <div class="flex flex-col items-center text-gray-400"><span
+                class="material-symbols-outlined">description</span><span
+                class="text-[10px] font-medium mt-1">Relatórios</span></div>
+        <div class="flex flex-col items-center text-gray-400"><span
+                class="material-symbols-outlined">settings</span><span
+                class="text-[10px] font-medium mt-1">Perfil</span></div>
+    </nav>
+</body>
+
+</html>

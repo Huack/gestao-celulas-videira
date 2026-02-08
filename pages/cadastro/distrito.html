@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cadastrar Distrito - Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "background-dark": "#121212", "card-dark": "#1e1e1e", "border-dark": "#33191e" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 bg-background-dark/80 ios-blur border-b border-white/5">
+            <div class="flex items-center p-4 justify-between w-full">
+                <button class="text-primary flex items-center gap-1 active:opacity-50 transition-opacity"><span
+                        class="material-symbols-outlined">chevron_left</span><span
+                        class="text-base">Voltar</span></button>
+                <h1 class="text-white text-lg font-bold leading-tight tracking-tight">Cadastrar Distrito</h1>
+                <button
+                    class="text-primary text-base font-bold leading-normal tracking-wide active:opacity-50 transition-opacity">Salvar</button>
+            </div>
+        </header>
+        <main class="flex-1 w-full pb-12">
+            <!-- Section: Basic Info -->
+            <section class="px-4 pt-6">
+                <div class="flex items-center gap-2 mb-4"><span
+                        class="material-symbols-outlined text-primary text-lg">info</span>
+                    <h2 class="text-white text-sm font-semibold uppercase tracking-wider">Informações Básicas</h2>
+                </div>
+                <div class="space-y-4">
+                    <label class="flex flex-col"><span class="text-slate-400 text-xs font-medium mb-1.5 ml-1">Nome do
+                            Distrito</span><input
+                            class="form-input flex w-full rounded-xl text-white focus:ring-2 focus:ring-primary focus:border-primary border-border-dark bg-card-dark h-12 placeholder:text-slate-600 px-4 text-base font-normal transition-all"
+                            placeholder="Ex: Distrito Sul" type="text" /></label>
+                    <label class="flex flex-col"><span class="text-slate-400 text-xs font-medium mb-1.5 ml-1">Pastor de
+                            Governo</span><select
+                            class="form-input flex w-full rounded-xl text-white focus:ring-2 focus:ring-primary focus:border-primary border-border-dark bg-card-dark h-12 px-4 text-base font-normal transition-all appearance-none">
+                            <option value="">Selecionar Pastor Responsável</option>
+                            <option value="1">Pr. Ricardo Silva</option>
+                            <option value="2">Pr. André Marques</option>
+                            <option value="3">Pra. Fabiana Costa</option>
+                        </select></label>
+                </div>
+            </section>
+            <!-- Section: Statistics Summary -->
+            <section class="px-4 pt-8">
+                <div class="bg-gradient-to-br from-primary to-rose-700 rounded-2xl p-5 shadow-lg shadow-primary/20">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-white text-sm font-semibold uppercase opacity-80">Resumo do Distrito</h3><span
+                            class="material-symbols-outlined text-white opacity-80">analytics</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="flex flex-col"><span
+                                class="text-2xl font-bold text-white leading-tight">08</span><span
+                                class="text-[10px] text-white/70 uppercase font-bold">Redes</span></div>
+                        <div class="flex flex-col"><span
+                                class="text-2xl font-bold text-white leading-tight">64</span><span
+                                class="text-[10px] text-white/70 uppercase font-bold">Células</span></div>
+                        <div class="flex flex-col"><span
+                                class="text-2xl font-bold text-white leading-tight">720</span><span
+                                class="text-[10px] text-white/70 uppercase font-bold">Membros</span></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Redes Vinculadas -->
+            <section class="px-4 pt-8">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-primary text-lg">hub</span>
+                        <h2 class="text-white text-sm font-semibold uppercase tracking-wider">Redes Vinculadas</h2>
+                    </div><button
+                        class="flex items-center gap-1 text-primary text-xs font-bold bg-primary/10 px-3 py-1.5 rounded-full active:bg-primary/20 transition-colors"><span
+                            class="material-symbols-outlined text-sm">add</span>ADICIONAR</button>
+                </div>
+                <div class="space-y-3">
+                    <div
+                        class="flex items-center justify-between bg-card-dark p-4 rounded-xl border border-border-dark group active:scale-[0.98] transition-transform">
+                        <div class="flex items-center gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">diversity_3</span></div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Rede Radical</p>
+                                <p class="text-slate-400 text-xs">Pr. Carlos Daniel</p>
+                            </div>
+                        </div><button class="text-slate-400 hover:text-rose-500 transition-colors"><span
+                                class="material-symbols-outlined text-xl">remove_circle_outline</span></button>
+                    </div>
+                    <div
+                        class="flex items-center justify-between bg-card-dark p-4 rounded-xl border border-border-dark group active:scale-[0.98] transition-transform">
+                        <div class="flex items-center gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">family_restroom</span></div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Rede Família</p>
+                                <p class="text-slate-400 text-xs">Pra. Helena Viana</p>
+                            </div>
+                        </div><button class="text-slate-400 hover:text-rose-500 transition-colors"><span
+                                class="material-symbols-outlined text-xl">remove_circle_outline</span></button>
+                    </div>
+                    <div
+                        class="flex items-center justify-between bg-card-dark p-4 rounded-xl border border-border-dark group active:scale-[0.98] transition-transform">
+                        <div class="flex items-center gap-3">
+                            <div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">child_care</span></div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Rede Kids</p>
+                                <p class="text-slate-400 text-xs">Msa. Carla Reis</p>
+                            </div>
+                        </div><button class="text-slate-400 hover:text-rose-500 transition-colors"><span
+                                class="material-symbols-outlined text-xl">remove_circle_outline</span></button>
+                    </div>
+                </div>
+            </section>
+            <!-- Map Visualization -->
+            <section class="px-4 pt-8">
+                <div class="flex items-center gap-2 mb-4"><span
+                        class="material-symbols-outlined text-primary text-lg">map</span>
+                    <h2 class="text-white text-sm font-semibold uppercase tracking-wider">Localização do Distrito</h2>
+                </div>
+                <div class="relative w-full h-40 bg-card-dark rounded-2xl overflow-hidden border border-border-dark">
+                    <img alt="Mapa da região"
+                        class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeGJJr1ZAiFQwdMMwDer3b-EyMHFgZWAKjdC8I2qHtFMWh_-pn0WNuL_D7WkqIO26iwW6hCwwMeSJgIMWKk4-Sl7OjYSUPndcYHrFBkBM9heA0koiyeyr8kQNgNefa8IMXDp6BFznL9NwYnF7S_0hkGxK_HZ2fJUBQkE7jCYCC3aAtbtdDSAdZKKTuxaK8jJO-YWtQKoP3mun3Gc7Zgs9bkV7I7IEt1qTVuSY-5_3bAI-EUPnpF78Zk2qyavEIGz_OWcG_iPZJ8ahL" />
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="size-12 bg-primary/30 rounded-full flex items-center justify-center animate-pulse">
+                            <div class="size-4 bg-primary rounded-full shadow-lg shadow-primary"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-2 text-xs text-slate-400 text-center italic">Mapa gerado com base no endereço da sede do
+                    distrito.</p>
+            </section>
+            <!-- Bottom Actions -->
+            <div class="px-4 pt-12">
+                <button
+                    class="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl border border-rose-500/30 text-rose-500 font-bold hover:bg-rose-500/5 transition-colors"><span
+                        class="material-symbols-outlined">delete_sweep</span>Excluir Distrito</button>
+                <p class="mt-6 text-center text-[10px] text-slate-600 uppercase tracking-widest font-bold">Videira App •
+                    Gestão de Governo</p>
+            </div>
+        </main>
+        <div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-700 rounded-full opacity-50"></div>
+    </div>
+</body>
+
+</html>

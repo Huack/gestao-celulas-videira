@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "gold": "#D4AF37", "background-dark": "#1a0d0f", "card-dark": "#2a161a", "border-dark": "#4a262d" },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <title>Cadastrar Nova Rede - Videira</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen">
+    <div
+        class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto bg-background-dark shadow-2xl">
+        <!-- TopAppBar -->
+        <header
+            class="sticky top-0 z-50 flex items-center bg-background-dark/80 ios-blur p-4 pb-2 justify-between border-b border-border-dark">
+            <div class="text-primary flex size-10 items-center justify-start cursor-pointer"><span
+                    class="material-symbols-outlined">close</span></div>
+            <h1 class="text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Nova Rede</h1>
+            <div class="flex size-10 items-center justify-end cursor-pointer">
+                <p class="text-gold text-base font-bold leading-normal tracking-wide">Salvar</p>
+            </div>
+        </header>
+        <main class="flex-1 overflow-y-auto pb-10">
+            <!-- Section: Basic Info -->
+            <div class="px-4 pt-6 pb-2">
+                <h3 class="text-gold text-xs font-bold leading-tight tracking-[0.1em] uppercase mb-3 px-1">Informações
+                    Básicas</h3>
+                <div
+                    class="bg-card-dark rounded-xl border border-border-dark overflow-hidden divide-y divide-border-dark">
+                    <div class="p-4"><label class="flex flex-col w-full"><span
+                                class="text-gray-400 text-xs font-medium pb-1.5 px-1">NOME DA REDE</span><input
+                                class="w-full bg-transparent border-none p-0 text-white focus:ring-0 text-lg placeholder:text-gray-600"
+                                placeholder="Ex: Jovens, Família, Kids" value="" /></label></div>
+                    <div class="p-4">
+                        <span class="text-gray-400 text-xs font-medium pb-3 px-1 block">COR DE IDENTIFICAÇÃO</span>
+                        <div class="flex flex-wrap gap-4 py-1">
+                            <label
+                                class="relative size-8 rounded-full cursor-pointer ring-offset-2 ring-offset-background-dark has-[:checked]:ring-2 ring-primary transition-all"
+                                style="background-color: #d41132;"><input checked="" class="sr-only"
+                                    name="network-color" type="radio" /></label>
+                            <label
+                                class="relative size-8 rounded-full cursor-pointer ring-offset-2 ring-offset-background-dark has-[:checked]:ring-2 ring-gold transition-all"
+                                style="background-color: #D4AF37;"><input class="sr-only" name="network-color"
+                                    type="radio" /></label>
+                            <label
+                                class="relative size-8 rounded-full cursor-pointer ring-offset-2 ring-offset-background-dark has-[:checked]:ring-2 ring-blue-500 transition-all"
+                                style="background-color: #3b82f6;"><input class="sr-only" name="network-color"
+                                    type="radio" /></label>
+                            <label
+                                class="relative size-8 rounded-full cursor-pointer ring-offset-2 ring-offset-background-dark has-[:checked]:ring-2 ring-emerald-500 transition-all"
+                                style="background-color: #10b981;"><input class="sr-only" name="network-color"
+                                    type="radio" /></label>
+                            <label
+                                class="relative size-8 rounded-full cursor-pointer ring-offset-2 ring-offset-background-dark has-[:checked]:ring-2 ring-purple-500 transition-all"
+                                style="background-color: #a855f7;"><input class="sr-only" name="network-color"
+                                    type="radio" /></label>
+                            <label
+                                class="relative size-8 rounded-full cursor-pointer ring-offset-2 ring-offset-background-dark has-[:checked]:ring-2 ring-orange-500 transition-all"
+                                style="background-color: #f97316;"><input class="sr-only" name="network-color"
+                                    type="radio" /></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Section: Hierarchy -->
+            <div class="px-4 pt-6 pb-2">
+                <h3 class="text-gold text-xs font-bold leading-tight tracking-[0.1em] uppercase mb-3 px-1">Estrutura e
+                    Liderança</h3>
+                <div
+                    class="bg-card-dark rounded-xl border border-border-dark overflow-hidden divide-y divide-border-dark">
+                    <button class="w-full flex items-center justify-between p-4 active:bg-primary/10 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">person</span></div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 font-medium uppercase">Pastor Responsável</p>
+                                <p class="text-white font-medium">Selecionar Pastor</p>
+                            </div>
+                        </div><span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <button class="w-full flex items-center justify-between p-4 active:bg-primary/10 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="size-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                                <span class="material-symbols-outlined">account_tree</span></div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 font-medium uppercase">Distrito / Região</p>
+                                <p class="text-white font-medium">Sede Principal</p>
+                            </div>
+                        </div><span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Section: Goals -->
+            <div class="px-4 pt-6 pb-2">
+                <div class="flex items-center justify-between mb-3 px-1">
+                    <h3 class="text-gold text-xs font-bold leading-tight tracking-[0.1em] uppercase">Metas Anuais (2024)
+                    </h3><span class="material-symbols-outlined text-gold text-sm">trending_up</span>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-card-dark p-4 rounded-xl border border-border-dark"><label
+                            class="flex flex-col"><span
+                                class="text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-2">Batismos</span>
+                            <div class="flex items-end gap-2"><input
+                                    class="w-full bg-transparent border-none p-0 text-white focus:ring-0 text-2xl font-bold placeholder:text-gray-700"
+                                    placeholder="0" type="number" /><span
+                                    class="text-gray-500 text-xs pb-1">almas</span></div>
+                        </label></div>
+                    <div class="bg-card-dark p-4 rounded-xl border border-border-dark"><label
+                            class="flex flex-col"><span
+                                class="text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-2">Multiplicação</span>
+                            <div class="flex items-end gap-2"><input
+                                    class="w-full bg-transparent border-none p-0 text-white focus:ring-0 text-2xl font-bold placeholder:text-gray-700"
+                                    placeholder="0" type="number" /><span
+                                    class="text-gray-500 text-xs pb-1">células</span></div>
+                        </label></div>
+                </div>
+            </div>
+            <!-- Visual Decoration -->
+            <div class="px-4 mt-8">
+                <div
+                    class="relative overflow-hidden rounded-xl h-24 bg-gradient-to-br from-primary to-background-dark border border-border-dark flex items-center px-6">
+                    <div class="absolute -right-4 -bottom-4 opacity-10"><span
+                            class="material-symbols-outlined text-[120px]">church</span></div>
+                    <div class="relative z-10">
+                        <p class="text-white/60 text-xs font-medium uppercase tracking-widest">Resumo da Rede</p>
+                        <p class="text-white text-sm font-light italic mt-1 leading-tight">"Ide por todo o mundo e
+                            pregai o evangelho a toda criatura."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6 mt-4"><button
+                    class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2"><span
+                        class="material-symbols-outlined text-lg">add_circle</span>Finalizar Cadastro</button></div>
+        </main>
+        <div class="flex justify-center pb-2 pt-4">
+            <div class="w-32 h-1.5 bg-gray-700 rounded-full"></div>
+        </div>
+    </div>
+</body>
+
+</html>

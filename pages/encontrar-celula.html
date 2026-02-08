@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "gold": "#d4af37", "background-dark": "#221013" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Encontrar uma Célula - Videira</title>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+            font-family: Inter, sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark">
+    <div
+        class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto bg-background-dark shadow-2xl">
+        <!-- TopAppBar -->
+        <header class="sticky top-0 z-20 flex flex-col bg-background-dark pt-6 px-4 pb-2 border-b border-white/5">
+            <div class="flex items-center justify-between">
+                <div class="text-white flex size-10 shrink-0 items-center justify-center cursor-pointer">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </div>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
+                    Encontrar uma Célula</h2>
+            </div>
+            <!-- Filter Chips -->
+            <div class="flex gap-2 py-4 overflow-x-auto no-scrollbar">
+                <button
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4 shadow-sm">
+                    <span class="text-sm font-semibold leading-normal">Perto de mim</span>
+                </button>
+                <button
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 text-white px-4 border border-white/10">
+                    <span class="text-sm font-medium leading-normal">Sábado</span>
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                </button>
+                <button
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 text-white px-4 border border-white/10">
+                    <span class="text-sm font-medium leading-normal">Jovens</span>
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                </button>
+                <button
+                    class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/10 text-white px-4 border border-white/10">
+                    <span class="text-sm font-medium leading-normal">Casais</span>
+                    <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                </button>
+            </div>
+        </header>
+        <!-- Main Map Area -->
+        <main class="relative flex-1">
+            <div class="absolute inset-0 bg-cover bg-center"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCltYFr5_LR1Nam-DMyxrUG9lmquHGrckCG0OzqILxxMIRZyy6wunIntONxp5ngC8emXK-TqKjQdKxK_CCfuJNaOyrFnfPluWXka7Kf57i5UraTZiynUnYVXN8ddtWFkOMvLoS4Om0e35txT3g6_VGYtDNlsKBs-GtIiSQrertOLokz4SR2rum-7qh2-pmwUWNdUNC4i3EU2ULkQCZ4-wZuAKodJfzSx20d-BL3trYram39zzJYNje3GP4Z1lSF98qc3amE8TgmZVxx");'>
+                <!-- Floating Search Bar -->
+                <div class="absolute top-4 left-4 right-4 z-10">
+                    <label class="flex flex-col min-w-40 h-12 shadow-xl">
+                        <div class="flex w-full flex-1 items-stretch rounded-full h-full">
+                            <div
+                                class="text-primary flex border-none bg-background-dark/90 backdrop-blur-md items-center justify-center pl-4 rounded-l-full">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-white focus:outline-0 focus:ring-0 border-none bg-background-dark/90 backdrop-blur-md h-full placeholder:text-gray-400 px-4 pl-2 text-base font-normal"
+                                placeholder="Buscar bairro ou nome..." />
+                        </div>
+                    </label>
+                </div>
+                <!-- Map Pins -->
+                <div class="absolute top-[40%] left-[30%]">
+                    <div class="relative flex flex-col items-center group cursor-pointer">
+                        <div
+                            class="bg-primary text-white p-2 rounded-full shadow-lg border-2 border-white animate-bounce">
+                            <span class="material-symbols-outlined">church</span>
+                        </div>
+                        <div
+                            class="mt-1 bg-background-dark text-white text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap border border-primary/30">
+                            Célula Promessa</div>
+                    </div>
+                </div>
+                <div class="absolute top-[55%] right-[25%]">
+                    <div class="relative flex flex-col items-center cursor-pointer">
+                        <div class="bg-primary text-white p-2 rounded-full shadow-lg border-2 border-white">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <div
+                            class="mt-1 bg-background-dark text-white text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap border border-primary/30">
+                            Célula Radicais</div>
+                    </div>
+                </div>
+                <!-- Map Controls -->
+                <div class="absolute right-4 bottom-72 flex flex-col gap-3">
+                    <div class="flex flex-col gap-0.5 rounded-full overflow-hidden shadow-lg border border-white/10">
+                        <button
+                            class="flex size-12 items-center justify-center bg-background-dark/90 backdrop-blur-md text-white"><span
+                                class="material-symbols-outlined">add</span></button>
+                        <button
+                            class="flex size-12 items-center justify-center bg-background-dark/90 backdrop-blur-md text-white border-t border-white/10"><span
+                                class="material-symbols-outlined">remove</span></button>
+                    </div>
+                    <button
+                        class="flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-lg"><span
+                            class="material-symbols-outlined">my_location</span></button>
+                </div>
+            </div>
+            <!-- Active Cell Card -->
+            <div class="absolute bottom-6 left-4 right-4 z-20">
+                <div
+                    class="flex flex-col rounded-xl shadow-2xl bg-background-dark/95 backdrop-blur-lg border border-white/10 overflow-hidden">
+                    <div class="relative">
+                        <div class="w-full h-32 bg-center bg-no-repeat bg-cover"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCy5y15SIAMm0VN707O0pLaBJKg0t-7L9sUO6M7j6oH2OvP3NK7Hte9XfsO9i2YZ7-zx_OFazWusY0l01RtNJIaEh9cEi8JFG_hIH8P5Su2ht9crenSBciiB9zJuZN_b80clsyoYh9tGxzACx02GSQxFEj2-yDPGuCq6mehcWBLJmzXRr2rUvILZm2_ScSLN8UI0CD-EHy7iqC1PnFjFvMAu-MWJh8pQYpCKXo-sLOdG2b7YfaXTZQEVG41nzSMweAA79AzZEGhLNGT");'>
+                        </div>
+                        <div
+                            class="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                            Jovens</div>
+                    </div>
+                    <div class="flex flex-col gap-1 p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-white text-xl font-bold leading-tight">Célula Filhos da Promessa</h3>
+                            <span class="material-symbols-outlined text-primary cursor-pointer">share</span>
+                        </div>
+                        <div class="flex flex-col gap-2 mt-2">
+                            <div class="flex items-center gap-2 text-primary/80"><span
+                                    class="material-symbols-outlined text-sm">schedule</span>
+                                <p class="text-sm font-medium">Sábados às 19:30</p>
+                            </div>
+                            <div class="flex items-start gap-2 text-gray-300"><span
+                                    class="material-symbols-outlined text-sm mt-0.5">location_on</span>
+                                <p class="text-sm leading-snug">Setor Bueno (Próximo ao Parque Vaca Brava), Goiânia</p>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <button
+                                class="w-full flex items-center justify-center rounded-full h-12 px-6 bg-primary text-white text-base font-bold transition-all active:scale-95 shadow-lg shadow-primary/20">
+                                <span class="material-symbols-outlined mr-2">chat</span><span>Quero Visitar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- BottomNavBar -->
+        <nav class="flex gap-2 border-t border-white/10 bg-background-dark px-4 pb-8 pt-2 z-30">
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="#"><span
+                    class="material-symbols-outlined">home</span>
+                <p class="text-[10px] font-medium uppercase tracking-widest">Início</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#"><span
+                    class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">map</span>
+                <p class="text-[10px] font-medium uppercase tracking-widest">Mapa</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="#"><span
+                    class="material-symbols-outlined">calendar_today</span>
+                <p class="text-[10px] font-medium uppercase tracking-widest">Eventos</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="#"><span
+                    class="material-symbols-outlined">person</span>
+                <p class="text-[10px] font-medium uppercase tracking-widest">Perfil</p>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>

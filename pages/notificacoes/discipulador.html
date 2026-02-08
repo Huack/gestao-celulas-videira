@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Notificações - Discipulador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e90c43",
+                        "gold": "#d4af37",
+                        "background-dark": "#1a0a0d",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <div>
+                    <h1 class="text-lg font-bold">Central de Avisos</h1>
+                    <p class="text-xs text-gray-400">5 células sob sua supervisão</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                    <span class="material-symbols-outlined">filter_list</span>
+                </button>
+            </div>
+        </header>
+        <main class="px-4 py-4 space-y-3">
+            <div class="flex gap-2 overflow-x-auto pb-2">
+                <button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap">Todos
+                    (8)</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Relatórios</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Líderes</button>
+            </div>
+            <div class="bg-orange-500/10 border border-orange-500/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-orange-400">warning</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium text-orange-400">Relatório pendente</p>
+                    <p class="text-xs text-gray-400 mt-1">Célula Manancial ainda não enviou o relatório desta semana.
+                    </p>
+                    <button
+                        class="mt-2 px-3 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full font-medium">Cobrar
+                        líder</button>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 2 horas</span>
+                </div>
+            </div>
+            <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-green-500">check_circle</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Relatório enviado</p>
+                    <p class="text-xs text-gray-400 mt-1">Célula Videira Central enviou o relatório. 12 presentes, 2
+                        visitantes.</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 4 horas</span>
+                </div>
+            </div>
+            <div class="bg-gold/10 border border-gold/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-gold">volunteer_activism</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Novo pedido urgente</p>
+                    <p class="text-xs text-gray-400 mt-1">João Pedro (Célula Esperança) pediu oração por familiar na
+                        UTI.</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 5 horas</span>
+                </div>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-start gap-3 opacity-70">
+                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-gray-400">person_add</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Novo membro consolidado</p>
+                    <p class="text-xs text-gray-400 mt-1">Ana Paula foi consolidada na Célula Videira Central.</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">ontem</span>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-discipulador.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Home</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Avisos</span></a>
+            <a href="../oracao/discipulador.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">volunteer_activism</span><span
+                    class="text-[10px]">Oração</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

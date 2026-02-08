@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home do Discipulador</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e90c43",
+                        "gold": "#d4af37",
+                        "wine-dark": "#2d0b13",
+                        "background-dark": "#1a0a0d",
+                    },
+                    fontFamily: { "display": ["Lexend", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-slate-100 min-h-screen pb-24">
+    <div class="h-12 w-full"></div>
+    <header class="px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-background-dark/80 ios-blur">
+        <div class="flex items-center gap-3">
+            <div class="relative">
+                <div class="size-12 rounded-full border-2 border-gold p-0.5">
+                    <div class="w-full h-full rounded-full bg-cover bg-center"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmNpbEVwR7x1P-71_l8pKlg-qRsqsParUtIRCU38Ryg4WG3X1baxptfB3pB8WFiUKeLmPROs8PJwEFAXz8Ue0L4RO4tOjELlA5GxGT_SZ2jrEaxn_qHooZdefECpI1TjfS3yUxqGbtcsjwgAAQ6oYykPk_FwGjrdir9N_nln9J0brb0T57aIsNXy33AUQ673IpO2ZfW51ubj66sC7YKF7JONp1_vdwPf3XMkTAhGmsQzOVtI4OR3rQwPGmYdD9sV_9VZYgU7RZiTSo')">
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 size-4 bg-green-500 border-2 border-background-dark rounded-full">
+                </div>
+            </div>
+            <div>
+                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Bem-vindo</p>
+                <h1 class="text-xl font-bold text-white">Pr. Ricardo</h1>
+            </div>
+        </div>
+        <button class="relative p-2 rounded-full bg-wine-dark/50 text-slate-300">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="absolute top-2 right-2 size-2 bg-primary rounded-full"></span>
+        </button>
+    </header>
+    <main class="px-6 space-y-8">
+        <section>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold">Resumo da Rede</h2>
+                <span class="text-sm text-primary font-semibold">Ver detalhes</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-wine-dark/30 border border-white/5 p-4 rounded-2xl shadow-sm">
+                    <div class="flex items-center gap-2 mb-2 text-slate-400">
+                        <span class="material-symbols-outlined text-primary text-xl">description</span>
+                        <span class="text-xs font-semibold uppercase">Relatórios</span>
+                    </div>
+                    <div class="flex items-end gap-1">
+                        <span class="text-2xl font-bold">85%</span>
+                        <span class="text-green-500 text-xs font-bold mb-1">+5%</span>
+                    </div>
+                    <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                        <div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="bg-wine-dark/30 border border-white/5 p-4 rounded-2xl shadow-sm">
+                    <div class="flex items-center gap-2 mb-2 text-slate-400">
+                        <span class="material-symbols-outlined text-gold text-xl">groups</span>
+                        <span class="text-xs font-semibold uppercase">Frequência</span>
+                    </div>
+                    <div class="flex items-end gap-1">
+                        <span class="text-2xl font-bold">1.240</span>
+                        <span class="text-primary text-xs font-bold mb-1">-2%</span>
+                    </div>
+                    <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                        <div class="bg-gold h-full rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold">Status das Células</h2>
+                <div class="flex items-center gap-1 text-xs bg-gold/20 text-gold px-2 py-1 rounded-full font-bold">
+                    <span class="material-symbols-outlined text-sm">event</span> Semana 42
+                </div>
+            </div>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/5">
+                    <div class="flex items-center gap-4">
+                        <div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">temple_buddhist</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-sm">Videira Central 01</h3>
+                            <p class="text-xs text-slate-500">Líder: Marcos Paulo</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span
+                            class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold rounded-full uppercase">Enviado</span>
+                        <span class="text-[10px] text-slate-400 mt-1">há 2h</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/5">
+                    <div class="flex items-center gap-4">
+                        <div class="size-10 rounded-lg bg-gold/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold">home</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-sm">Célula Manancial</h3>
+                            <p class="text-xs text-slate-500">Líder: Ana Clara</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span
+                            class="px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase">Pendente</span>
+                        <span class="text-[10px] text-slate-400 mt-1">Atrasado</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pb-4">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <h2 class="text-lg font-bold">Pedidos de Oração</h2>
+                    <span class="bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">3</span>
+                </div>
+            </div>
+            <div class="flex gap-4 overflow-x-auto hide-scrollbar -mx-6 px-6">
+                <div
+                    class="min-w-[280px] bg-gradient-to-br from-wine-dark to-primary p-5 rounded-2xl text-white shadow-lg">
+                    <p class="text-sm font-light leading-relaxed mb-6 italic">"Peço oração pela saúde da minha mãe..."
+                    </p>
+                    <button
+                        class="flex items-center gap-1 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-full text-xs font-bold transition-colors">
+                        <span class="material-symbols-outlined text-sm">favorite</span> Orar agora
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <button
+        class="fixed bottom-24 right-6 size-14 bg-gold rounded-full flex items-center justify-center text-white shadow-xl shadow-gold/30 active:scale-95 transition-transform">
+        <span class="material-symbols-outlined text-3xl">add</span>
+    </button>
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-background-dark/95 ios-blur border-t border-white/5 px-8 pt-3 pb-8 flex items-center justify-between z-50">
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">bar_chart</span>
+            <span class="text-[10px] font-medium">Relatórios</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">badge</span>
+            <span class="text-[10px] font-medium">Líderes</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-medium">Perfil</span>
+        </button>
+    </nav>
+</body>
+
+</html>

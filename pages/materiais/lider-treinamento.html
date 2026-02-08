@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CTL - Líder em Treinamento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#C5A059",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center gap-4">
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <div>
+                <h1 class="text-lg font-bold">Curso de Treinamento</h1>
+                <p class="text-xs text-gray-400">CTL - Módulo 2</p>
+            </div>
+        </header>
+        <main class="px-4 py-4 space-y-4">
+            <div class="bg-gradient-to-r from-primary to-primary/70 rounded-2xl p-5 text-white">
+                <div class="flex items-center justify-between mb-3">
+                    <div>
+                        <p class="text-xs opacity-70 uppercase tracking-wider">Progresso Geral</p>
+                        <p class="text-2xl font-bold">65%</p>
+                    </div>
+                    <div class="w-16 h-16 rounded-full border-4 border-white/20 flex items-center justify-center">
+                        <span class="text-lg font-bold">4/6</span>
+                    </div>
+                </div>
+                <div class="w-full bg-white/20 h-2 rounded-full overflow-hidden">
+                    <div class="bg-white h-full w-[65%] rounded-full"></div>
+                </div>
+                <p class="text-xs mt-2 opacity-70">Faltam 2 lições para concluir o módulo</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm mb-3 px-1">Módulo 2: Caráter do Líder</h3>
+                <div class="space-y-2">
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium text-sm">Lição 1: Integridade</h4>
+                            <p class="text-xs text-gray-400">Concluído • 100%</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium text-sm">Lição 2: Humildade</h4>
+                            <p class="text-xs text-gray-400">Concluído • 95%</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium text-sm">Lição 3: Fidelidade</h4>
+                            <p class="text-xs text-gray-400">Concluído • 88%</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-green-500">check_circle</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium text-sm">Lição 4: Paciência</h4>
+                            <p class="text-xs text-gray-400">Concluído • 92%</p>
+                        </div>
+                    </div>
+                    <div class="bg-accent-gold/10 border border-accent-gold/20 rounded-xl p-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-accent-gold/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-accent-gold">play_circle</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium text-sm">Lição 5: Serviço</h4>
+                            <p class="text-xs text-accent-gold font-medium">Disponível • Iniciar agora</p>
+                        </div>
+                        <span class="material-symbols-outlined text-accent-gold">chevron_right</span>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-3 opacity-50">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-gray-500">lock</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-medium text-sm">Lição 6: Mentoria</h4>
+                            <p class="text-xs text-gray-500">Bloqueada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-lider-treinamento.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Início</span></a>
+            <a href="../notificacoes/lider-treinamento.html"
+                class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Avisos</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">school</span><span class="text-[10px]">CTL</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

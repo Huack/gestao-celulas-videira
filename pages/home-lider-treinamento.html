@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home do Líder em Treinamento</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41142",
+                        "accent-gold": "#C5A059",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .ios-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#1b0d11] dark:text-white transition-colors duration-300">
+    <div class="relative mx-auto flex h-auto min-h-screen w-full max-w-md flex-col overflow-x-hidden pb-24">
+        <header
+            class="sticky top-0 z-50 flex items-center justify-between bg-background-light/80 dark:bg-background-dark/80 px-4 py-4 backdrop-blur-md">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 overflow-hidden rounded-full border-2 border-primary">
+                    <img class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAye8Rr_dxjD-vyCWO-Nh9oC_-Euw8_f38kboDv9LUW0pfgeu2JG7IF5XNcDC08X1RPwljUtILcRKEOfVXakYI_G7A7pTyF8OvTQ4hjhUkpubdPS7M40JBeHRTtwdAw12-8ViKCaL1uFrZ17vvhT3HXHJLO-OI9OSmdA6FHmWIgXbpdtiTZwuQ-LLZj7E-9LakO83cVl5T1bi82vc-qEl8DFFOmn-5aAMfHDcLlXCoWiu21lajGnIT8zgc7EbKwtueCPVxYFih8iAv" />
+                </div>
+                <div>
+                    <h2 class="text-sm font-bold leading-none">Olá, João Pedro</h2>
+                    <p class="text-[11px] font-medium text-primary/80">Líder em Treinamento</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-[#321a20] ios-shadow">
+                    <span class="material-symbols-outlined text-primary text-[20px]">notifications</span>
+                </button>
+            </div>
+        </header>
+        <main class="flex flex-col gap-6 px-4 pt-2">
+            <section class="flex flex-col gap-1">
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Célula Videira Centro</p>
+                <h1 class="text-2xl font-extrabold tracking-tight">Pronto para a célula de hoje?</h1>
+            </section>
+            <section class="rounded-xl bg-white p-5 dark:bg-[#321a20] ios-shadow border border-primary/5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-accent-gold">school</span>
+                        <h3 class="text-lg font-bold">Meu Progresso no CTL</h3>
+                    </div>
+                    <span class="text-xs font-bold text-accent-gold uppercase tracking-wider">Módulo 2</span>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-end justify-between">
+                        <p class="text-sm font-medium">Caráter do Líder</p>
+                        <p class="text-xl font-black text-primary">65%</p>
+                    </div>
+                    <div class="h-3 w-full rounded-full bg-[#e7cfd5] dark:bg-[#4a2830]">
+                        <div class="h-full rounded-full bg-primary" style="width: 65%;"></div>
+                    </div>
+                    <div class="flex items-center justify-between pt-1">
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Faltam 3 lições para concluir</p>
+                        <button class="text-xs font-bold text-primary flex items-center gap-1">
+                            Continuar <span class="material-symbols-outlined text-[14px]">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-bold">Minhas Designações</h3>
+                    <span class="text-xs font-medium text-gray-400 italic">Terça-feira, 20:00</span>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div
+                        class="flex items-center gap-4 rounded-xl bg-white p-4 dark:bg-[#321a20] ios-shadow border-l-4 border-primary">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                            <span class="material-symbols-outlined text-primary">campaign</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold">Quebra-gelo</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Dinâmica de apresentação</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-4 rounded-xl bg-white p-4 dark:bg-[#321a20] ios-shadow border-l-4 border-accent-gold">
+                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-gold/10">
+                            <span class="material-symbols-outlined text-accent-gold">volunteer_activism</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold">Momento de Oração</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Intercessão pelos visitantes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex flex-col gap-3">
+                <h3 class="text-lg font-bold">Acesso Rápido</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div
+                        class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-4 dark:bg-[#321a20] ios-shadow border border-primary/5">
+                        <span class="material-symbols-outlined text-primary text-[32px]">menu_book</span>
+                        <span class="text-sm font-bold">Roteiro da Célula</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-4 dark:bg-[#321a20] ios-shadow border border-primary/5">
+                        <span class="material-symbols-outlined text-primary text-[32px]">groups</span>
+                        <span class="text-sm font-bold">Lista de Membros</span>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-4 rounded-xl bg-gradient-to-br from-primary to-[#a00d32] p-6 text-white ios-shadow">
+                <span class="material-symbols-outlined text-[30px] opacity-40">format_quote</span>
+                <p class="mt-2 text-sm italic font-medium leading-relaxed">
+                    "O líder em treinamento é aquele que está disposto a ser o maior servo de todos."
+                </p>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-[10px] font-bold uppercase tracking-widest opacity-80">Reflexão do Dia</span>
+                    <span class="text-[10px] font-medium opacity-80">— Pastor Aluízio Silva</span>
+                </div>
+            </section>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 z-50 mx-auto max-w-md border-t border-gray-200 bg-white/90 px-6 pb-6 pt-3 backdrop-blur-lg dark:border-white/10 dark:bg-background-dark/90">
+            <div class="flex items-center justify-between">
+                <a class="flex flex-col items-center gap-1 text-primary" href="#">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="text-[10px] font-bold">Início</span>
+                </a>
+                <a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="text-[10px] font-medium">Materiais</span>
+                </a>
+                <div class="relative -top-8">
+                    <button
+                        class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40">
+                        <span class="material-symbols-outlined text-[32px]">add</span>
+                    </button>
+                </div>
+                <a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+                    <span class="material-symbols-outlined">auto_graph</span>
+                    <span class="text-[10px] font-medium">CTL</span>
+                </a>
+                <a class="flex flex-col items-center gap-1 text-gray-400" href="#">
+                    <span class="material-symbols-outlined">person</span>
+                    <span class="text-[10px] font-medium">Perfil</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

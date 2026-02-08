@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Confirmar Presença na Célula - Igreja Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "gold": "#D4AF37", "background-dark": "#1b0d10" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .gold-border {
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-background-dark max-w-[480px] mx-auto shadow-2xl">
+        <div class="flex items-center bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50">
+            <div class="text-primary flex size-12 shrink-0 items-center justify-start cursor-pointer"><span
+                    class="material-symbols-outlined text-2xl">chevron_left</span></div>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">
+                Confirmar Presença</h2>
+        </div>
+        <div class="px-4 py-3">
+            <div class="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-background-dark rounded-xl min-h-[220px] relative"
+                style='background-image: linear-gradient(0deg, rgba(212, 17, 50, 0.9) 0%, rgba(0, 0, 0, 0) 70%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUhA-HIHwHQr4Piiu4JLDA_1F6tGBJMgFzNlPFR6iDFnlXTL6WntEIejpixF6OQ56pCeyU1WGy0xdBdrxJggNNWnVbihgzAG2aAuZ11nPozmlJ5K1lYUxv9Lu1__3aAxSEkLVwKI2IaEaKCS9cu8GYcEpdk34cCHbD85birkRGTPc_aQ9JvYvkn28s8AldrskNMzg3O0yi7s36DieNvKTs82lW_50IY9xkdk2brw6QMrlwdrlimA6YMojNZmlPJfBY-sdnmEm0qfVP");'>
+                <div class="flex flex-col p-5">
+                    <span class="text-white/80 text-xs font-bold uppercase tracking-widest mb-1">Reunião de
+                        Célula</span>
+                    <p class="text-white tracking-light text-[28px] font-extrabold leading-tight">Célula Manancial</p>
+                    <div class="flex flex-col gap-2 mt-3">
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-gold text-sm">home</span>
+                            <p class="text-white/90 text-sm font-medium">Casa do Irmão André (Anfitrião)</p>
+                        </div>
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-gold text-sm">location_on</span>
+                            <p class="text-white/90 text-xs">Rua das Videiras, 123 - Setor Sul</p>
+                        </div>
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-gold text-sm">schedule</span>
+                            <p class="text-white/90 text-sm font-bold">Hoje às 20:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex px-4 py-6">
+            <button
+                class="flex min-w-full cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-xl h-16 px-5 flex-1 bg-primary text-white text-lg font-extrabold leading-normal tracking-[0.015em] gold-border transition-transform active:scale-95 shadow-lg">
+                <span class="material-symbols-outlined">check_circle</span>
+                <span class="truncate uppercase tracking-wider text-sm">Confirmar Presença na Célula</span>
+            </button>
+        </div>
+        <div class="px-4 flex flex-col gap-6 mb-10">
+            <section>
+                <div class="flex items-center justify-between mb-3 px-1">
+                    <div class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-primary text-xl">group_add</span>
+                        <h3 class="text-white font-bold">Já confirmados</h3>
+                    </div>
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">8 pessoas</span>
+                </div>
+                <div class="grid grid-cols-1 gap-2">
+                    <div class="flex items-center justify-between bg-[#2d1a1e] p-3 rounded-xl border border-gray-800">
+                        <div class="flex items-center gap-3">
+                            <img alt="Membro" class="h-10 w-10 rounded-full object-cover border-2 border-gold"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdAcVQ6yePba9Qd87MC5Y_OQgngg1rAlI88vAHof5XFe4zazgLtSlFMyCpGA28snN4oNtTO7KhQr-SjrfIbPxVG_AdBIbV1aQJsoD5E1ieIIhmR4wmtONPv2eVm-MYpZPkUQFKpdGhJEkI1nZ8lUe1PkXb0Bpmr4jJ3YhLcDnKj9YCYkDV9UR7v690Umk6ngCtHxHiUYUWkgIaMkIgfXeqs0PYJ0CUlCBihTdzt7gr6HXeQ3HkYnghv0voeh79R8fBnoUNoZqPDRtQ" />
+                            <div>
+                                <p class="text-sm font-bold text-white">Mariana Costa</p>
+                                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Confirmado há 2h
+                                </p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-green-500">done_all</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-[#2d1a1e] p-3 rounded-xl border border-gray-800">
+                        <div class="flex items-center gap-3">
+                            <img alt="Membro" class="h-10 w-10 rounded-full object-cover border-2 border-gold"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3M-dfpxgrY-yMFSBxOYGNtdwMsZWBHiL5WNj36kvfze9-M5BzBGm8m7BxRhiW3fYsTteIW-QoIHvRTHjY3BcwydB28PPfWDQshhZqFLu1OwqxMfOXvHg7I6CWoICmPTjML2sBPvTKln9Nkf3Q1OUB9ZTrlgyIuXQcZMk7XBrjA0nOYwmTP5m7VsVSTOORCJhKParGCZ70UQUgWOeDcRi0lkDcaTActPc0Ft4GQgWR8tMi4H-1YVS981iqW89yGmWSXOw8Nhe10_6c" />
+                            <div>
+                                <p class="text-sm font-bold text-white">Ricardo Mendes</p>
+                                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Confirmado há 5h
+                                </p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-green-500">done_all</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-[#2d1a1e] p-3 rounded-xl border border-gray-800">
+                        <div class="flex items-center gap-3">
+                            <img alt="Membro" class="h-10 w-10 rounded-full object-cover border-2 border-gold"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-kdg6JSNV05hHdZTERsctNI6wGqSL3W6Mez-2sQo1xBUlxEsZSNsYpMpC82o23smqQ2-Xz5QoaNwfUDr5pImMlP2BTdzgqpQ62tnU4x-5muM1SPvsvHvlhsv7viMLAlqe68beAQpDj_YOiau825W22fzd15TisGsQZ4pHBjQ49qXlAUmL5Viu03yZkgj-nCIUvdy0iuSEbIQj7cSPu8K-45oSTIJYasYca9GV9Gr81Rcw3WY-tmCpAbAAiEe3u_qA6_IOJVh_CbBg" />
+                            <div>
+                                <p class="text-sm font-bold text-white">Lucas Silva</p>
+                                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Confirmado ontem
+                                </p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-green-500">done_all</span>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="flex items-center justify-between mb-3 px-1">
+                    <div class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-gray-400 text-xl">pending</span>
+                        <h3 class="text-white font-bold">Aguardando confirmação</h3>
+                    </div>
+                    <span class="text-xs font-bold text-gray-500 bg-gray-800 px-2 py-1 rounded">4 pessoas</span>
+                </div>
+                <div class="grid grid-cols-1 gap-2 opacity-70">
+                    <div
+                        class="flex items-center justify-between bg-[#2d1a1e]/50 p-3 rounded-xl border border-dashed border-gray-700">
+                        <div class="flex items-center gap-3">
+                            <img alt="Membro" class="h-10 w-10 rounded-full object-cover grayscale"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-T86kiFEpv-6YV8NMagzAxcFHiD5v1sn-c81ZZZ2uder8RJApCexjv2PB3UZ54Qz5ERtuPbkg1tfrfnUuHMlrLscDfIk5WL4YxDNzoR-suT6VNIE8vw1ojTQKaCa5PwGu4Xf2lA4z5IOivsHWdlRhCTRgEQKn2L-YmLhbVJENZFPonHJCZFbbtI6G1xvhsN45uMzS-F0uqMVgo4KcQ8Iv_W7JnTa3YEHS59cNBUq0ltAGWdRD7ftM1wFmi_OVIksK_MS2B8uUZfnw" />
+                            <p class="text-sm font-medium text-white">Beatriz Souza</p>
+                        </div>
+                        <button
+                            class="text-[10px] font-bold text-primary uppercase border border-primary/30 px-2 py-1 rounded-lg">Lembrar</button>
+                    </div>
+                    <div
+                        class="flex items-center justify-between bg-[#2d1a1e]/50 p-3 rounded-xl border border-dashed border-gray-700">
+                        <div class="flex items-center gap-3">
+                            <img alt="Membro" class="h-10 w-10 rounded-full object-cover grayscale"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNTsx6NcquWFx0EaWqbvazQCMr2TrdVXq_AddywyI3Gx56sBzs8aTk2Q1_ta029On87QCvwsoodnnjH-CV8SHQc4Z5aKnLf0GDt45O2UNF9dZqOeVCLdm5Fex17G71UuyyQsyd5GyE0FndPxbABpEmDvZsQE3sJO0qPSGc86khh4Edzwgp5OlEV3OTrkI2P8OGPhS9QmZbHzk6B0QTAAjdQrfi803XH3zxd3icj06mF84OFQo_bEkLfsTr_TZZ0OSOok9zalwbjPdb" />
+                            <p class="text-sm font-medium text-white">Felipe Rocha</p>
+                        </div>
+                        <button
+                            class="text-[10px] font-bold text-primary uppercase border border-primary/30 px-2 py-1 rounded-lg">Lembrar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="mt-auto px-4 py-8 text-center bg-[#1b0d10]/50">
+            <p class="text-gray-500 text-xs font-medium italic">"Não deixemos de reunir-nos como igreja, segundo o
+                costume de alguns, mas encorajemo-nos uns aos outros..."<br />Hebreus 10:25</p>
+        </div>
+        <div class="h-8"></div>
+    </div>
+</body>
+
+</html>

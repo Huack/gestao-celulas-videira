@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Materiais - Pastor de Rede</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#d4af37",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <h1 class="text-lg font-bold">Central de Conteúdo</h1>
+            </div>
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </header>
+        <main class="px-4 py-4 space-y-6">
+            <div class="bg-gradient-to-r from-accent-gold/20 to-primary/10 border border-accent-gold/20 rounded-xl p-4">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-accent-gold">upcoming</span>
+                    <h2 class="font-bold text-sm">Próximo Encontro de Rede</h2>
+                </div>
+                <p class="text-sm text-gray-300 mb-3">Materiais para o encontro de líderes de sábado</p>
+                <button class="px-4 py-2 bg-accent-gold/20 text-accent-gold text-sm rounded-lg font-medium">Preparar
+                    Apresentação</button>
+            </div>
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold">Roteiros Semanais</h3>
+                    <button class="text-primary text-xs font-bold">Histórico</button>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-primary/10 border border-primary/20 rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span
+                                class="px-2 py-0.5 bg-primary/30 text-primary text-[10px] rounded font-bold uppercase">Atual</span>
+                            <span class="text-xs text-gray-500">Semana 42</span>
+                        </div>
+                        <h4 class="font-bold text-sm">A Fé que Vence</h4>
+                        <p class="text-xs text-gray-400 mb-3">Hebreus 11:1-6</p>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex-1 py-2 bg-primary text-white text-xs rounded-lg font-medium">Baixar</button>
+                            <button class="flex-1 py-2 bg-white/10 text-gray-300 text-xs rounded-lg font-medium">Enviar
+                                à Rede</button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between opacity-70">
+                        <div>
+                            <span class="text-xs text-gray-500">Semana 41</span>
+                            <h4 class="font-medium text-sm">Vencendo o Medo</h4>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold mb-3">Treinamentos para Discipuladores</h3>
+                <div class="space-y-2">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-accent-gold/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-accent-gold">videocam</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Gestão de Células</h4>
+                            <p class="text-xs text-gray-400">Curso completo • 12 módulos</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Liderança Pastoral</h4>
+                            <p class="text-xs text-gray-400">Curso avançado • 8 módulos</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-pastor-rede.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Home</span></a>
+            <a href="../notificacoes/pastor-rede.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Avisos</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">menu_book</span><span class="text-[10px]">Materiais</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Configurações - Igreja Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#f2cc0d", "wine": "#722f37", "background-dark": "#1c190d" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white antialiased">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col max-w-[430px] mx-auto bg-background-dark overflow-x-hidden shadow-2xl">
+        <!-- Header -->
+        <header
+            class="flex items-center px-4 py-6 justify-between sticky top-0 bg-background-dark/80 backdrop-blur-md z-10">
+            <div class="flex items-center gap-2">
+                <div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <span class="material-symbols-outlined">arrow_back_ios_new</span></div>
+            </div>
+            <h1 class="text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Configurações</h1>
+        </header>
+        <main class="flex-1 pb-10">
+            <!-- Profile -->
+            <div class="px-4 mb-8">
+                <div class="bg-[#2a271a] p-4 rounded-xl flex items-center gap-4 shadow-sm border border-white/5">
+                    <div
+                        class="size-14 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary/30">
+                        <img alt="User profile" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADUpP-iZhM4shZlYtFc-nZgYjp9eeNO6w1HftiXq7ZS6zkJsfLbEQN56fj1SKRsZVzorufeQCKf7ojVtk-kZnts6tzN9Y48x8tAMbMmP5nLspla2up2tsSPeX-5iZzQ_TKGON6U-iNnNuQBtimnMJ8JNY10fPyOuY-aLBAyj6bAmFu6qJChd8p8cjAa6i_RbeVvz0x2B-1vMHRwPCn0xsZbuGvGDdEuREbajAN9DkSBcvrMOGLvtjlwd7sUop7BJDLp5EsST62778V" />
+                    </div>
+                    <div>
+                        <h2 class="font-bold text-lg">Ricardo Oliveira</h2>
+                        <p class="text-sm opacity-60">Líder de Célula • Videira Sede</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Alertas de Célula -->
+            <div class="px-4 mb-6">
+                <h3 class="text-primary text-xs font-bold uppercase tracking-wider mb-2 ml-1">Alertas de Célula</h3>
+                <div
+                    class="bg-[#2a271a] rounded-xl overflow-hidden shadow-sm border border-white/5 divide-y divide-white/5">
+                    <div class="flex items-center gap-4 px-4 py-4 justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">how_to_reg</span></div>
+                            <p class="text-[15px] font-medium">Confirmação de presença</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer"><input checked
+                                class="sr-only peer" type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center gap-4 px-4 py-4 justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">cookie</span></div>
+                            <p class="text-[15px] font-medium">Escala de lanche</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer"><input checked
+                                class="sr-only peer" type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Comunicação -->
+            <div class="px-4 mb-6">
+                <h3 class="text-primary text-xs font-bold uppercase tracking-wider mb-2 ml-1">Comunicação</h3>
+                <div
+                    class="bg-[#2a271a] rounded-xl overflow-hidden shadow-sm border border-white/5 divide-y divide-white/5">
+                    <div class="flex items-center gap-4 px-4 py-4 justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">campaign</span></div>
+                            <p class="text-[15px] font-medium">Novos avisos no mural</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer"><input checked
+                                class="sr-only peer" type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center gap-4 px-4 py-4 justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">volunteer_activism</span></div>
+                            <p class="text-[15px] font-medium">Pedidos de oração</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer"><input class="sr-only peer"
+                                type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Administrativo -->
+            <div class="px-4 mb-6">
+                <h3 class="text-primary text-xs font-bold uppercase tracking-wider mb-2 ml-1">Administrativo</h3>
+                <div
+                    class="bg-[#2a271a] rounded-xl overflow-hidden shadow-sm border border-white/5 divide-y divide-white/5">
+                    <div class="flex items-center gap-4 px-4 py-4 justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">assignment</span></div>
+                            <p class="text-[15px] font-medium">Lembrete de relatório</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer"><input checked
+                                class="sr-only peer" type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center gap-4 px-4 py-4 justify-between">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">auto_stories</span></div>
+                            <p class="text-[15px] font-medium">Novas lições de estudo</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer"><input class="sr-only peer"
+                                type="checkbox" />
+                            <div
+                                class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Preferências -->
+            <div class="px-4 mb-8">
+                <h3 class="text-primary text-xs font-bold uppercase tracking-wider mb-2 ml-1">Preferências de Conta</h3>
+                <div
+                    class="bg-[#2a271a] rounded-xl overflow-hidden shadow-sm border border-white/5 divide-y divide-white/5">
+                    <button
+                        class="w-full flex items-center gap-4 px-4 py-4 justify-between active:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">person</span></div>
+                            <p class="text-[15px] font-medium">Editar Perfil</p>
+                        </div><span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <button
+                        class="w-full flex items-center gap-4 px-4 py-4 justify-between active:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">lock</span></div>
+                            <p class="text-[15px] font-medium">Alterar Senha</p>
+                        </div><span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                    <button
+                        class="w-full flex items-center gap-4 px-4 py-4 justify-between active:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-9">
+                                <span class="material-symbols-outlined text-[20px]">palette</span></div>
+                            <p class="text-[15px] font-medium">Aparência do App</p>
+                        </div><span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Logout -->
+            <div class="px-4">
+                <button
+                    class="w-full flex items-center justify-center gap-2 py-4 px-4 bg-[#2a271a] rounded-xl border border-primary/10 text-wine font-bold active:bg-wine/5 transition-colors"><span
+                        class="material-symbols-outlined text-[20px]">logout</span>Sair da Conta</button>
+            </div>
+            <p class="text-center text-xs opacity-40 mt-8 mb-4">Videira App v2.4.0 • 2024</p>
+        </main>
+        <!-- Bottom Nav -->
+        <nav
+            class="sticky bottom-0 w-full bg-[#1c190d]/90 backdrop-blur-lg border-t border-white/5 py-3 px-6 flex justify-between items-center">
+            <div class="flex flex-col items-center gap-1 opacity-40"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px] font-medium">Início</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-40"><span
+                    class="material-symbols-outlined">groups</span><span class="text-[10px] font-medium">Célula</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-40"><span
+                    class="material-symbols-outlined">event</span><span class="text-[10px] font-medium">Eventos</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-primary"><span class="material-symbols-outlined"
+                    style="font-variation-settings:'FILL' 1">settings</span><span
+                    class="text-[10px] font-bold">Ajustes</span></div>
+        </nav>
+    </div>
+</body>
+
+</html>

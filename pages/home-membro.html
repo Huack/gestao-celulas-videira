@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home do Membro - Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "accent-wine": "#722f37",
+                        "background-light": "#fcfbf8",
+                        "background-dark": "#1a1608",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+        font-family: 'Inter', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        min-height: max(884px, 100dvh);
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .btn-luxury {
+        @apply bg-accent-wine text-white font-bold text-sm shadow-md hover:brightness-110 active:scale-[0.98] transition-all duration-200 border border-primary/20;
+    }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#1c180d] dark:text-white transition-colors duration-300">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden max-w-[480px] mx-auto shadow-2xl">
+        <header
+            class="flex items-center bg-white/90 dark:bg-background-dark/90 backdrop-blur-md p-4 pb-2 justify-between sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
+            <div class="flex size-12 shrink-0 items-center">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary"
+                    data-alt="User profile picture"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_wpiRCnMOF4FDxxeqlVMt4G4cWXkgcKWJHWW2AwSYriDMsZhNnriqrg-nXXQAN8wvHQFw0gUMPAcNA68s1SxEmqum1MMmByDwIbOKyqZ-abZ2bJ_d65y_DJseUN_UVsNU-2V4Ysby2FlsTkWRxrNi4yv79KuxTW8y9z42KzfQTilLJuhiqQNrzhol_7_eX_paJ5RCZk2Js3ugD6hmxZKuAfTyQk_u6n6MOI4fuo8exQQCNCYCmZ2uoYPxjFU_IzokEUuRgfFYz3Gi");'>
+                </div>
+            </div>
+            <div class="flex flex-col flex-1 px-3">
+                <h2 class="text-[#1c180d] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Olá,
+                    João!</h2>
+                <p class="text-accent-wine/70 dark:text-primary/70 text-xs font-medium">Bem-vindo à sua casa</p>
+            </div>
+            <div class="flex w-12 items-center justify-end">
+                <button
+                    class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-accent-wine dark:text-primary">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="flex-1 pb-24">
+            <div class="@container">
+                <div class="px-4 py-3">
+                    <div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-2xl min-h-64 shadow-xl relative ring-1 ring-black/5"
+                        style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKipfODwjdmsUpNWFbailoVFeqFYXWUg7Kn3o9FeMbjlV-Fh67ercLfbXbxppT4B_AaAdiEPqJD6qraTY_rwVhxCcj6hNNMiaRu_QIEfWXqJPkIBom4INX4TZtvL09u81lMTcfZ9JqOZsNYBQ86H5sMOxOuCUYGlMKpFnTw2I_7V0TMncn3iywqR1tqYsTeDIZH8Ud6zdGGAa4df2z8xySMLOGcFS_L-Q5A9YuUhBBAgDA2lpUlimIFqoEGAKDEfqY9lMM7Q8S_rXj");'>
+                        <div class="flex flex-col p-6 gap-1">
+                            <span class="text-primary text-xs font-black uppercase tracking-[0.2em]">Sua Próxima
+                                Célula</span>
+                            <p class="text-white text-2xl font-bold leading-tight">Célula Manancial</p>
+                            <div class="flex items-center gap-1.5 text-white/80 text-sm">
+                                <span class="material-symbols-outlined text-[16px]">location_on</span>
+                                <span>Rua das Oliveiras, 120</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mt-2">
+                <h4
+                    class="text-accent-wine dark:text-primary text-sm font-black leading-normal tracking-widest px-4 py-2 text-center uppercase">
+                    Início em:</h4>
+                <div class="flex gap-4 py-4 px-8">
+                    <div class="flex grow basis-0 flex-col items-stretch gap-2">
+                        <div
+                            class="flex h-16 grow items-center justify-center rounded-2xl bg-white dark:bg-white/5 border border-primary/30 shadow-sm">
+                            <p
+                                class="text-accent-wine dark:text-primary text-2xl font-black leading-tight tracking-tight">
+                                02</p>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <p
+                                class="text-accent-wine/60 dark:text-white/50 text-[10px] font-bold uppercase tracking-wider">
+                                Dias</p>
+                        </div>
+                    </div>
+                    <div class="flex grow basis-0 flex-col items-stretch gap-2">
+                        <div
+                            class="flex h-16 grow items-center justify-center rounded-2xl bg-white dark:bg-white/5 border border-primary/30 shadow-sm">
+                            <p
+                                class="text-accent-wine dark:text-primary text-2xl font-black leading-tight tracking-tight">
+                                05</p>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <p
+                                class="text-accent-wine/60 dark:text-white/50 text-[10px] font-bold uppercase tracking-wider">
+                                Horas</p>
+                        </div>
+                    </div>
+                    <div class="flex grow basis-0 flex-col items-stretch gap-2">
+                        <div
+                            class="flex h-16 grow items-center justify-center rounded-2xl bg-white dark:bg-white/5 border border-primary/30 shadow-sm">
+                            <p
+                                class="text-accent-wine dark:text-primary text-2xl font-black leading-tight tracking-tight">
+                                30</p>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <p
+                                class="text-accent-wine/60 dark:text-white/50 text-[10px] font-bold uppercase tracking-wider">
+                                Mins</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="p-4 @container">
+                <div
+                    class="flex flex-col items-stretch justify-start rounded-2xl shadow-lg bg-white dark:bg-[#252115] border border-gray-100 dark:border-white/5 overflow-hidden">
+                    <div class="w-full bg-center bg-no-repeat aspect-[21/9] bg-cover relative"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0--bgOcjYiAh17eQn3Y1OJEU8WxUAyq09PsJVLr3rSNiokeiJ9M9FNzh6_rPCyZjPC9oTTFx0U0Mg4pdVm3xGDfogYk1-UEDZpybPtkmwTmGvwJcWA7tGFdIqazuugIib46L1MOkyx1FKtiH0smP_2aSRYgFjMj-m47aXtK42d95SpaNwBKeaVgDHxddBj-uQkPc5j6JkMnp0V2oDdSJszQg5ScU-oUWDB9Gnbp_YMCEhL78_egQF_W76JugoJ0cHrJi-O24AjkO5");'>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 p-5">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="material-symbols-outlined text-primary text-2xl">auto_stories</span>
+                            <p class="text-accent-wine dark:text-white text-lg font-extrabold leading-tight">Palavra do
+                                Dia</p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col gap-1 border-l-4 border-primary pl-4 py-1 italic">
+                                <p class="text-[#6b5b2e] dark:text-white/80 text-base font-medium leading-relaxed">"Eu
+                                    sou a videira, vós as varas; quem está em mim, e eu nele, esse dá muito fruto..."
+                                </p>
+                                <p class="text-accent-wine dark:text-primary text-sm font-bold mt-1">João 15:5</p>
+                            </div>
+                            <button class="btn-luxury h-12 rounded-xl flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                                <span class="truncate uppercase tracking-wider text-xs font-black">Refletir agora</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-4 py-2">
+                <div
+                    class="flex items-center justify-between p-5 rounded-2xl bg-accent-wine text-white shadow-xl ring-1 ring-white/10">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: 'FILL' 1;">favorite</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-base leading-tight">Meus Pedidos de Oração</p>
+                            <p class="text-xs text-white/60 mt-0.5">3 pedidos ativos no momento</p>
+                        </div>
+                    </div>
+                    <button
+                        class="h-10 w-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-4">
+                <div
+                    class="relative overflow-hidden rounded-2xl bg-white dark:bg-[#252115] shadow-lg border border-gray-100 dark:border-white/5">
+                    <div class="p-6 flex flex-col gap-4">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1 pr-4">
+                                <span
+                                    class="bg-primary/10 text-accent-wine dark:text-primary text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-[0.1em] border border-primary/20">Próximo
+                                    Evento</span>
+                                <h3 class="text-accent-wine dark:text-white font-extrabold text-xl mt-2 leading-tight">
+                                    Conferência de Radicais Livres</h3>
+                            </div>
+                            <div
+                                class="bg-background-light dark:bg-background-dark p-2 rounded-xl text-center min-w-[56px] shadow-inner border border-primary/10">
+                                <p class="text-[10px] text-accent-wine dark:text-primary font-black">OUT</p>
+                                <p class="text-2xl font-black text-accent-wine dark:text-white -mt-1">22</p>
+                            </div>
+                        </div>
+                        <p class="text-[#6b5b2e] dark:text-white/60 text-sm leading-relaxed">Prepare-se para um final de
+                            semana de avivamento e comunhão profunda com os Radicais.</p>
+                        <button
+                            class="btn-luxury h-14 rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-accent-wine/20">
+                            <span class="material-symbols-outlined text-lg">confirmation_number</span>
+                            <span class="uppercase tracking-[0.15em] font-black text-xs">Garantir Vaga</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav
+            class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-white/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-100 dark:border-white/5 flex justify-around items-center h-22 px-2 pb-6 z-50">
+            <button class="flex flex-col items-center gap-1 text-accent-wine dark:text-primary transition-all">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                <span class="text-[10px] font-black uppercase tracking-tighter">Home</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-accent-wine/50 dark:text-gray-500">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">Célula</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-accent-wine/50 dark:text-gray-500">
+                <span class="material-symbols-outlined">book</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">Bíblia</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-accent-wine/50 dark:text-gray-500">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+    <div class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-40 dark:opacity-10">
+        <div class="absolute top-[-5%] right-[-10%] w-72 h-72 bg-primary/40 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-80 h-80 bg-accent-wine/30 rounded-full blur-[120px]"></div>
+    </div>
+</body>
+
+</html>

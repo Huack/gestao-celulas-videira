@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Notificações - Líder de Governo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bd0f2c",
+                        "accent": "#d4af37",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <div>
+                    <h1 class="text-lg font-bold">Painel de Alertas</h1>
+                    <p class="text-xs text-gray-400">Regional 04 • 12 redes</p>
+                </div>
+            </div>
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+        </header>
+        <main class="px-4 py-4 space-y-4">
+            <div class="grid grid-cols-3 gap-2">
+                <div class="bg-primary/20 rounded-xl p-3 text-center">
+                    <p class="text-xl font-bold text-primary">5</p>
+                    <p class="text-[9px] text-gray-400 uppercase">Críticos</p>
+                </div>
+                <div class="bg-orange-500/20 rounded-xl p-3 text-center">
+                    <p class="text-xl font-bold text-orange-400">12</p>
+                    <p class="text-[9px] text-gray-400 uppercase">Atenção</p>
+                </div>
+                <div class="bg-accent/20 rounded-xl p-3 text-center">
+                    <p class="text-xl font-bold text-accent">28</p>
+                    <p class="text-[9px] text-gray-400 uppercase">Info</p>
+                </div>
+            </div>
+            <div class="bg-primary/10 border border-primary/20 rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-primary">emergency</span>
+                    <h2 class="font-bold text-sm text-primary">Alertas Críticos</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                        <div>
+                            <p class="text-sm font-medium">Rede Mulheres - Queda de 15%</p>
+                            <p class="text-[10px] text-gray-500">Frequência abaixo da meta há 3 semanas</p>
+                        </div>
+                        <button class="text-primary"><span
+                                class="material-symbols-outlined">chevron_right</span></button>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                        <div>
+                            <p class="text-sm font-medium">Revisão de Vidas - Prazo</p>
+                            <p class="text-[10px] text-gray-500">3 redes não enviaram lista final</p>
+                        </div>
+                        <button class="text-primary"><span
+                                class="material-symbols-outlined">chevron_right</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-green-500">celebration</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Recorde de batismos!</p>
+                    <p class="text-xs text-gray-400 mt-1">Sua regional batizou 342 pessoas este mês - novo recorde
+                        histórico!</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">há 2 horas</span>
+                </div>
+            </div>
+            <div class="bg-accent/10 border border-accent/20 rounded-xl p-4 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-accent">event</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium">Encontro de Líderes</p>
+                    <p class="text-xs text-gray-400 mt-1">Lembrete: Reunião regional sábado às 9h na sede.</p>
+                    <span class="text-[10px] text-gray-500 mt-2 block">hoje</span>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-lider-governo.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Início</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Alertas</span></a>
+            <a href="../oracao/lider-governo.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">volunteer_activism</span><span
+                    class="text-[10px]">Oração</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

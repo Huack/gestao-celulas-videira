@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Materiais - Discipulador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e90c43",
+                        "gold": "#d4af37",
+                        "background-dark": "#1a0a0d",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <h1 class="text-lg font-bold">Biblioteca do Discipulador</h1>
+            </div>
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+        </header>
+        <main class="px-4 py-4 space-y-6">
+            <div class="flex gap-2 overflow-x-auto pb-2">
+                <button
+                    class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap">Todos</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Roteiros</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Treinamentos</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Ferramentas</button>
+            </div>
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold text-sm">Roteiro da Semana</h3>
+                    <span class="text-xs text-primary font-medium">Semana 42</span>
+                </div>
+                <div class="bg-gradient-to-r from-primary/20 to-gold/10 border border-primary/20 rounded-xl p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-lg bg-primary/30 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-white text-2xl">menu_book</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold">A Fé que Vence</h4>
+                            <p class="text-xs text-gray-400">Hebreus 11:1-6</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <button class="px-3 py-1 bg-primary text-white text-xs rounded-full font-medium">Baixar
+                                    PDF</button>
+                                <button
+                                    class="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full font-medium">Áudio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm mb-3">Treinamentos para Líderes</h3>
+                <div class="space-y-3">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-gold">school</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Como Discipular</h4>
+                            <p class="text-xs text-gray-400">6 vídeos • 45 min total</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Aconselhamento Básico</h4>
+                            <p class="text-xs text-gray-400">8 vídeos • 1h 20min</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm mb-3">Ferramentas</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-2">description</span>
+                        <p class="text-xs font-medium">Ficha de Consolidação</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                        <span class="material-symbols-outlined text-gold text-3xl mb-2">checklist</span>
+                        <p class="text-xs font-medium">Checklist Mentor</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-discipulador.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Home</span></a>
+            <a href="../notificacoes/discipulador.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Avisos</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">menu_book</span><span class="text-[10px]">Materiais</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

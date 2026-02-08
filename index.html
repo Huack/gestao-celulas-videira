@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Videira - Gestão de Células</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "gold-accent": "#D4AF37",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* ==================== BASE STYLES ==================== */
+        .ios-safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .bg-overlay {
+            background: linear-gradient(to bottom, rgba(34, 16, 19, 0.4) 0%, rgba(34, 16, 19, 0.9) 100%);
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ==================== ENTRANCE ANIMATIONS ==================== */
+
+        /* Fade in from opacity 0 to 1 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Slide up with fade */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scale in with fade (for logo) */
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Subtle floating animation for logo */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Gentle pulse glow for logo */
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(212, 17, 50, 0.3), 0 0 40px rgba(212, 17, 50, 0.1);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(212, 17, 50, 0.5), 0 0 60px rgba(212, 17, 50, 0.2);
+            }
+        }
+
+        /* Ken Burns effect for background */
+        @keyframes kenBurns {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            50% {
+                transform: scale(1.08) translate(-1%, -1%);
+            }
+
+            100% {
+                transform: scale(1) translate(0, 0);
+            }
+        }
+
+        /* Shimmer effect for buttons */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        /* ==================== ANIMATION CLASSES ==================== */
+
+        /* Background with Ken Burns */
+        .animate-ken-burns {
+            animation: kenBurns 25s ease-in-out infinite;
+        }
+
+        /* Logo container */
+        .animate-logo {
+            animation: scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                float 4s ease-in-out 1s infinite,
+                pulseGlow 3s ease-in-out 1s infinite;
+            opacity: 0;
+        }
+
+        /* Staggered entrance animations */
+        .animate-title {
+            animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .animate-subtitle {
+            animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
+        .animate-btn-primary {
+            animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.7s;
+            opacity: 0;
+        }
+
+        .animate-btn-secondary {
+            animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation-delay: 0.85s;
+            opacity: 0;
+        }
+
+        .animate-links {
+            animation: fadeIn 0.8s ease-out forwards;
+            animation-delay: 1s;
+            opacity: 0;
+        }
+
+        .animate-footer {
+            animation: fadeIn 0.6s ease-out forwards;
+            animation-delay: 1.2s;
+            opacity: 0;
+        }
+
+        /* ==================== HOVER & INTERACTION EFFECTS ==================== */
+
+        /* Primary button hover with gradient shimmer */
+        .btn-primary-animated {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            background: linear-gradient(90deg, #d41132 0%, #d41132 100%);
+        }
+
+        .btn-primary-animated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary-animated:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary-animated:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 17, 50, 0.4);
+        }
+
+        .btn-primary-animated:active {
+            transform: scale(0.98) translateY(0);
+        }
+
+        /* Secondary button hover with gold glow */
+        .btn-secondary-animated {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .btn-secondary-animated::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #D4AF37, #f5d67b, #D4AF37);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-secondary-animated:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-secondary-animated:hover::after {
+            opacity: 1;
+            animation: shimmer 2s linear infinite;
+            background-size: 200% auto;
+        }
+
+        .btn-secondary-animated:active {
+            transform: scale(0.98) translateY(0);
+        }
+
+        /* Link hover effects */
+        .link-animated {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .link-animated::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .link-animated:hover::after {
+            width: 100%;
+        }
+
+        /* Icon hover effect */
+        .icon-animated {
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover .icon-animated {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* ==================== OVERLAY ANIMATION ==================== */
+        .overlay-animated {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        /* ==================== REDUCED MOTION ==================== */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-hidden">
+    <!-- Main Container -->
+    <div class="relative flex h-screen w-full flex-col overflow-hidden">
+        <!-- Background Image with Ken Burns Effect -->
+        <div class="absolute inset-0 z-0 h-full w-full bg-center bg-cover bg-no-repeat animate-ken-burns"
+            data-alt="A warm group of people gathering in a cozy living room for a church cell group"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_t9go3ayV4Y9PWX7Y4xqdHYvgXWRGf0W_Nkn4nE7tm0mFSmzL5idrIje9wS-GKSn4otMlT3gbhJZpACvu2h6ySuZ_5f1yrHrcQ-BNBAoCPqT7d3YR21b40arerS4rYMPAmWN4jdGKY0My6LIU6PbJmxMvRlnoHiNKoWaqKl0noyZeCHUF6JWUomzHqppty2unRTpX_LD-AxJH3ukEydpY-UKofWx0vMMWFddbKNR5odOneQwgAzF-u90kxOe3c_3I1auf6wYx17Mr');">
+            <div class="absolute inset-0 bg-overlay overlay-animated"></div>
+        </div>
+
+        <!-- Content Layer -->
+        <div class="relative z-10 flex flex-col h-full px-6 pt-16 pb-10">
+            <!-- Logo Section -->
+            <div class="flex flex-col items-center justify-center flex-grow-[2]">
+                <!-- Logo with float and glow animation -->
+                <div
+                    class="logo-container w-24 h-24 mb-6 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 animate-logo cursor-pointer">
+                    <span class="material-symbols-outlined text-white text-6xl icon-animated"
+                        data-icon="church">church</span>
+                </div>
+
+                <!-- Title with slide up animation -->
+                <h1 class="text-white tracking-light text-[36px] font-bold leading-tight text-center animate-title">
+                    Bem-vindo à <span class="text-primary">Videira</span>
+                </h1>
+
+                <!-- Subtitle with delayed slide up -->
+                <p
+                    class="text-white/80 text-lg font-normal leading-normal mt-3 text-center max-w-[280px] animate-subtitle">
+                    Gestão de células e comunhão na palma da sua mão.
+                </p>
+            </div>
+
+            <!-- Interaction Section -->
+            <div class="flex flex-col gap-4 w-full max-w-[400px] mx-auto flex-grow-0">
+                <!-- Primary Action: Entrar -->
+                <button
+                    class="btn-primary-animated flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary text-white text-lg font-bold leading-normal tracking-wide shadow-lg animate-btn-primary">
+                    <span class="truncate">Entrar</span>
+                </button>
+
+                <!-- Secondary Action: Sou Visitante -->
+                <button
+                    class="btn-secondary-animated flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl border-2 border-gold-accent bg-transparent text-gold-accent text-lg font-bold leading-normal tracking-wide animate-btn-secondary">
+                    <span class="truncate">Sou Visitante</span>
+                </button>
+
+                <!-- Help/Utility Links -->
+                <div class="mt-4 flex flex-col gap-2 animate-links">
+                    <p class="text-white/60 text-sm font-normal leading-normal text-center">
+                        Ainda não tem acesso?
+                        <span
+                            class="link-animated text-white font-medium cursor-pointer hover:text-primary transition-colors">
+                            Fale com seu líder
+                        </span>
+                    </p>
+                    <p
+                        class="link-animated text-white/40 text-[13px] font-normal leading-normal text-center cursor-pointer hover:text-white transition-colors inline-block mx-auto">
+                        Esqueci minha senha
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer / Safe Area -->
+            <div class="mt-8 ios-safe-bottom flex justify-center animate-footer">
+                <div class="w-32 h-1 bg-white/20 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

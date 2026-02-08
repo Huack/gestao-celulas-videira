@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home do Visitante - Igreja Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#C5A059",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100dvh;
+        }
+
+        .ios-tab-bar {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1b0d12] dark:text-[#fcf8f9] antialiased">
+    <div class="relative flex h-screen w-full flex-col overflow-x-hidden">
+        <header
+            class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 justify-between border-b border-gray-200 dark:border-white/10">
+            <div class="text-primary flex size-10 shrink-0 items-center justify-center">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <h2 class="text-[#1b0d12] dark:text-[#fcf8f9] text-sm font-bold leading-tight tracking-tight uppercase">
+                    Igreja Videira</h2>
+                <span class="text-[10px] text-accent-gold font-semibold tracking-widest uppercase">Visitante</span>
+            </div>
+            <button
+                class="flex items-center justify-center rounded-full size-10 bg-transparent text-[#1b0d12] dark:text-[#fcf8f9]">
+                <span class="material-symbols-outlined">account_circle</span>
+            </button>
+        </header>
+        <main class="flex-1 pb-24 overflow-y-auto">
+            <div class="@container px-4 py-4">
+                <div class="relative bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] shadow-lg group"
+                    style='background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP1hl5mIilLcNXvWZEt3ZOlerBVLaOyvO8fx6m8u6HNeobkPiCrWOcbCYavd5S-8au8IImHDg0KmMEQjLdeZk-OgdJ-6zySA8apSVKBXGINe8KugsV-Co1w0zqEWDQ_lIblly4U6RBlemjB_kaOBXMsqmDIQK24tyMPoJE29L9JnB4xaN0AZ2Nl8f7uQjwdEwW4xbuihakw33ERBkUOCi-w-Evq6oOVfTas4A9z7oZZTxsZSi2U7BZZR7An_G7NBYaiY6wEX3iFTmP");'>
+                    <div class="p-6">
+                        <p class="text-accent-gold text-xs font-bold uppercase tracking-[0.2em] mb-1">Seja Bem-vindo</p>
+                        <h1 class="text-white text-3xl font-bold leading-tight mb-2">Sua nova família começa aqui.</h1>
+                        <p class="text-white/80 text-sm font-medium">Conecte-se com pessoas que amam a Deus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 py-2">
+                <button
+                    class="w-full flex items-center justify-between bg-primary hover:bg-primary/90 text-white rounded-xl p-5 shadow-md transition-all active:scale-[0.98]">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-white/20 p-2 rounded-lg">
+                            <span class="material-symbols-outlined text-white">map</span>
+                        </div>
+                        <div class="text-left">
+                            <span class="block text-lg font-bold">Localizar Célula</span>
+                            <span class="block text-xs text-white/70">Encontre um grupo perto de você</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+            <div class="px-4 py-4">
+                <div
+                    class="bg-white dark:bg-white/5 border border-accent-gold/30 rounded-xl p-6 shadow-sm relative overflow-hidden">
+                    <div class="absolute -top-4 -right-4 text-accent-gold/10 pointer-events-none">
+                        <span class="material-symbols-outlined !text-8xl">format_quote</span>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-symbols-outlined text-accent-gold text-xl">auto_stories</span>
+                        <h3 class="text-[#1b0d12] dark:text-[#fcf8f9] text-sm font-bold uppercase tracking-wider">
+                            Versículo do Dia</h3>
+                    </div>
+                    <p class="text-lg italic font-medium leading-relaxed text-[#1b0d12] dark:text-[#fcf8f9] mb-4">
+                        "Eu sou a videira, vós, as varas; quem está em mim, e eu nele, este dá muito fruto..."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-primary font-bold text-sm">João 15:5</span>
+                        <button
+                            class="flex items-center gap-1 text-accent-gold font-semibold text-xs border border-accent-gold/30 px-3 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">share</span> Compartilhar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 py-2">
+                <h3 class="text-[#1b0d12] dark:text-[#fcf8f9] text-lg font-bold mb-4 px-1">Próximos Passos</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col gap-3 shadow-sm">
+                        <div class="bg-primary/10 size-10 rounded-lg flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">chat_bubble</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Falar com Líder</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Tire suas dúvidas agora</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col gap-3 shadow-sm">
+                        <div
+                            class="bg-accent-gold/10 size-10 rounded-lg flex items-center justify-center text-accent-gold">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Nossa Visão</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Conheça nossa história</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 py-6">
+                <div class="bg-accent-gold/5 rounded-xl p-5 border border-accent-gold/20 flex items-center gap-4">
+                    <div class="flex-1">
+                        <h4 class="text-accent-gold font-bold text-sm uppercase tracking-tight mb-1">Nossos Cultos</h4>
+                        <p class="text-[#1b0d12] dark:text-[#fcf8f9] text-sm font-semibold">Domingos às 10h, 17h e 19h
+                        </p>
+                        <p class="text-gray-500 text-xs mt-1">Av. T-7, Setor Bueno</p>
+                    </div>
+                    <div class="bg-white dark:bg-white/10 p-2 rounded-full text-accent-gold shadow-sm">
+                        <span class="material-symbols-outlined">directions</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="ios-tab-bar fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 border-t border-gray-200 dark:border-white/10 pb-6 pt-2 px-6 flex justify-between items-center z-50">
+            <div class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Início</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-gray-400">
+                <span class="material-symbols-outlined">event</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Eventos</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-gray-400">
+                <span class="material-symbols-outlined">location_on</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Células</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-gray-400">
+                <span class="material-symbols-outlined">menu_book</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Bíblia</span>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Materiais - Líder de Governo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bd0f2c",
+                        "accent": "#d4af37",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header class="bg-primary text-white p-4 pt-6 pb-6 rounded-b-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-4">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <div>
+                        <h1 class="text-lg font-bold">Centro de Recursos</h1>
+                        <p class="text-xs opacity-70">Regional 04</p>
+                    </div>
+                </div>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10">
+                    <span class="material-symbols-outlined">upload</span>
+                </button>
+            </div>
+        </header>
+        <main class="px-4 py-4 -mt-2 space-y-6">
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-2">folder</span>
+                    <p class="text-sm font-medium">248</p>
+                    <p class="text-[10px] text-gray-400">Documentos</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                    <span class="material-symbols-outlined text-accent text-3xl mb-2">videocam</span>
+                    <p class="text-sm font-medium">42</p>
+                    <p class="text-[10px] text-gray-400">Vídeos</p>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="font-bold">Documentos Estratégicos</h3>
+                    <button class="text-primary text-xs font-bold">Ver todos</button>
+                </div>
+                <div class="space-y-2">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-primary">analytics</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Planejamento 2024</h4>
+                            <p class="text-xs text-gray-400">Metas e estratégias regionais</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-accent">groups</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Manual de Multiplicação</h4>
+                            <p class="text-xs text-gray-400">Guia completo para abrir novas células</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-green-500">school</span>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm">Grade Curricular CTL</h4>
+                            <p class="text-xs text-gray-400">Estrutura do curso de líderes</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold mb-3">Treinamentos Avançados</h3>
+                <div class="space-y-2">
+                    <div class="bg-gradient-to-r from-accent/10 to-transparent border border-accent/20 rounded-xl p-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="material-symbols-outlined text-accent">star</span>
+                            <h4 class="font-bold text-sm">Masterclass: Visão Celular</h4>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-3">Série exclusiva com Pr. Aluízio Silva</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500">12 episódios • 8h total</span>
+                            <button
+                                class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full font-medium">Assistir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold mb-3">Relatórios Modelo</h3>
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span class="material-symbols-outlined text-primary text-2xl">description</span>
+                        <p class="text-[10px] mt-1">Mensal</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span class="material-symbols-outlined text-accent text-2xl">assessment</span>
+                        <p class="text-[10px] mt-1">Trimestral</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                        <span class="material-symbols-outlined text-green-500 text-2xl">summarize</span>
+                        <p class="text-[10px] mt-1">Anual</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-lider-governo.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Início</span></a>
+            <a href="../notificacoes/lider-governo.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">notifications</span><span class="text-[10px]">Alertas</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">menu_book</span><span class="text-[10px]">Recursos</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

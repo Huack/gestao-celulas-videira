@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aprovar Transferências - Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41132", "accent-gold": "#C5A059", "background-dark": "#221013", "card-dark": "#2d161a" },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen">
+    <div
+        class="relative mx-auto max-w-[430px] min-h-screen flex flex-col shadow-2xl bg-background-dark overflow-x-hidden">
+        <!-- Header -->
+        <header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-md border-b border-primary/20">
+            <div class="flex items-center justify-between px-4 py-4">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/20 transition-colors"><span
+                        class="material-symbols-outlined text-white">arrow_back_ios_new</span></button>
+                <h1 class="text-lg font-bold tracking-tight text-center flex-1 pr-10">Aprovar Transferências</h1>
+            </div>
+            <!-- Tab Switcher -->
+            <div class="px-4 pb-4">
+                <div class="flex h-11 w-full items-center justify-center rounded-xl bg-card-dark p-1">
+                    <label
+                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:shadow-sm text-slate-400 has-[:checked]:text-white text-sm font-semibold transition-all"><span
+                            class="truncate">Pendentes</span><input checked="" class="invisible w-0" name="tab-group"
+                            type="radio" value="Pendentes" /></label>
+                    <label
+                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:shadow-sm text-slate-400 has-[:checked]:text-white text-sm font-semibold transition-all"><span
+                            class="truncate">Histórico</span><input class="invisible w-0" name="tab-group" type="radio"
+                            value="Histórico" /></label>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 px-4 py-4 space-y-4">
+            <div class="flex items-center justify-between pb-2">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-accent-gold/80">Solicitações (3)</h2><span
+                    class="material-symbols-outlined text-slate-400">filter_list</span>
+            </div>
+            <!-- Request Card 1 -->
+            <div class="bg-card-dark rounded-xl p-4 border border-primary/10 shadow-sm">
+                <div class="flex items-start gap-3">
+                    <div class="h-14 w-14 rounded-full overflow-hidden border-2 border-primary/20 shrink-0"><img
+                            alt="Profile Photo" class="h-full w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv8z9jP-dOY4DwU_H-NMfXy-UULcu77RC-zeTaAsj5pw-e8ekH914wCzl6jGc3lwKOm5COqsU2Xfy6N-sEVqWj0bFph_-AYjWhNWwFTOf_BzgajeEA745EsUfiP8fp-xTg4z9Q3cW9KHmy0bQg1R5fls2rLrxunnapFEwLZ6TamdY9mQvyHmpr1t9sF40mJpy46D97nRPzJ3E715S21xvfBunchU1txfdSSuil8LxycgvTFUvBq-kMhV0KJfAI5idoxFgsDUySIp4F" />
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-white leading-tight">Mateus Oliveira</h3>
+                        <p class="text-xs font-medium text-accent-gold">Membro Ativo</p>
+                        <p class="text-xs text-slate-400 mt-1 italic">"Mudança de endereço para setor sul"</p>
+                    </div>
+                </div>
+                <div class="mt-4 bg-background-dark/50 rounded-lg p-3 flex items-center justify-between">
+                    <div class="text-center flex-1">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">De</p>
+                        <p class="text-sm font-semibold text-slate-200">Célula Betel</p>
+                    </div>
+                    <div class="flex items-center justify-center px-2"><span
+                            class="material-symbols-outlined text-primary">trending_flat</span></div>
+                    <div class="text-center flex-1">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">Para</p>
+                        <p class="text-sm font-semibold text-slate-200">Célula Moriá</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex gap-3">
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary/10 text-slate-300 font-semibold text-sm hover:bg-primary/20 transition-all"><span
+                            class="material-symbols-outlined text-sm">close</span>Recusar</button>
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary text-white font-semibold text-sm shadow-lg shadow-primary/20 hover:brightness-110 transition-all"><span
+                            class="material-symbols-outlined text-sm">check</span>Aprovar</button>
+                </div>
+            </div>
+            <!-- Request Card 2 -->
+            <div class="bg-card-dark rounded-xl p-4 border border-primary/10 shadow-sm">
+                <div class="flex items-start gap-3">
+                    <div class="h-14 w-14 rounded-full overflow-hidden border-2 border-primary/20 shrink-0"><img
+                            alt="Profile Photo" class="h-full w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSuFs3Y-Q_bbGEub-T3m3HwDmQFpQO7eHepBeLsVQWna6pJUsGbxYPmqsvedzGUHo0wxYDA62KdGAiM2QnBksx2iWlR9r-F79fRD2REt3oJwYgxBAmS5baBhqrY9xDatUEmPe3GmTCca6o38KLz0nagNTnFo6lXZ2VNzvksFvumGV_2FNl1l8YXCWaaAFdpywY2R41P0UISm9lc6JQ1znQTWZ6fbJg3_jTjK8Bb2VM_RLDjcojFXbTXy-rMwUaNmgupz9Lmg0VrKd6" />
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-white leading-tight">Ana Beatriz Silva</h3>
+                        <p class="text-xs font-medium text-accent-gold">Líder em Treinamento</p>
+                        <p class="text-xs text-slate-400 mt-1 italic">"Novo desafio ministerial"</p>
+                    </div>
+                </div>
+                <div class="mt-4 bg-background-dark/50 rounded-lg p-3 flex items-center justify-between">
+                    <div class="text-center flex-1">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">De</p>
+                        <p class="text-sm font-semibold text-slate-200">Célula Videira 1</p>
+                    </div>
+                    <div class="flex items-center justify-center px-2"><span
+                            class="material-symbols-outlined text-primary">trending_flat</span></div>
+                    <div class="text-center flex-1">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">Para</p>
+                        <p class="text-sm font-semibold text-slate-200">Célula Shalom</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex gap-3">
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary/10 text-slate-300 font-semibold text-sm transition-all"><span
+                            class="material-symbols-outlined text-sm">close</span>Recusar</button>
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary text-white font-semibold text-sm shadow-lg shadow-primary/20 transition-all"><span
+                            class="material-symbols-outlined text-sm">check</span>Aprovar</button>
+                </div>
+            </div>
+            <!-- Request Card 3 -->
+            <div class="bg-card-dark rounded-xl p-4 border border-primary/10 shadow-sm opacity-90">
+                <div class="flex items-start gap-3">
+                    <div class="h-14 w-14 rounded-full overflow-hidden border-2 border-primary/20 shrink-0"><img
+                            alt="Profile Photo" class="h-full w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn4P3uLtljW2Wsa-Zm-jetQqJaTHlGnAjBcxbhbCl0sl4Z5TbrXvmDl_XuIXTTk6rhaGYY8w7bj5UxioElZ8zps0SxKLOTr4LPb54B0pGx2IRsyOMXiQDJsdJXW8AveIIZeQEIY6ChcKbPhX2z4OIVPyz6T-SWrI7OAhkTRykmWcRc3UJox47z8ZHwXBGxVx557BhV4d0a_FkyEKX6ifB5bRDxBfW5iJtpFI7N0aQz9Lhb26WZwbVW6VyRZ01qHNKnyf7u3ispdCL3" />
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-white leading-tight">Ricardo Santos</h3>
+                        <p class="text-xs font-medium text-accent-gold">Membro</p>
+                        <p class="text-xs text-slate-400 mt-1 italic">"Ajuste de horário de trabalho"</p>
+                    </div>
+                </div>
+                <div class="mt-4 bg-background-dark/50 rounded-lg p-3 flex items-center justify-between">
+                    <div class="text-center flex-1">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">De</p>
+                        <p class="text-sm font-semibold text-slate-200">Célula Monte</p>
+                    </div>
+                    <div class="flex items-center justify-center px-2"><span
+                            class="material-symbols-outlined text-primary">trending_flat</span></div>
+                    <div class="text-center flex-1">
+                        <p class="text-[10px] uppercase font-bold text-slate-400">Para</p>
+                        <p class="text-sm font-semibold text-slate-200">Célula Sinai</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex gap-3">
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary/10 text-slate-300 font-semibold text-sm transition-all"><span
+                            class="material-symbols-outlined text-sm">close</span>Recusar</button>
+                    <button
+                        class="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-primary text-white font-semibold text-sm shadow-lg shadow-primary/20 transition-all"><span
+                            class="material-symbols-outlined text-sm">check</span>Aprovar</button>
+                </div>
+            </div>
+        </main>
+        <!-- Bottom Tab Bar -->
+        <nav
+            class="sticky bottom-0 bg-background-dark/90 backdrop-blur-md border-t border-primary/20 flex justify-around items-center py-2 pb-6 px-6">
+            <div class="flex flex-col items-center text-slate-400"><span
+                    class="material-symbols-outlined">home</span><span
+                    class="text-[10px] font-medium mt-1">Início</span></div>
+            <div class="flex flex-col items-center text-primary"><span class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 1">swap_horiz</span><span
+                    class="text-[10px] font-medium mt-1">Trocas</span></div>
+            <div class="flex flex-col items-center text-slate-400"><span
+                    class="material-symbols-outlined">groups</span><span
+                    class="text-[10px] font-medium mt-1">Células</span></div>
+            <div class="flex flex-col items-center text-slate-400"><span
+                    class="material-symbols-outlined">person</span><span
+                    class="text-[10px] font-medium mt-1">Perfil</span></div>
+        </nav>
+    </div>
+</body>
+
+</html>

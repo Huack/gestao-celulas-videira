@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pedidos de Oração - Discipulador</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#C5A059",
+                        "background-dark": "#1a0a0d",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-4">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <h1 class="text-lg font-bold">Central de Oração</h1>
+                </div>
+                <button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-bold flex items-center gap-1">
+                    <span class="material-symbols-outlined text-lg">add</span> Novo
+                </button>
+            </div>
+            <div class="flex gap-2">
+                <div class="flex-1 bg-white/5 rounded-xl p-3 text-center border border-white/10">
+                    <p class="text-2xl font-bold text-primary">28</p>
+                    <p class="text-[10px] text-gray-400 uppercase">Ativos</p>
+                </div>
+                <div class="flex-1 bg-white/5 rounded-xl p-3 text-center border border-white/10">
+                    <p class="text-2xl font-bold text-accent-gold">12</p>
+                    <p class="text-[10px] text-gray-400 uppercase">Respondidos</p>
+                </div>
+                <div class="flex-1 bg-white/5 rounded-xl p-3 text-center border border-white/10">
+                    <p class="text-2xl font-bold text-green-400">5</p>
+                    <p class="text-[10px] text-gray-400 uppercase">Testemunhos</p>
+                </div>
+            </div>
+        </header>
+        <main class="px-4 py-4 space-y-4">
+            <div class="flex gap-2 overflow-x-auto pb-2">
+                <button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap">Todas
+                    Células</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Urgentes
+                    (3)</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-gray-300 rounded-full text-sm font-medium whitespace-nowrap">Sem
+                    resposta</button>
+            </div>
+            <div class="space-y-3">
+                <div class="bg-white/5 border-l-4 border-orange-500 rounded-r-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="px-2 py-0.5 bg-orange-500/20 text-orange-400 text-[10px] rounded font-bold uppercase">Urgente</span>
+                            <span class="text-xs text-gray-500">Célula Manancial</span>
+                        </div>
+                        <span class="text-[10px] text-gray-500">há 3h</span>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-2">Membro internado - João Pedro pede oração pela avó na UTI</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500">Líder: Ana Clara</span>
+                        <div class="flex gap-2">
+                            <button class="text-xs text-primary flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">call</span></button>
+                            <button class="text-xs text-accent-gold flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">chat</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs text-gray-500">Célula Videira Central</span>
+                        <span class="text-[10px] text-gray-500">há 1 dia</span>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-2">Restauração familiar - pedido anônimo por reconciliação</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500">Líder: Marcos Paulo</span>
+                        <span class="text-[10px] text-green-400">8 orando</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-gradient-to-r from-accent-gold/10 to-transparent border border-accent-gold/20 rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-accent-gold text-lg">celebration</span>
+                        <span class="text-xs font-bold text-accent-gold uppercase">Testemunho</span>
+                    </div>
+                    <p class="text-sm text-gray-300 mb-2">"Meu marido foi curado do câncer! Glória a Deus!"</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500">Célula Esperança</span>
+                        <button class="text-xs text-accent-gold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">share</span> Compartilhar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-discipulador.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Home</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">volunteer_activism</span><span
+                    class="text-[10px]">Oração</span></a>
+            <a href="../materiais/discipulador.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">menu_book</span><span class="text-[10px]">Materiais</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

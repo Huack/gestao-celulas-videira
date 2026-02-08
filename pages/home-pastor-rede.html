@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home do Pastor de Rede</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#d4af37",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Manrope", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-white">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+        <div class="flex items-center bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50">
+            <div class="flex size-12 shrink-0 items-center">
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBtu4BeZWJjvseApdZyttdx-Db4xQMqtQGxoJjtqMeNhPaThjy9mUYHgG-3l_2SCJM_bK1C68g02kjTRL6u-5rgoRgZlP0FMcb_7aRBAwg0I8FQDIxh0JHvD0LpAaQxzEQMcL0kvmgmFGikR1tcvNVdm_UzqpZuCn10JavfNZnG-6a2_DQmUPbWBOOu3W8jsZEoIHBtOXYo_XvO2KA3ngvpoAxnfVC55wGaXS0Yuy26dKN4BZMfr8C7j6OGp4K8VN1zE4YUx9lNEMd");'>
+                </div>
+            </div>
+            <div class="flex-1 px-3">
+                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">Pastor de Rede</p>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-tight">Olá, Pr. Ricardo</h2>
+            </div>
+            <button class="relative flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-accent-gold"></span>
+            </button>
+        </div>
+        <div class="px-4 py-3">
+            <div class="flex items-center gap-3 rounded-xl bg-primary/10 border border-primary/20 p-4 shadow-sm">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+                    <span class="material-symbols-outlined">report_problem</span>
+                </div>
+                <div class="flex-1">
+                    <p class="text-primary text-sm font-bold">Relatórios Pendentes</p>
+                    <p class="text-slate-300 text-xs">8 células ainda não enviaram o relatório da semana.</p>
+                </div>
+                <span class="material-symbols-outlined text-primary">chevron_right</span>
+            </div>
+        </div>
+        <div class="px-4 pt-4 pb-2 flex items-center justify-between">
+            <h2 class="text-white text-[20px] font-bold leading-tight tracking-tight">Saúde da Rede</h2>
+            <span class="text-primary text-xs font-bold uppercase tracking-wider">Ver tudo</span>
+        </div>
+        <div class="flex flex-col gap-4 px-4 py-2">
+            <div class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-[#331922] p-6 shadow-sm">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-[#c992a4] text-sm font-medium uppercase tracking-wider">Frequência Mensal</p>
+                        <p class="text-white tracking-tight text-[32px] font-extrabold leading-tight">1.240</p>
+                    </div>
+                    <div class="flex items-center gap-1 bg-emerald-500/20 px-2 py-1 rounded-full">
+                        <span class="material-symbols-outlined text-emerald-400 text-sm">trending_up</span>
+                        <p class="text-emerald-400 text-xs font-bold">+5.2%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col gap-3 rounded-xl p-5 bg-[#48232f] shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined text-primary">water_drop</span>
+                        <p class="text-emerald-400 text-xs font-bold">+12</p>
+                    </div>
+                    <div>
+                        <p class="text-white/70 text-xs font-medium uppercase tracking-wider">Batismos</p>
+                        <p class="text-white tracking-tight text-2xl font-bold">42<span
+                                class="text-sm font-normal text-white/50">/50</span></p>
+                    </div>
+                    <div class="w-full bg-black/20 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-primary h-full w-[84%] rounded-full"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 rounded-xl p-5 bg-[#48232f] shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined text-accent-gold">groups</span>
+                        <p class="text-white/50 text-xs font-bold">0%</p>
+                    </div>
+                    <div>
+                        <p class="text-white/70 text-xs font-medium uppercase tracking-wider">Novas Células</p>
+                        <p class="text-white tracking-tight text-2xl font-bold">08<span
+                                class="text-sm font-normal text-white/50">/12</span></p>
+                    </div>
+                    <div class="w-full bg-black/20 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-accent-gold h-full w-[66%] rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 pt-6 pb-2">
+            <h2 class="text-white text-lg font-bold leading-tight tracking-tight">Gestão e Eventos</h2>
+        </div>
+        <div class="flex gap-4 overflow-x-auto px-4 py-2">
+            <div class="flex flex-col items-center gap-2 min-w-[80px]">
+                <button
+                    class="flex size-14 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20">
+                    <span class="material-symbols-outlined">event</span>
+                </button>
+                <p class="text-[11px] font-bold text-slate-300 text-center">Novo Evento</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 min-w-[80px]">
+                <button
+                    class="flex size-14 items-center justify-center rounded-2xl bg-[#331922] text-primary border border-primary/20">
+                    <span class="material-symbols-outlined">assignment_ind</span>
+                </button>
+                <p class="text-[11px] font-bold text-slate-300 text-center">Escalas</p>
+            </div>
+            <div class="flex flex-col items-center gap-2 min-w-[80px]">
+                <button
+                    class="flex size-14 items-center justify-center rounded-2xl bg-[#331922] text-primary border border-primary/20">
+                    <span class="material-symbols-outlined">analytics</span>
+                </button>
+                <p class="text-[11px] font-bold text-slate-300 text-center">Consolidado</p>
+            </div>
+        </div>
+        <div
+            class="fixed bottom-0 left-0 right-0 h-20 bg-[#221016]/90 backdrop-blur-lg border-t border-white/5 px-6 flex items-center justify-between z-50">
+            <div class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-bold">Home</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-slate-500">
+                <span class="material-symbols-outlined">hub</span>
+                <span class="text-[10px] font-bold">Células</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 -mt-8">
+                <div
+                    class="size-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 text-white">
+                    <span class="material-symbols-outlined text-3xl">add</span>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-slate-500">
+                <span class="material-symbols-outlined">group</span>
+                <span class="text-[10px] font-bold">Pessoas</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 text-slate-500">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="text-[10px] font-bold">Ajustes</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

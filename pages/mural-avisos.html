@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41152", "gold": "#D4AF37", "background-dark": "#221016", "surface-dark": "#331922" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <title>Mural de Avisos - Videira</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F1D592 50%, #D4AF37 100%);
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen">
+    <!-- Status Bar -->
+    <div class="h-12 w-full bg-background-dark sticky top-0 z-50"></div>
+    <!-- Header -->
+    <header class="sticky top-12 z-40 bg-background-dark/80 ios-blur px-4 py-2 border-b border-white/10">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3"><span
+                    class="material-symbols-outlined text-primary text-3xl">church</span>
+                <h1 class="text-xl font-bold tracking-tight">Mural de Avisos</h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="p-2 rounded-full hover:bg-white/10 transition-colors"><span
+                        class="material-symbols-outlined">notifications</span></button>
+                <button
+                    class="gold-gradient text-background-dark px-4 py-2 rounded-full flex items-center gap-2 font-bold shadow-lg shadow-gold/20 active:scale-95 transition-transform"><span
+                        class="material-symbols-outlined text-sm font-bold">add_circle</span><span
+                        class="text-sm">Comunicar</span></button>
+            </div>
+        </div>
+        <!-- Tabs -->
+        <nav class="flex mt-4 bg-white/5 p-1 rounded-xl">
+            <button
+                class="flex-1 py-2 text-sm font-semibold rounded-lg bg-primary shadow-sm text-white transition-all">Geral</button>
+            <button class="flex-1 py-2 text-sm font-medium text-slate-400 hover:text-primary transition-colors">Minha
+                Rede</button>
+            <button class="flex-1 py-2 text-sm font-medium text-slate-400 hover:text-primary transition-colors">Minha
+                Célula</button>
+        </nav>
+    </header>
+    <main class="p-4 space-y-6 pb-24">
+        <!-- Announcement Card 1 -->
+        <article class="bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-white/5">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white ring-2 ring-gold">
+                        <span class="material-symbols-outlined">person</span></div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-bold text-sm">Pr. Ricardo</h3><span
+                                class="bg-gold/20 text-gold text-[10px] font-bold px-1.5 py-0.5 rounded uppercase border border-gold/30">Pastor
+                                Sede</span>
+                        </div>
+                        <p class="text-xs text-slate-400">Há 2 horas • Videira Sede</p>
+                    </div>
+                </div>
+                <button class="text-slate-400"><span class="material-symbols-outlined">more_horiz</span></button>
+            </div>
+            <div class="px-4 pb-2">
+                <h2 class="text-lg font-bold mb-2">Conferência de Avivamento 2024</h2>
+                <p class="text-sm text-slate-300 leading-relaxed">Prepare-se para três dias de imersão total na palavra
+                    e no espírito. As inscrições já estão abertas exclusivamente pelo app! Não fique de fora desse tempo
+                    profético.</p>
+            </div>
+            <div class="relative aspect-video w-full bg-white/5"><img alt="Stage with lights and worship"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZvL4YOxlTKEBwySEuKPThaOsWm8wlcd_uQ_IQLeVHrXeLE5HSGSJtFEI9OABzYtZqon59PQC8VB6cgPoDVIJNeR3MyKy-0JlgkohOJ_g_wlCkGMc_DnUCUpFzSTo6i8c9f4Ge_azUjXHMFrLoDkFYjKcC8J2twS4ullbFuNZEsgn3MRTJE-RzAcEclwL49q8g5kiraTqhDMKQui-2kr77HaIQp9xKK8LF-w7Vj8fkuDC2l8ZfyU5O8_6I_3dbbSIPxT4iq3s7ET4p" />
+                <div
+                    class="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                    Geral</div>
+            </div>
+            <div class="p-3 flex items-center justify-between border-t border-white/5">
+                <div class="flex items-center gap-4"><button
+                        class="flex items-center gap-1.5 text-slate-400 group"><span
+                            class="material-symbols-outlined text-xl group-hover:text-primary group-active:scale-125 transition-all">favorite</span><span
+                            class="text-xs font-semibold">1.2k</span></button><button
+                        class="flex items-center gap-1.5 text-slate-400"><span
+                            class="material-symbols-outlined text-xl">chat_bubble</span><span
+                            class="text-xs font-semibold">48</span></button></div>
+                <button class="text-primary text-xs font-bold flex items-center gap-1">Ver Detalhes<span
+                        class="material-symbols-outlined text-sm">arrow_forward</span></button>
+            </div>
+        </article>
+        <!-- Announcement Card 2 -->
+        <article class="bg-surface-dark rounded-xl p-4 shadow-sm border border-white/5">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-slate-500"><span
+                        class="material-symbols-outlined">person</span></div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h3 class="font-bold text-sm">Líder Marcos</h3><span
+                            class="bg-primary/10 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded uppercase border border-primary/20">Líder
+                            de Rede</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Há 5 horas • Rede Esperança</p>
+                </div>
+            </div>
+            <h2 class="text-md font-bold mb-2">Reunião de Alinhamento - Próximo Sábado</h2>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">Olá líderes, teremos nossa reunião mensal de
+                alinhamento no auditório B às 14h. Pauta: Consolidação e Novos Batismos.</p>
+            <div class="flex items-center gap-4 pt-3 border-t border-white/5">
+                <button class="flex items-center gap-1.5 text-primary"><span class="material-symbols-outlined text-xl"
+                        style="font-variation-settings: 'FILL' 1">favorite</span><span
+                        class="text-xs font-bold">12</span></button>
+                <button class="flex items-center gap-1.5 text-slate-400"><span
+                        class="material-symbols-outlined text-xl">chat_bubble</span><span
+                        class="text-xs font-semibold">5</span></button>
+            </div>
+        </article>
+        <!-- Announcement Card 3 -->
+        <article class="bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-white/5">
+            <div class="p-4 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-slate-500"><span
+                        class="material-symbols-outlined">groups</span></div>
+                <div>
+                    <h3 class="font-bold text-sm">Célula Betel</h3>
+                    <p class="text-xs text-slate-400">Há 1 dia</p>
+                </div>
+            </div>
+            <div class="px-4 pb-3">
+                <p class="text-sm text-slate-300">Nossa última célula foi incrível! Deus se manifestou poderosamente.
+                    Confira as fotos! 📸✨</p>
+            </div>
+            <div class="grid grid-cols-2 gap-0.5">
+                <div class="aspect-square bg-white/5"><img alt="Group of friends" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp-KFjlI9JXkko5sZ7gbyIzH0kTTUJewNYvOTuyhlNHDbCdNdzH66Tx8iphp26mjscIvaMnCb-DqQbhaM9S4dEYetFdt05evu3Au4M1cxkiYT8zUhnY5cDuFgU_YLu-ZEqYkJzLPesAF9k4ES_CQlKi_2Eq-cF8BhE6AR8XuTgJ-6V8BdNTdBSXQnll-Z6Lv3dHwqv8oGiCC4cDk42hnEhYwrJ35Gy4-GUpvIJBylS0xe1oR-iG6lpiw-Pv5q9iMVhr1hRNz4Uz5OY" />
+                </div>
+                <div class="aspect-square bg-white/5"><img alt="Bible and coffee" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhlqvx7OXr1pu5z9m88Y067jJ834YHvOXWPnI0AatY8VkC2EzfsSFkSFdZ_4tkkVqTTwD8wGlxOrsY2AMvPbMPXByMepC4Tr1IraF-i2Q2N8f0ZE-TU36A3BEyWN2Lq4GCdTVpA8NHaTQy1JdNB2T4QKG02aXAEpm9Zkedi6O66U4NPGNfeq33pY6zqD2ReVV7HjLYEIRSQDNMkDbzH4qSjoqIPEsm84Rr0TlMfb4F7nrLg1fiop7WkqOFperFr336Qa7OzUBW20wa" />
+                </div>
+            </div>
+            <div class="p-3 flex items-center gap-4">
+                <button class="flex items-center gap-1.5 text-slate-400"><span
+                        class="material-symbols-outlined text-xl">favorite</span><span
+                        class="text-xs font-semibold">24</span></button>
+                <button class="flex items-center gap-1.5 text-slate-400"><span
+                        class="material-symbols-outlined text-xl">chat_bubble</span><span
+                        class="text-xs font-semibold">3</span></button>
+            </div>
+        </article>
+    </main>
+    <!-- Navigation Bar -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-background-dark/95 ios-blur border-t border-white/10 px-6 py-3 pb-8 z-50">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <button class="flex flex-col items-center gap-1 text-slate-400"><span
+                    class="material-symbols-outlined">home</span><span
+                    class="text-[10px] font-medium">Início</span></button>
+            <button class="flex flex-col items-center gap-1 text-primary"><span class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 1">grid_view</span><span
+                    class="text-[10px] font-bold">Mural</span></button>
+            <button class="flex flex-col items-center gap-1 text-slate-400"><span
+                    class="material-symbols-outlined">groups</span><span
+                    class="text-[10px] font-medium">Célula</span></button>
+            <button class="flex flex-col items-center gap-1 text-slate-400"><span
+                    class="material-symbols-outlined">calendar_month</span><span
+                    class="text-[10px] font-medium">Agenda</span></button>
+            <button class="flex flex-col items-center gap-1 text-slate-400"><span
+                    class="material-symbols-outlined">person</span><span
+                    class="text-[10px] font-medium">Perfil</span></button>
+        </div>
+    </nav>
+</body>
+
+</html>

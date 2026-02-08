@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Escala de Lanche - Igreja Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { "primary": "#d41152", "gold": "#D4AF37", "background-dark": "#221016" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .gold-icon {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-gray-100 min-h-screen">
+    <div class="h-12 w-full"></div>
+    <div class="flex items-center px-6 py-4 justify-between bg-background-dark sticky top-0 z-50">
+        <div class="flex items-center gap-2"><span
+                class="material-symbols-outlined text-primary cursor-pointer">chevron_left</span><span
+                class="text-sm font-semibold tracking-wider uppercase text-primary/80">Voltar</span></div>
+        <h1 class="text-xl font-bold text-white">Escala de Lanche</h1>
+        <div class="flex items-center gap-4"><span class="material-symbols-outlined gold-icon">notifications</span><span
+                class="material-symbols-outlined gold-icon">more_vert</span></div>
+    </div>
+    <main class="px-4 pb-32">
+        <!-- Compact Featured Card -->
+        <div class="mt-2 mb-6">
+            <div
+                class="relative overflow-hidden flex items-center justify-between rounded-xl bg-[#331922] border border-white/5 p-4 shadow-lg">
+                <div class="flex flex-col z-10">
+                    <div class="flex items-center gap-2 mb-1"><span
+                            class="bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">Próxima
+                            Célula</span><span class="text-gold text-xs font-semibold">20 Out • 19:30</span></div>
+                    <h2 class="text-white text-lg font-bold">Ana Paula</h2>
+                    <div class="flex items-center gap-1.5"><span
+                            class="material-symbols-outlined text-primary text-xs">restaurant</span>
+                        <p class="text-gray-300 text-xs">Bolo de Fubá e Café</p>
+                    </div>
+                </div>
+                <button
+                    class="z-10 bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg transition-all active:scale-95 shadow-md shadow-primary/20">Confirmar</button>
+                <div class="absolute inset-0 opacity-20 pointer-events-none"><img alt="Cookies"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxfqQbY0HYkacl-X7zrKf-Na5gYpTDbR_384zF9gvysWbCSRSpDgYYN9t9cREqIcVMBpcBXY9tL_05Qkrj8528TpGkvC3LJTU75VHMaNBqQWz-fO0pus1vYd68uDY8oYMftzdm4YLDDoetj4Bo0XLlexTO-445FrDp8VwfdHhSbAjOsKsz1ILBmTQRrplZgPLdd4_AkFV1MVlMwbHCgBYALhyRDJA12IeLB18NCX2l0-lSA8oa4HsKJn0yv1M_xfLjIDBOxGih_NZZ" />
+                </div>
+            </div>
+        </div>
+        <!-- My Responsibilities -->
+        <div class="mb-8">
+            <div class="flex items-center gap-2 mb-4 px-2"><span
+                    class="material-symbols-outlined text-gold text-lg">event_available</span>
+                <h2 class="text-lg font-bold text-white">Minhas Responsabilidades</h2>
+            </div>
+            <div class="space-y-3">
+                <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl">
+                    <div
+                        class="flex flex-col items-center justify-center bg-primary/10 rounded-lg min-w-[56px] h-14 border border-primary/20">
+                        <span class="text-primary text-[10px] font-bold uppercase leading-none mb-1">Out</span><span
+                            class="text-white text-lg font-bold leading-none">27</span></div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-1.5">
+                            <p class="text-white text-base font-semibold">Ricardo Oliveira</p><span
+                                class="material-symbols-outlined text-gold text-xs">verified</span>
+                        </div>
+                        <p class="text-gray-400 text-xs flex items-center gap-1"><span
+                                class="material-symbols-outlined text-xs text-primary">local_pizza</span>Salgados e Suco
+                            de Uva</p>
+                    </div>
+                    <div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/30 shrink-0"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdLKgrjm3vPDw_5_FyTTlH6upL7CSZLFT4iFQTK-NU3UX3jY_MIBOvuT_cwl5XbRAZvIPq3Pc7D4f45EmKc6BWEG4qFXdRcukAaeoAsuPw6aXKFwMItaNjIH9cxddiwXTksnHUH3UaxMKL_dGnU_8eu9DiTSUuixgfqsB-IZwJCkkEOARrK7H2SZ-RZ17X-v9FuI7TLh2buIazLNHhiBDnk4-5b-9K05H2P0WPSITFOV9sVoxuEGQvpx5O2t7ds5o7VnP3hl1j5c8N");'>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl">
+                    <div
+                        class="flex flex-col items-center justify-center bg-primary/10 rounded-lg min-w-[56px] h-14 border border-primary/20">
+                        <span class="text-primary text-[10px] font-bold uppercase leading-none mb-1">Nov</span><span
+                            class="text-white text-lg font-bold leading-none">17</span></div>
+                    <div class="flex-1">
+                        <p class="text-white text-base font-semibold">Família Souza</p>
+                        <p class="text-gray-400 text-xs flex items-center gap-1"><span
+                                class="material-symbols-outlined text-xs text-primary">bakery_dining</span>Pães
+                            recheados e Chá</p>
+                    </div>
+                    <div class="size-10 rounded-full bg-cover bg-center border-2 border-primary/30 shrink-0"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYBQsxfhOxWgO2irrt255f1T40EKAVZNkD8DhW-OrFwNh32NyzyOvokq5qipekp_a9OinqWPKnnmH-8VeIYKZDsMDd-pLCewgsq3NjX0CbPsZuES04JIDdib7W0TKbGcQJRDh0tbXxMaF-kkJVLJBS9EhlHYiU2DTzKE0A18_wjG8ji7IXvdQe5XiO1Wkxw50hk_dcOvwBrMmZgTbh7B_Cb9mxPsdJSMYY_YT48Trso821h2SSB7mlztIURr64fptNHsyKABTHyjtY");'>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Open Slots -->
+        <div>
+            <div class="flex items-center gap-2 mb-4 px-2"><span
+                    class="material-symbols-outlined text-gold text-lg">volunteer_activism</span>
+                <h2 class="text-lg font-bold text-white">Vagas Abertas</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white/5 border border-dashed border-gold/40 p-5 rounded-2xl">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex flex-col items-center justify-center bg-gray-800/80 rounded-lg min-w-[50px] h-12 border border-gray-700">
+                                <span class="text-gray-500 text-[10px] font-bold uppercase">Nov</span><span
+                                    class="text-gray-300 text-lg font-bold leading-none">03</span></div>
+                            <div>
+                                <p class="text-gold text-base font-semibold italic">Vaga Disponível</p>
+                                <p class="text-gray-500 text-xs">Seja o anfitrião do lanche!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary text-white text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/20 active:scale-[0.98] transition-all"><span
+                            class="material-symbols-outlined text-sm">add_circle</span>Eu levo</button>
+                </div>
+                <div class="bg-white/5 border border-dashed border-gold/40 p-5 rounded-2xl">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex flex-col items-center justify-center bg-gray-800/80 rounded-lg min-w-[50px] h-12 border border-gray-700">
+                                <span class="text-gray-500 text-[10px] font-bold uppercase">Nov</span><span
+                                    class="text-gray-300 text-lg font-bold leading-none">10</span></div>
+                            <div>
+                                <p class="text-gold text-base font-semibold italic">Vaga Disponível</p>
+                                <p class="text-gray-500 text-xs">Aguardando voluntário</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary text-white text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/20 active:scale-[0.98] transition-all"><span
+                            class="material-symbols-outlined text-sm">add_circle</span>Eu levo</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Collapsible Info -->
+    <div class="fixed bottom-20 left-4 right-4 z-40">
+        <details class="bg-[#2a181e] border border-gold/30 rounded-xl shadow-2xl overflow-hidden group">
+            <summary class="flex items-center justify-between p-3 cursor-pointer list-none">
+                <div class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-gold text-lg">info</span>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-tight">Lembrete de Hospitalidade</h4>
+                </div>
+                <span
+                    class="material-symbols-outlined text-gold text-sm group-open:rotate-180 transition-transform">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4">
+                <p class="text-gray-400 text-xs leading-relaxed border-t border-white/5 pt-2">A hospitalidade é um
+                    ministério de amor. Tente chegar 15 minutos antes para organizar a mesa e acolher os visitantes.</p>
+            </div>
+        </details>
+    </div>
+    <!-- Bottom Navigation -->
+    <div
+        class="fixed bottom-0 left-0 right-0 h-20 bg-[#1a0c11] border-t border-white/5 px-8 flex justify-between items-center z-50">
+        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+                class="material-symbols-outlined text-gray-500 group-hover:text-primary">home</span><span
+                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Início</span></div>
+        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+                class="material-symbols-outlined text-primary"
+                style="font-variation-settings: 'FILL' 1;">restaurant</span><span
+                class="text-[10px] font-bold text-primary uppercase tracking-tighter">Lanche</span></div>
+        <div class="relative -top-6">
+            <div
+                class="size-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 border-4 border-background-dark">
+                <span class="material-symbols-outlined text-white text-3xl">add</span></div>
+        </div>
+        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+                class="material-symbols-outlined text-gray-500 group-hover:text-primary">groups</span><span
+                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Célula</span></div>
+        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+                class="material-symbols-outlined text-gray-500 group-hover:text-primary">settings</span><span
+                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Ajustes</span></div>
+    </div>
+</body>
+
+</html>

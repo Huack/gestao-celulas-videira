@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Materiais - Visitante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#C5A059",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div class="min-h-screen pb-24">
+        <header
+            class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-md border-b border-white/5 px-4 py-4 flex items-center gap-4">
+            <button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="text-lg font-bold">Conheça a Videira</h1>
+        </header>
+        <main class="px-4 py-6 space-y-6">
+            <div
+                class="bg-gradient-to-br from-primary/20 to-accent-gold/10 border border-primary/20 rounded-2xl p-6 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-accent-gold text-3xl">auto_stories</span>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Bem-vindo ao seu início!</h2>
+                <p class="text-sm text-gray-400">Conheça nossa visão, valores e como funcionamos.</p>
+            </div>
+            <div class="space-y-3">
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-primary">church</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sm">Nossa Visão</h3>
+                        <p class="text-xs text-gray-400">Conheça o propósito da Igreja Videira</p>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-accent-gold/20 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-accent-gold">groups</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sm">O que é uma Célula?</h3>
+                        <p class="text-xs text-gray-400">Entenda como funcionam nossos grupos</p>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-green-500">favorite</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-sm">Primeiros Passos</h3>
+                        <p class="text-xs text-gray-400">Como iniciar sua jornada conosco</p>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-500">chevron_right</span>
+                </div>
+            </div>
+            <div class="pt-4">
+                <h3 class="font-bold text-sm mb-3 px-1">Vídeos Recomendados</h3>
+                <div class="space-y-3">
+                    <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                        <div
+                            class="h-32 bg-gradient-to-br from-primary/30 to-accent-gold/20 flex items-center justify-center">
+                            <div class="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-2xl">play_arrow</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm">Quem somos nós</h4>
+                            <p class="text-xs text-gray-400">5 min • Institucional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-lg border-t border-white/5 px-6 py-3 pb-6 flex justify-around z-50">
+            <a href="../home-visitante.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px]">Início</span></a>
+            <a href="../oracao/visitante.html" class="flex flex-col items-center gap-1 text-gray-400"><span
+                    class="material-symbols-outlined">volunteer_activism</span><span
+                    class="text-[10px]">Oração</span></a>
+            <a href="#" class="flex flex-col items-center gap-1 text-primary"><span
+                    class="material-symbols-outlined">menu_book</span><span class="text-[10px]">Materiais</span></a>
+        </nav>
+    </div>
+</body>
+
+</html>

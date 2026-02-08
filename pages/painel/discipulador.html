@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Painel do Discipulador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: { colors: { "primary": "#d41132", "gold": "#d4af37", "background-dark": "#221013", "card-dark": "#32181c" } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px)
+        }
+
+        body {
+            min-height: 100dvh;
+            font-family: Inter, sans-serif
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div
+        class="h-10 w-full bg-background-dark sticky top-0 z-50 flex items-center px-6 justify-between text-xs font-semibold">
+        <span>9:41</span>
+        <div class="flex gap-1.5"><span class="material-symbols-outlined text-sm">signal_cellular_4_bar</span><span
+                class="material-symbols-outlined text-sm">wifi</span><span
+                class="material-symbols-outlined text-sm">battery_full</span></div>
+    </div>
+    <nav
+        class="sticky top-10 z-40 bg-background-dark/80 ios-blur px-4 py-3 flex items-center justify-between border-b border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="size-10 rounded-full bg-primary/20 border-2 border-primary"></div>
+            <div>
+                <p class="text-[11px] text-white/50 uppercase tracking-widest font-bold">Discipulador</p>
+                <h1 class="text-base font-bold">Pr. Marcelo Dias</h1>
+            </div>
+        </div>
+        <button class="size-10 flex items-center justify-center rounded-full bg-white/5"><span
+                class="material-symbols-outlined">edit_note</span></button>
+    </nav>
+    <main class="pb-24 px-4">
+        <div class="pt-6 pb-2">
+            <h2 class="text-2xl font-bold">Painel do Discipulador</h2>
+            <p class="text-sm text-white/60">Desenvolvimento de Liderança</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 py-4">
+            <div class="bg-card-dark border border-white/5 rounded-xl p-5">
+                <div class="flex items-center gap-2 text-gold mb-1"><span
+                        class="material-symbols-outlined text-sm">health_and_safety</span><span
+                        class="text-[10px] font-bold uppercase">Saúde</span></div>
+                <p class="text-3xl font-bold">88%</p>
+                <p class="text-xs text-[#0bda92]">Nível Ótimo</p>
+            </div>
+            <div class="bg-card-dark border border-white/5 rounded-xl p-5">
+                <div class="flex items-center gap-2 text-gold mb-1"><span
+                        class="material-symbols-outlined text-sm">school</span><span
+                        class="text-[10px] font-bold uppercase">Treinamento</span></div>
+                <p class="text-3xl font-bold">74%</p>
+                <p class="text-xs text-primary">Módulo 3</p>
+            </div>
+        </div>
+        <div class="bg-card-dark border border-white/5 rounded-xl p-5 mb-6">
+            <div class="flex justify-between mb-3">
+                <div>
+                    <p class="text-xs font-bold text-gold uppercase mb-1">Encontros</p>
+                    <h3 class="text-lg font-bold">Frequência Mensal</h3>
+                </div><span class="text-2xl font-black text-primary">92%</span>
+            </div>
+            <div class="h-3 w-full bg-white/5 rounded-full overflow-hidden mb-2">
+                <div class="h-full bg-primary rounded-full" style="width:92%"></div>
+            </div>
+            <p class="text-xs text-white/50">11 de 12 reuniões</p>
+        </div>
+        <div class="flex justify-between mb-4">
+            <h2 class="text-xl font-bold">Líderes Discipulados</h2><button
+                class="text-xs text-primary font-bold">Filtros</button>
+        </div>
+        <div class="space-y-3">
+            <div class="bg-card-dark border border-white/5 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center"><span
+                                class="material-symbols-outlined text-primary">person</span></div>
+                        <div>
+                            <h4 class="font-bold">Fernando Oliveira</h4>
+                            <p class="text-[10px] text-white/40 uppercase">Célula Betel</p>
+                        </div>
+                    </div><span class="material-symbols-outlined text-white/20">chevron_right</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/5">
+                    <div><span class="text-[9px] text-white/40 uppercase">Espiritual</span>
+                        <div class="flex gap-0.5">
+                            <div class="h-1 w-full bg-[#0bda92] rounded-full"></div>
+                            <div class="h-1 w-full bg-[#0bda92] rounded-full"></div>
+                            <div class="h-1 w-full bg-[#0bda92] rounded-full"></div>
+                        </div>
+                    </div>
+                    <div><span class="text-[9px] text-white/40 uppercase">Relatórios</span>
+                        <div class="flex gap-0.5">
+                            <div class="h-1 w-full bg-[#0bda92] rounded-full"></div>
+                            <div class="h-1 w-full bg-[#0bda92] rounded-full"></div>
+                            <div class="h-1 w-full bg-white/10 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div><span class="text-[9px] text-white/40 uppercase">Crescimento</span>
+                        <p class="text-[10px] text-[#0bda92] font-bold">+2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-card-dark border border-white/5 p-4 rounded-xl">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center"><span
+                                class="material-symbols-outlined text-primary">person</span></div>
+                        <div>
+                            <h4 class="font-bold">Cláudia Soares</h4>
+                            <p class="text-[10px] text-white/40 uppercase">Célula Manancial</p>
+                        </div>
+                    </div><span class="material-symbols-outlined text-white/20">chevron_right</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/5">
+                    <div><span class="text-[9px] text-white/40 uppercase">Espiritual</span>
+                        <div class="flex gap-0.5">
+                            <div class="h-1 w-full bg-[#0bda92] rounded-full"></div>
+                            <div class="h-1 w-full bg-white/10 rounded-full"></div>
+                            <div class="h-1 w-full bg-white/10 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div><span class="text-[9px] text-white/40 uppercase">Relatórios</span>
+                        <div class="flex gap-0.5">
+                            <div class="h-1 w-full bg-primary rounded-full"></div>
+                            <div class="h-1 w-full bg-primary rounded-full"></div>
+                            <div class="h-1 w-full bg-primary rounded-full"></div>
+                        </div>
+                    </div>
+                    <div><span class="text-[9px] text-white/40 uppercase">Crescimento</span>
+                        <p class="text-[10px] text-white/40 font-bold">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div
+        class="fixed bottom-0 w-full bg-background-dark/90 ios-blur border-t border-white/10 pb-8 pt-2 px-6 flex justify-between z-50">
+        <button class="flex flex-col items-center gap-1 text-primary"><span
+                class="material-symbols-outlined">dashboard</span><span
+                class="text-[10px] font-bold">Painel</span></button>
+        <button class="flex flex-col items-center gap-1 text-white/40"><span
+                class="material-symbols-outlined">description</span><span
+                class="text-[10px] font-bold">Encontros</span></button>
+        <div class="relative -top-6"><button
+                class="size-14 bg-primary rounded-full shadow-lg flex items-center justify-center border-4 border-background-dark"><span
+                    class="material-symbols-outlined text-white text-3xl">add</span></button></div>
+        <button class="flex flex-col items-center gap-1 text-white/40"><span
+                class="material-symbols-outlined">diversity_3</span><span
+                class="text-[10px] font-bold">Líderes</span></button>
+        <button class="flex flex-col items-center gap-1 text-white/40"><span
+                class="material-symbols-outlined">settings</span><span
+                class="text-[10px] font-bold">Ajustes</span></button>
+    </div>
+</body>
+
+</html>

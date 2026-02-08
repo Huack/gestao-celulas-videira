@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Painel do Pastor de Governo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: { extend: { colors: { "primary": "#d41132", "gold": "#d4af37", "background-dark": "#221013", "card-dark": "#32181c" } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px)
+        }
+
+        body {
+            min-height: 100dvh;
+            font-family: Inter, sans-serif
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white">
+    <div
+        class="h-10 w-full bg-background-dark sticky top-0 z-50 flex items-center px-6 justify-between text-xs font-semibold">
+        <span>9:41</span>
+        <div class="flex gap-1.5"><span class="material-symbols-outlined text-sm">signal_cellular_4_bar</span><span
+                class="material-symbols-outlined text-sm">wifi</span><span
+                class="material-symbols-outlined text-sm">battery_full</span></div>
+    </div>
+    <nav
+        class="sticky top-10 z-40 bg-background-dark/80 ios-blur px-4 py-3 flex items-center justify-between border-b border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="size-10 rounded-full bg-primary/20 border-2 border-gold"></div>
+            <div>
+                <p class="text-[10px] text-gold uppercase tracking-widest font-bold">Pastor de Governo</p>
+                <h1 class="text-base font-bold">Pr. Marcos Oliveira</h1>
+            </div>
+        </div>
+        <button class="size-10 flex items-center justify-center rounded-full bg-white/5"><span
+                class="material-symbols-outlined">analytics</span></button>
+    </nav>
+    <main class="pb-24 px-4">
+        <div class="pt-6 pb-2">
+            <h2 class="text-2xl font-bold">Visão Regional</h2>
+            <p class="text-sm text-white/60">Consolidado Estratégico • Região Metropolitana</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 py-4">
+            <div class="bg-card-dark border border-white/5 rounded-xl p-4">
+                <div class="flex items-center gap-2 text-gold mb-1"><span
+                        class="material-symbols-outlined text-sm">public</span><span
+                        class="text-[10px] font-bold uppercase">Membros</span></div>
+                <p class="text-2xl font-bold">8.420</p>
+                <p class="text-[10px] text-[#0bda92]">+12% vs m.a.</p>
+            </div>
+            <div class="bg-card-dark border border-white/5 rounded-xl p-4">
+                <div class="flex items-center gap-2 text-gold mb-1"><span
+                        class="material-symbols-outlined text-sm">fertile</span><span
+                        class="text-[10px] font-bold uppercase">Taxa Multip.</span></div>
+                <p class="text-2xl font-bold">1.8x</p>
+                <p class="text-[10px] text-gold">Acima da Meta</p>
+            </div>
+        </div>
+        <div class="bg-card-dark border border-white/5 rounded-xl p-5 mb-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-gold/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+            <div class="flex justify-between items-end mb-3">
+                <div>
+                    <p class="text-[10px] font-bold text-gold uppercase mb-1">Meta de Batismo Regional</p>
+                    <h3 class="text-lg font-bold italic">Rumo aos 2.500</h3>
+                </div>
+                <div class="text-right"><span class="text-2xl font-black">1.642</span>
+                    <p class="text-[10px] text-white/40 uppercase">Realizados</p>
+                </div>
+            </div>
+            <div class="h-4 w-full bg-white/5 rounded-full overflow-hidden mb-2 p-[2px]">
+                <div class="h-full bg-gradient-to-r from-primary to-gold rounded-full" style="width:65%"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-white/50"><span>65.7% do Alvo</span><span
+                    class="text-gold">Faltam 858</span></div>
+        </div>
+        <div class="flex justify-between mb-4">
+            <h2 class="text-xl font-bold">Redes Sob Supervisão</h2>
+            <div class="flex gap-2"><span class="size-2 rounded-full bg-[#0bda92]"></span><span
+                    class="size-2 rounded-full bg-gold"></span><span class="size-2 rounded-full bg-primary"></span>
+            </div>
+        </div>
+        <div class="space-y-3">
+            <div
+                class="bg-card-dark border-l-4 border-l-[#0bda92] border-y border-r border-white/5 p-4 rounded-r-xl flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="size-12 rounded-lg bg-white/5 flex flex-col items-center justify-center border border-white/10">
+                        <span class="text-xs font-bold text-gold">92%</span><span
+                            class="text-[8px] text-white/40">Perf.</span></div>
+                    <div>
+                        <h4 class="font-bold">Rede Videira Sul</h4>
+                        <p class="text-xs text-white/40">Pr. André • 1.240 Membros</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end"><span
+                        class="material-symbols-outlined text-[#0bda92]">trending_up</span><span
+                        class="text-[10px] font-bold text-[#0bda92]">+5.2%</span></div>
+            </div>
+            <div
+                class="bg-card-dark border-l-4 border-l-gold border-y border-r border-white/5 p-4 rounded-r-xl flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="size-12 rounded-lg bg-white/5 flex flex-col items-center justify-center border border-white/10">
+                        <span class="text-xs font-bold text-gold">78%</span><span
+                            class="text-[8px] text-white/40">Perf.</span></div>
+                    <div>
+                        <h4 class="font-bold">Rede Alphaville</h4>
+                        <p class="text-xs text-white/40">Pr. Carlos • 2.150 Membros</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end"><span
+                        class="material-symbols-outlined text-gold">horizontal_rule</span><span
+                        class="text-[10px] font-bold text-gold">Estável</span></div>
+            </div>
+            <div
+                class="bg-card-dark border-l-4 border-l-primary border-y border-r border-white/5 p-4 rounded-r-xl flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="size-12 rounded-lg bg-white/5 flex flex-col items-center justify-center border border-white/10">
+                        <span class="text-xs font-bold text-primary">45%</span><span
+                            class="text-[8px] text-white/40">Perf.</span></div>
+                    <div>
+                        <h4 class="font-bold">Rede Norte/Central</h4>
+                        <p class="text-xs text-white/40">Pr. Sergio • 980 Membros</p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end"><span
+                        class="material-symbols-outlined text-primary">trending_down</span><span
+                        class="text-[10px] font-bold text-primary">-2.4%</span></div>
+            </div>
+        </div>
+    </main>
+    <div
+        class="fixed bottom-0 w-full bg-background-dark/95 ios-blur border-t border-white/10 pb-8 pt-2 px-6 flex justify-between z-50">
+        <button class="flex flex-col items-center gap-1 text-gold"><span
+                class="material-symbols-outlined">query_stats</span><span
+                class="text-[10px] font-bold uppercase">Estratégico</span></button>
+        <button class="flex flex-col items-center gap-1 text-white/40"><span
+                class="material-symbols-outlined">account_balance</span><span
+                class="text-[10px] font-bold uppercase">Redes</span></button>
+        <div class="relative -top-6"><button
+                class="size-14 bg-gradient-to-br from-primary to-gold rounded-full shadow-lg flex items-center justify-center border-4 border-background-dark"><span
+                    class="material-symbols-outlined text-white text-3xl">insights</span></button></div>
+        <button class="flex flex-col items-center gap-1 text-white/40"><span
+                class="material-symbols-outlined">groups_3</span><span
+                class="text-[10px] font-bold uppercase">Pastores</span></button>
+        <button class="flex flex-col items-center gap-1 text-white/40"><span
+                class="material-symbols-outlined">settings_suggest</span><span
+                class="text-[10px] font-bold uppercase">Gestão</span></button>
+    </div>
+</body>
+
+</html>
