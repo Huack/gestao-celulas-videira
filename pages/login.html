@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login - Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "gold": "#D4AF37",
+                        "background-dark": "#0a0506",
+                        "surface-dark": "#1a0a0c",
+                        "card-dark": "#221013",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .profile-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .profile-card.selected {
+            border-color: #d41132;
+            background: rgba(212, 17, 50, 0.1);
+            box-shadow: 0 0 20px rgba(212, 17, 50, 0.15);
+        }
+
+        .login-btn {
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .login-btn:not(:disabled):hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(212, 17, 50, 0.4);
+        }
+
+        .login-btn:not(:disabled):active {
+            transform: scale(0.98);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse-ring {
+            animation: pulseRing 2s ease-out infinite;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 17, 50, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(212, 17, 50, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 17, 50, 0);
+            }
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #d41132;
+            box-shadow: 0 0 0 3px rgba(212, 17, 50, 0.15);
+        }
+
+        .show-password-btn {
+            transition: color 0.2s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-[400px] fade-in">
+        <!-- Logo & Header -->
+        <div class="text-center mb-8">
+            <div
+                class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center pulse-ring">
+                <span class="material-symbols-outlined text-primary text-4xl"
+                    style="font-variation-settings: 'FILL' 1">church</span>
+            </div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">Videira</h1>
+            <p class="text-sm text-gray-500 mt-1">Sistema de Gestão de Células</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="bg-card-dark rounded-2xl border border-white/5 p-6 mb-6 shadow-xl">
+            <h2 class="text-lg font-bold mb-5 text-center">Entrar na sua conta</h2>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <!-- Email -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="email">E-mail</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">mail</span>
+                        <input id="email" type="email" placeholder="seu@email.com"
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-4 text-sm text-white placeholder-gray-600" />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-6">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="password">Senha</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">lock</span>
+                        <input id="password" type="password" placeholder="••••••••"
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-11 text-sm text-white placeholder-gray-600" />
+                        <button type="button" onclick="togglePassword()"
+                            class="show-password-btn absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
+                            <span id="toggleIcon" class="material-symbols-outlined text-xl">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile Selector -->
+                <div class="mb-6">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Perfil de
+                        Acesso</label>
+                    <div class="grid grid-cols-2 gap-2" id="profileGrid">
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="visitante" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-blue-400 text-lg">waving_hand</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Visitante</p>
+                                <p class="text-[10px] text-gray-500">Primeiro acesso</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="membro" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-yellow-400 text-lg">person</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Membro</p>
+                                <p class="text-[10px] text-gray-500">Participante</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="anfitriao" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-green-400 text-lg">house</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Anfitrião</p>
+                                <p class="text-[10px] text-gray-500">Host da célula</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="lider" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-amber-400 text-lg"
+                                    style="font-variation-settings: 'FILL' 1">star</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Líder</p>
+                                <p class="text-[10px] text-gray-500">Líder de célula</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="lider-treinamento" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-orange-400 text-lg">school</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Líder Treino</p>
+                                <p class="text-[10px] text-gray-500">Em treinamento</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="discipulador" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                                <span
+                                    class="material-symbols-outlined text-purple-400 text-lg">supervisor_account</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Discipulador</p>
+                                <p class="text-[10px] text-gray-500">Supervisão</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="pastor-rede" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-pink-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-pink-400 text-lg">hub</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Pastor Rede</p>
+                                <p class="text-[10px] text-gray-500">Pastoral</p>
+                            </div>
+                        </div>
+                        <div class="profile-card rounded-xl border border-white/10 bg-surface-dark p-3 cursor-pointer flex items-center gap-3"
+                            data-profile="lider-governo" onclick="selectProfile(this)">
+                            <div
+                                class="w-9 h-9 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-red-400 text-lg">shield_person</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white">Líder Governo</p>
+                                <p class="text-[10px] text-gray-500">Estratégico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" id="loginBtn"
+                    class="login-btn w-full bg-primary text-white font-bold py-3.5 rounded-xl text-sm flex items-center justify-center gap-2"
+                    disabled>
+                    <span class="material-symbols-outlined text-lg">login</span>
+                    Entrar
+                </button>
+            </form>
+
+            <!-- Forgot Password -->
+            <div class="text-center mt-4">
+                <a href="#" class="text-xs text-primary hover:text-primary/80 transition-colors no-underline">Esqueceu
+                    sua senha?</a>
+            </div>
+        </div>
+
+        <!-- Register Link -->
+        <div class="text-center">
+            <p class="text-xs text-gray-500">
+                Novo por aqui?
+                <a href="boas-vindas/bem-vindo.html"
+                    class="text-primary font-semibold hover:text-primary/80 no-underline transition-colors">Criar
+                    conta</a>
+            </p>
+        </div>
+
+        <!-- Quick Access (Dev Mode) -->
+        <div class="mt-8 pt-6 border-t border-white/5">
+            <p class="text-[10px] uppercase tracking-widest text-gray-600 text-center mb-3 font-bold">Acesso Rápido
+                (Dev)</p>
+            <div class="grid grid-cols-4 gap-2">
+                <a href="home-visitante.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-blue-400 text-lg">waving_hand</span>
+                    <span class="text-[9px] text-gray-500">Visitante</span>
+                </a>
+                <a href="home-membro.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-yellow-400 text-lg">person</span>
+                    <span class="text-[9px] text-gray-500">Membro</span>
+                </a>
+                <a href="home-lider.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-amber-400 text-lg"
+                        style="font-variation-settings: 'FILL' 1">star</span>
+                    <span class="text-[9px] text-gray-500">Líder</span>
+                </a>
+                <a href="home-discipulador.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-purple-400 text-lg">supervisor_account</span>
+                    <span class="text-[9px] text-gray-500">Discip.</span>
+                </a>
+                <a href="home-anfitriao.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-green-400 text-lg">house</span>
+                    <span class="text-[9px] text-gray-500">Anfitrião</span>
+                </a>
+                <a href="home-lider-treinamento.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-orange-400 text-lg">school</span>
+                    <span class="text-[9px] text-gray-500">L. Treino</span>
+                </a>
+                <a href="home-pastor-rede.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-pink-400 text-lg">hub</span>
+                    <span class="text-[9px] text-gray-500">Pastor R.</span>
+                </a>
+                <a href="home-lider-governo.html"
+                    class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/[0.02] hover:bg-white/5 transition-colors no-underline">
+                    <span class="material-symbols-outlined text-red-400 text-lg">shield_person</span>
+                    <span class="text-[9px] text-gray-500">Governo</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <p class="text-center text-[10px] text-gray-600 mt-6">Igreja Videira © 2025</p>
+    </div>
+
+    <script>
+        let selectedProfile = null;
+
+        // Profile route mapping
+        const profileRoutes = {
+            'visitante': 'home-visitante.html',
+            'membro': 'home-membro.html',
+            'anfitriao': 'home-anfitriao.html',
+            'lider': 'home-lider.html',
+            'lider-treinamento': 'home-lider-treinamento.html',
+            'discipulador': 'home-discipulador.html',
+            'pastor-rede': 'home-pastor-rede.html',
+            'lider-governo': 'home-lider-governo.html',
+        };
+
+        function selectProfile(el) {
+            // Remove previous selection
+            document.querySelectorAll('.profile-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+
+            // Apply selection
+            el.classList.add('selected');
+            selectedProfile = el.dataset.profile;
+
+            // Enable login button
+            document.getElementById('loginBtn').disabled = false;
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+
+            if (!selectedProfile) {
+                alert('Selecione um perfil de acesso.');
+                return;
+            }
+
+            const email = document.getElementById('email').value || 'demo@videira.com';
+            const password = document.getElementById('password').value;
+
+            // Store user profile in sessionStorage for future use
+            sessionStorage.setItem('userProfile', selectedProfile);
+            sessionStorage.setItem('userEmail', email);
+
+            // Navigate to the correct home page
+            const targetPage = profileRoutes[selectedProfile];
+            if (targetPage) {
+                window.location.href = targetPage;
+            }
+        }
+
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const icon = document.getElementById('toggleIcon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility_off';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -40,9 +40,9 @@
         <!-- TopAppBar -->
         <header
             class="flex items-center bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-white/10">
-            <div class="text-white flex size-12 shrink-0 items-center">
+            <a href="javascript:history.back()" class="text-white flex size-12 shrink-0 items-center no-underline">
                 <span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
-            </div>
+            </a>
             <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Perfil</h2>
             <div class="flex w-12 items-center justify-end">
                 <button class="flex cursor-pointer items-center justify-center h-12 bg-transparent text-white">
@@ -126,6 +126,21 @@
             </button>
             <p class="text-center text-white/30 text-xs mt-6">Versão 2.4.0 • Videira Gestão</p>
         </footer>
+        <!-- Bottom Navigation -->
+        <nav
+            class="sticky bottom-0 w-full bg-[#1a0b0f]/90 backdrop-blur-md border-t border-white/10 flex justify-around items-center py-2 pb-6 px-4 z-50">
+            <a href="home-lider.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
+                    class="material-symbols-outlined">home</span><span class="text-[10px] font-medium">Início</span></a>
+            <a href="checkin-celula.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
+                    class="material-symbols-outlined">groups</span><span
+                    class="text-[10px] font-medium">Células</span></a>
+            <a href="painel/lider.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
+                    class="material-symbols-outlined">assignment</span><span
+                    class="text-[10px] font-medium">Relatórios</span></a>
+            <a href="perfil.html" class="flex flex-col items-center gap-1 text-primary no-underline"><span
+                    class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">person</span><span
+                    class="text-[10px] font-bold">Perfil</span></a>
+        </nav>
     </div>
 </body>
 

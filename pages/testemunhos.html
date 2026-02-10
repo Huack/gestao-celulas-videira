@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mural de Testemunhos - Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d", // Dourado
+                        "vinho": "#4a0404", // Vinho Igreja
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1a1814",
+                        "card-dark": "#2a2721",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-24">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-white/10">
+        <div class="flex items-center justify-between px-4 h-16">
+            <button
+                class="flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <h1 class="text-lg font-extrabold tracking-tight uppercase">Mural de Testemunhos</h1>
+            <div class="flex items-center gap-2">
+                <button
+                    class="flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <div class="relative">
+                    <span
+                        class="material-symbols-outlined size-10 flex items-center justify-center">notifications</span>
+                    <span class="absolute top-2 right-2 size-2 bg-primary rounded-full"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Highlights / Stories -->
+    <div class="py-4 overflow-x-auto hide-scrollbar flex gap-4 px-4">
+        <div class="flex flex-col items-center gap-2 shrink-0">
+            <div class="size-16 rounded-full p-0.5 border-2 border-primary overflow-hidden">
+                <div class="w-full h-full rounded-full bg-vinho flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl">add</span>
+                </div>
+            </div>
+            <span class="text-[11px] font-semibold opacity-70">Meu Fruto</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 shrink-0">
+            <div class="size-16 rounded-full p-0.5 border-2 border-primary overflow-hidden">
+                <img class="w-full h-full rounded-full object-cover" data-alt="Foto de perfil de um membro da igreja"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDIH5Qo2KVS255zx2BCr7YGMgLnBKqwsGtB8XndQLWjq-EevufJS0kKjpVUEIofh5BF6Jt-jZFEgsj2zFeRz46Uaac5e4izDxGwUn--5COaBMxhQEvC6NO4ygWlW50Vc_LIT3522OJsCwQSMAOS5zJLDPvS35Q__-8LuG9XV9WZAGk33dxIkfnrq7UzW1Ol3bx7M_GoOLA6VBDFppO4DxtGPD-w_-zoqmjecxujvXoMndJp95tAjE-BuuIyL4HARusSXiOYiyar5ES" />
+            </div>
+            <span class="text-[11px] font-semibold">Batismos</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 shrink-0">
+            <div class="size-16 rounded-full p-0.5 border-2 border-primary overflow-hidden">
+                <img class="w-full h-full rounded-full object-cover" data-alt="Pessoas em oração fervorosa"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Mi2kyq-r4fQNC1tRYwnToyMw4kPmO8B-y4EzU0nZykPgJcWZjpJYD_9WGHEQfidUuSGjJedkHYtZidjdcZ-4ZtNp6klHpIdh7Pc-4aZXGXUhxVtLuBC4LxUMLj7rzXffrhubVUzMlRtPUVaW_2gD7-HzKbVkM10uHmOkLHsySLoxKHyVf42jzKSbWpH15ZgAiF3hQzPTsmzfvcVbfnI8hUtVmRqFVeXCbvRGFjaejRRR93jIlmVnuzzwWzvioPuQHd7JeXUAG4Jq" />
+            </div>
+            <span class="text-[11px] font-semibold">Milagres</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 shrink-0">
+            <div class="size-16 rounded-full p-0.5 border-2 border-primary overflow-hidden">
+                <img class="w-full h-full rounded-full object-cover" data-alt="Grupo de amigos rindo"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_-RGbswUwJpVLSfBHQyzMPrXR2rlqPlv1Ic7MEqHK6qJbZhL0MYR0rD1ZFODeNWwRTjDXsdZ4-d4jWD1ZdBmXm288_C654OaRqqMKlAztoRFSWxibBspQ4gmj21x2oPRGZ_MyQp3B7I_oBGnvN2H3Vr3MtAcEZeR8-XSJWX16QcQEMEbYTfpOZFWpejqzPdG-dRXReaONxNaWg0EaSgGXH9xFQE7rqkBCSksYha5sCCUAEtOuiCEi3pyDYD2I-8FcfgpQ5v_VOdzH" />
+            </div>
+            <span class="text-[11px] font-semibold">Comunhão</span>
+        </div>
+        <div class="flex flex-col items-center gap-2 shrink-0">
+            <div class="size-16 rounded-full p-0.5 border-2 border-primary overflow-hidden">
+                <img class="w-full h-full rounded-full object-cover" data-alt="Cena de batismo no rio"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibcHH1Kq2e5Vm5_6QpSfGxWbxYfhlE2CTFdWWpjGjfBA2P4uXksmgnrZ7ZI6XfC93MbmJKWkI6RX8uay3uaElbTRQpMirHiJN-jlfXUuZ2zeRdMteLVpBiPoHOFM3naHG0ZViWxzC9LZh-lPxnskEYq7fYNW6X_Opu5-JfKk3QEhvRNgVcYZ5uCnUPSP3Kxadct6fJaFx-bbd1uKrPzZgCv8p7d2Qxxr6MoIgic4TqPg2a0Ndq99R1ARAWzIs8topswZlb7ATJVe0" />
+            </div>
+            <span class="text-[11px] font-semibold">Novos Frutos</span>
+        </div>
+    </div>
+    <!-- Categories / Chips -->
+    <div class="flex gap-2 px-4 py-2 overflow-x-auto hide-scrollbar">
+        <button
+            class="px-4 py-2 bg-primary text-background-dark rounded-full text-xs font-bold whitespace-nowrap">Todos</button>
+        <button
+            class="px-4 py-2 bg-slate-200 dark:bg-card-dark rounded-full text-xs font-bold whitespace-nowrap">Batismos</button>
+        <button
+            class="px-4 py-2 bg-slate-200 dark:bg-card-dark rounded-full text-xs font-bold whitespace-nowrap">Curas</button>
+        <button
+            class="px-4 py-2 bg-slate-200 dark:bg-card-dark rounded-full text-xs font-bold whitespace-nowrap">Comunhão</button>
+        <button
+            class="px-4 py-2 bg-slate-200 dark:bg-card-dark rounded-full text-xs font-bold whitespace-nowrap">Libertação</button>
+    </div>
+    <!-- Main Feed -->
+    <main class="mt-4 px-4 space-y-6">
+        <!-- Post 1 -->
+        <article
+            class="bg-white dark:bg-card-dark rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-white/5">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="size-10 rounded-full bg-vinho/30 flex items-center justify-center font-bold text-primary">
+                        MS</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Maria Silva</h3>
+                        <p class="text-[11px] opacity-60">Célula Videira Sul • 2h atrás</p>
+                    </div>
+                </div>
+                <button class="material-symbols-outlined opacity-50">more_horiz</button>
+            </div>
+            <div class="relative aspect-[4/5]">
+                <img class="w-full h-full object-cover" data-alt="Pessoa sorrindo em um momento de alegria"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBoapvJ5G5-w0AxLZVCIKUMHpnMm564-ojWfkLoSNfkXoq6-5pm469HwUinTU7OATny4l1QPMY4SEdYmYccHfyNJ29srMuArkmCeYxTaRv0S0RBmMwWOhx6_38gcx2J764cAzw8MXLlcw1MxUYnh1Rq_IYkqmAg17-pc-jFSpma8-p6WUCadCCwtcmN41fCf82tXCOeqv-1NQyl4oghueytEa0wuNYCn97azPza9Ik0XEZZsd0u1T0xmqUVtr46wzobQK_THow61Bx" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <span
+                        class="bg-primary/90 text-background-dark text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">Milagre</span>
+                    <h2 class="text-white text-lg font-bold mt-1">Fui curado durante o jejum!</h2>
+                </div>
+            </div>
+            <div class="p-4">
+                <p class="text-sm line-clamp-2 opacity-80 leading-relaxed">
+                    Glória a Deus por esse milagre incrível que aconteceu na nossa célula ontem. Eu estava sofrendo com
+                    dores terríveis há semanas e após a oração...
+                </p>
+                <button class="text-primary text-xs font-bold mt-2">Ler testemunho completo</button>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button class="flex items-center gap-1.5 group">
+                            <span
+                                class="material-symbols-outlined text-primary group-active:scale-125 transition-transform"
+                                style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+                            <span class="text-xs font-bold">128</span>
+                        </button>
+                        <button class="flex items-center gap-1.5 group">
+                            <span
+                                class="material-symbols-outlined text-slate-400 group-active:scale-125 transition-transform">back_hand</span>
+                            <span class="text-xs font-bold">45</span>
+                        </button>
+                    </div>
+                    <button class="material-symbols-outlined opacity-50">share</button>
+                </div>
+            </div>
+        </article>
+        <!-- Post 2 -->
+        <article
+            class="bg-white dark:bg-card-dark rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-white/5">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img class="size-10 rounded-full object-cover" data-alt="Avatar do autor do post"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZQmg9pJUnfbkpaKhhGoZNm5SNHSteKZNLAAKscJaMlsE5dSlxWXoEFq1h4zJF8CliQ2xEaOR5FYHctAOBj-8HZ91BqOBB3s78kjw-U3iTxaK-K-kKvEdU2UyApU44Y5FYcgUOeCQHCpA6RC5YauqfIArnla9bsMpIiivx44wZy9oOrPcYIoz-HQMKdGKl-MB_xZfPFA0xnhQQnXcbfmr4HntJxswyYoLQ_UNwBDCSSDckY3L6Rr-z6JlrHK1jhLle85x2Fi4m0KiB" />
+                    <div>
+                        <h3 class="text-sm font-bold">Ricardo Oliveira</h3>
+                        <p class="text-[11px] opacity-60">Célula Radicais Livres • 5h atrás</p>
+                    </div>
+                </div>
+                <button class="material-symbols-outlined opacity-50">more_horiz</button>
+            </div>
+            <div class="relative aspect-[16/9]">
+                <img class="w-full h-full object-cover" data-alt="Batismo em piscina com muita emoção"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeFErdSJgnqwVI1m-jpiXSI_JBtJ2-lfwxG0WOQVA8MTEFUr5w0xhzWw30Q1VvFzKoYGyqzNruDDr_ejIBjIk9yuv6Muu8D61H5IKT6DQWXWEhAk5fHhqzeI6pWdp2cc3699e1CMqewsw6a_RCWkaOh6UFEzu3PUoe2lHOMJAG9xwwD_qENmV-sgcOQG1mn3CwIGndrYIuEJM6n3bfWctN1SQKjhRWDrLSZUUNVlpMfUx8tXe1OFV2Gcn2EmjI8hJ3C3Rhy9lJ0khD" />
+                <div class="absolute top-4 right-4">
+                    <span
+                        class="bg-vinho/90 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider border border-primary/30">Batismo</span>
+                </div>
+            </div>
+            <div class="p-4">
+                <h2 class="text-md font-bold mb-1">Novo nascimento na Videira!</h2>
+                <p class="text-sm opacity-80 leading-relaxed">
+                    Hoje celebramos o batismo do João. Mais um fruto para o Reino de Deus. A alegria dele foi
+                    contagiante!
+                </p>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+                            <span class="text-xs font-bold">256</span>
+                        </button>
+                        <button class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: 'FILL' 1">back_hand</span>
+                            <span class="text-xs font-bold">112</span>
+                        </button>
+                    </div>
+                    <button class="material-symbols-outlined opacity-50">share</button>
+                </div>
+            </div>
+        </article>
+        <!-- Post 3 -->
+        <article
+            class="bg-white dark:bg-card-dark rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-white/5">
+            <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="size-10 rounded-full bg-primary flex items-center justify-center font-bold text-background-dark">
+                        AC</div>
+                    <div>
+                        <h3 class="text-sm font-bold">Ana Costa</h3>
+                        <p class="text-[11px] opacity-60">Célula Kids • Ontem</p>
+                    </div>
+                </div>
+                <button class="material-symbols-outlined opacity-50">more_horiz</button>
+            </div>
+            <div class="px-4 pb-4">
+                <div class="bg-vinho/10 dark:bg-vinho/20 p-4 rounded-lg border-l-4 border-primary">
+                    <p class="italic text-sm leading-relaxed opacity-90">
+                        "O meu filho de 6 anos orou sozinho pela primeira vez agradecendo pelo pão. Que fruto lindo ver
+                        as crianças crescendo nos caminhos do Senhor!"
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: 'FILL' 1">local_fire_department</span>
+                            <span class="text-xs font-bold">89</span>
+                        </button>
+                        <button class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-variation-settings: 'FILL' 1">back_hand</span>
+                            <span class="text-xs font-bold">203</span>
+                        </button>
+                    </div>
+                    <button class="material-symbols-outlined opacity-50">share</button>
+                </div>
+            </div>
+        </article>
+    </main>
+    <!-- Floating Action Button -->
+    <button
+        class="fixed bottom-24 right-6 bg-primary text-background-dark h-14 pl-5 pr-6 rounded-full shadow-2xl shadow-primary/40 flex items-center gap-2 z-50 active:scale-95 transition-transform border-4 border-background-dark/10">
+        <span class="material-symbols-outlined font-bold">add_reaction</span>
+        <span class="text-sm font-black uppercase tracking-tight">Compartilhar Milagre</span>
+    </button>
+    <!-- Bottom Navigation Bar (iOS style) -->
+    <nav
+        class="fixed bottom-0 w-full bg-background-light/90 dark:bg-background-dark/95 ios-blur border-t border-slate-200 dark:border-white/10 px-6 pt-3 pb-8 flex justify-between items-center z-50">
+        <a href="home-membro.html" class="flex flex-col items-center gap-1 text-slate-400 no-underline">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a href="testemunhos.html" class="flex flex-col items-center gap-1 text-primary no-underline">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">grid_view</span>
+            <span class="text-[10px] font-bold">Mural</span>
+        </a>
+        <a href="checkin-celula.html" class="flex flex-col items-center gap-1 text-slate-400 no-underline">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="text-[10px] font-bold">Célula</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 text-slate-400 no-underline">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span class="text-[10px] font-bold">Bíblia</span>
+        </a>
+        <a href="perfil.html" class="flex flex-col items-center gap-1 text-slate-400 no-underline">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-bold">Perfil</span>
+        </a>
+    </nav>
+</body>
+
+</html>

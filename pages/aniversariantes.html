@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aniversariantes do Mês - Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2cc0d",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1a0f0f", /* Slightly Vinho/Dark wood tint */
+                        "vinho": "#4a0e0e",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+    <!-- Main Container (Phone Form Factor) -->
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-20">
+        <!-- Top App Bar -->
+        <div
+            class="sticky top-0 z-50 flex items-center bg-vinho/95 backdrop-blur-md p-4 pb-4 justify-between border-b border-primary/20 shadow-lg">
+            <a href="javascript:history.back()"
+                class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 cursor-pointer no-underline">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+            </a>
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-lg font-bold leading-tight tracking-tight">Celebrações</h1>
+                <p class="text-primary text-xs font-medium uppercase tracking-widest">Videira Church</p>
+            </div>
+            <div class="flex w-10 items-center justify-end">
+                <button
+                    class="text-white flex size-10 items-center justify-center rounded-full hover:bg-white/10 cursor-pointer">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+            </div>
+        </div>
+        <!-- Month Selector & Header -->
+        <div class="bg-gradient-to-b from-vinho to-background-dark px-4 pt-6 pb-4">
+            <div class="flex items-center justify-between mb-6">
+                <button
+                    class="text-primary/70 flex size-10 items-center justify-center rounded-full border border-primary/20 bg-white/5">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-white leading-none">Outubro</h2>
+                    <p class="text-primary font-medium text-sm mt-1">2023</p>
+                </div>
+                <button
+                    class="text-primary/70 flex size-10 items-center justify-center rounded-full border border-primary/20 bg-white/5">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+            <!-- Mini Calendar View -->
+            <div class="grid grid-cols-7 gap-1 mb-4">
+                <p class="text-white/40 text-[11px] font-bold text-center">D</p>
+                <p class="text-white/40 text-[11px] font-bold text-center">S</p>
+                <p class="text-white/40 text-[11px] font-bold text-center">T</p>
+                <p class="text-white/40 text-[11px] font-bold text-center">Q</p>
+                <p class="text-white/40 text-[11px] font-bold text-center">Q</p>
+                <p class="text-white/40 text-[11px] font-bold text-center">S</p>
+                <p class="text-white/40 text-[11px] font-bold text-center">S</p>
+                <!-- Day cells with indicators -->
+                <div class="h-10 flex flex-col items-center justify-center"><span
+                        class="text-white/20 text-xs">28</span></div>
+                <div class="h-10 flex flex-col items-center justify-center"><span
+                        class="text-white/20 text-xs">29</span></div>
+                <div class="h-10 flex flex-col items-center justify-center"><span
+                        class="text-white/20 text-xs">30</span></div>
+                <div
+                    class="h-10 flex flex-col items-center justify-center bg-primary/10 rounded-full border border-primary/30">
+                    <span class="text-primary font-bold text-xs">1</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">2</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center relative">
+                    <span class="text-white text-xs">3</span>
+                    <div class="absolute bottom-1.5 size-1 bg-primary rounded-full"></div>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">4</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">5</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center relative">
+                    <span class="text-white text-xs">6</span>
+                    <div class="absolute bottom-1.5 size-1 bg-primary rounded-full"></div>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">7</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">8</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">9</span>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center relative">
+                    <span class="text-white text-xs font-bold text-primary">10</span>
+                    <div class="absolute bottom-1.5 size-1 bg-primary rounded-full"></div>
+                </div>
+                <div class="h-10 flex flex-col items-center justify-center"><span class="text-white text-xs">11</span>
+                </div>
+            </div>
+        </div>
+        <!-- Featured Highlights (Celebrantes do Dia) -->
+        <section class="mt-4 px-4">
+            <h3 class="text-white text-lg font-bold leading-tight tracking-tight mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">celebration</span>
+                Aniversariantes de Hoje
+            </h3>
+            <div class="flex gap-4 overflow-x-auto custom-scrollbar pb-2">
+                <div class="flex flex-col items-center gap-2 min-w-[80px]">
+                    <div class="relative p-1 rounded-full bg-gradient-to-tr from-primary to-vinho">
+                        <div class="size-16 rounded-full bg-cover bg-center border-2 border-background-dark"
+                            data-alt="Profile photo of a woman smiling"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2LdxInWv798wtGW-nQzC_O4O3ZV2HPYnPHkYOjxiN4Lf5FBqwKsFw0-fjLGBEdQIrTUbn_Lrd5XCdCg49tyAuCPZaNjExDpBnfuUPdt49tJym2KfmJJ_UuotUCRnY-wHYYMvn9Y5NxDeeCx0UabeOxCLU9771gcbKOD-aIdEbuYvu1kKNWIh-sJSaOxhQfSgTCaR15xsJAkjy0JPMb9UNh05LliDOWTDb_bjkYVMClEh96f04BuERkfLOE1j9kK-sLTzvKbo_UFpo");'>
+                        </div>
+                        <div
+                            class="absolute -bottom-1 -right-1 size-6 bg-primary rounded-full flex items-center justify-center text-vinho shadow-lg">
+                            <span class="material-symbols-outlined text-[16px] font-bold">cake</span>
+                        </div>
+                    </div>
+                    <p class="text-white text-xs font-bold">Camila</p>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[80px]">
+                    <div class="relative p-1 rounded-full border border-white/10">
+                        <div class="size-16 rounded-full bg-cover bg-center"
+                            data-alt="Profile photo of a man in a shirt"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVKnlFR8ZnkWF4rWIHvDfIw0zdS7WLowr45BrZuRC2oQnqiitAcTK3daB7qj0ADXmUPpmG07kj30SQ-WjpkpjnCdMzWCkRmmREIqzHabRNtlEQ7_IOR8il2fDhFkzoutcyAmu3itLEXDS2hDq1T9r1VdYnYe0aTaFFfqphtV52RMYolfuN2HpJNw9IYTMJNsLq1CxNfaZQ6P7aKRfr_JUdTbm3wx6hbq8iYEj8-1SOX_ISin4gLoARRkt-7S4Ha_TZUuvi2sORJW_s");'>
+                        </div>
+                        <div
+                            class="absolute -bottom-1 -right-1 size-6 bg-primary rounded-full flex items-center justify-center text-vinho shadow-lg">
+                            <span class="material-symbols-outlined text-[16px] font-bold">cake</span>
+                        </div>
+                    </div>
+                    <p class="text-white text-xs font-medium">Roberto</p>
+                </div>
+                <div class="flex flex-col items-center gap-2 min-w-[80px]">
+                    <div class="relative p-1 rounded-full border border-white/10">
+                        <div class="size-16 rounded-full bg-cover bg-center"
+                            data-alt="Profile photo of a young man smiling"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC88gPKgwdWIgLLPfA4rb2irBGexa2dBQCJYRokXBFocqZDP4aqV47k86yXM_WdhEaIqQ0XH8z8L2cyS6bbnKivY1l9c6WEO91vxb7p18oqCOkWgGJ-g7g1t1mF9bxUCk22b5wgB7oJY-Yg1Q0o_9qW10v4jadaHEyngnpxDi2JLXnCCs7nXx_N7K-2CFI-tgwFWCPqBDmYOqfdP6K9G1qxjBnYmQR7piYGb9dWMfLXci_CGSIChzzBdyg9ocDyPc7MoWqM4pV3ItF8");'>
+                        </div>
+                        <div
+                            class="absolute -bottom-1 -right-1 size-6 bg-primary rounded-full flex items-center justify-center text-vinho shadow-lg">
+                            <span class="material-symbols-outlined text-[16px] font-bold">cake</span>
+                        </div>
+                    </div>
+                    <p class="text-white text-xs font-medium">Tiago</p>
+                </div>
+            </div>
+        </section>
+        <!-- Chronological List Section -->
+        <section class="mt-8 px-4 flex-1">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-white text-lg font-bold leading-tight tracking-tight">Cronograma do Mês</h3>
+                <span class="text-primary/60 text-xs font-medium">12 eventos</span>
+            </div>
+            <div class="space-y-3">
+                <!-- List Item 1: Birthday -->
+                <div
+                    class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/5 group active:bg-white/10 transition-colors">
+                    <div
+                        class="flex flex-col items-center justify-center min-w-[48px] h-14 bg-vinho/40 rounded-xl border border-primary/20">
+                        <span class="text-[10px] uppercase font-bold text-primary leading-none mb-1">Out</span>
+                        <span class="text-xl font-bold text-white leading-none">03</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-white font-bold truncate">Mariana Silva</p>
+                        <div class="flex items-center gap-1.5 mt-0.5">
+                            <span class="material-symbols-outlined text-primary text-[14px]">cake</span>
+                            <span class="text-white/60 text-xs">Aniversário Natalício</span>
+                        </div>
+                    </div>
+                    <button
+                        class="flex size-10 items-center justify-center rounded-full bg-primary text-vinho shadow-lg active:scale-90 transition-transform">
+                        <span class="material-symbols-outlined font-bold">chat</span>
+                    </button>
+                </div>
+                <!-- List Item 2: Baptism Anniversary -->
+                <div class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/5 group">
+                    <div
+                        class="flex flex-col items-center justify-center min-w-[48px] h-14 bg-white/5 rounded-xl border border-white/10">
+                        <span class="text-[10px] uppercase font-bold text-white/40 leading-none mb-1">Out</span>
+                        <span class="text-xl font-bold text-white leading-none">06</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-white font-bold truncate">Lucas Oliveira</p>
+                        <div class="flex items-center gap-1.5 mt-0.5">
+                            <span class="material-symbols-outlined text-blue-400 text-[14px]">water_drop</span>
+                            <span class="text-white/60 text-xs">Aniv. de Batismo</span>
+                        </div>
+                    </div>
+                    <button
+                        class="flex size-10 items-center justify-center rounded-full bg-primary/20 text-primary border border-primary/30 active:scale-90 transition-transform">
+                        <span class="material-symbols-outlined font-bold">chat</span>
+                    </button>
+                </div>
+                <!-- List Item 3: Birthday -->
+                <div class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/5 group">
+                    <div
+                        class="flex flex-col items-center justify-center min-w-[48px] h-14 bg-white/5 rounded-xl border border-white/10">
+                        <span class="text-[10px] uppercase font-bold text-white/40 leading-none mb-1">Out</span>
+                        <span class="text-xl font-bold text-white leading-none">10</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-white font-bold truncate">Daniela Ferreira</p>
+                        <div class="flex items-center gap-1.5 mt-0.5">
+                            <span class="material-symbols-outlined text-primary text-[14px]">cake</span>
+                            <span class="text-white/60 text-xs">Aniversário Natalício</span>
+                        </div>
+                    </div>
+                    <button
+                        class="flex size-10 items-center justify-center rounded-full bg-primary text-vinho shadow-lg active:scale-90 transition-transform">
+                        <span class="material-symbols-outlined font-bold">chat</span>
+                    </button>
+                </div>
+                <!-- List Item 4: Wedding Anniversary -->
+                <div class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/5 group">
+                    <div
+                        class="flex flex-col items-center justify-center min-w-[48px] h-14 bg-white/5 rounded-xl border border-white/10">
+                        <span class="text-[10px] uppercase font-bold text-white/40 leading-none mb-1">Out</span>
+                        <span class="text-xl font-bold text-white leading-none">15</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-white font-bold truncate">Pr. João &amp; Ana</p>
+                        <div class="flex items-center gap-1.5 mt-0.5">
+                            <span class="material-symbols-outlined text-rose-400 text-[14px]">favorite</span>
+                            <span class="text-white/60 text-xs">Aniv. de Casamento</span>
+                        </div>
+                    </div>
+                    <button
+                        class="flex size-10 items-center justify-center rounded-full bg-primary/20 text-primary border border-primary/30 active:scale-90 transition-transform">
+                        <span class="material-symbols-outlined font-bold">chat</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Other Special Dates / Baptism Section -->
+        <section class="mt-10 px-4 pb-12">
+            <div class="bg-gradient-to-r from-vinho/60 to-background-dark p-5 rounded-3xl border border-primary/10">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="size-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">water_drop</span>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold">Próximos Batismos</h4>
+                        <p class="text-white/40 text-xs">Aniversários espirituais vindo aí</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="size-8 rounded-full bg-cover bg-center" data-alt="Woman profile photo"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCW0iL4l-u4k0lORaIaUazEQzFCARCnqRlrFIfbIRHIEgCtp6yLYlxoxb26VeOeBnJ4sOQgkpNUurM0JevL4nJjcmBFn_d7JvkRdaeidE4Y2NwFybJAXHoP3FJV_fjfkEJNcesWGTawqfa0FgTDaBpVMwYN20ahmTWLcotOujCoa1dGphc1e9mhYFLuG0Db0baBP5uY9CgfnOk6cXCGi6zSO5adP4jHU9BoNQ1RpGX3ijeBv27ZJx2p2oJ_rpxKeqWJElnq_cytvP2_");'>
+                            </div>
+                            <span class="text-white/80 text-sm">Fernanda Lima</span>
+                        </div>
+                        <span class="text-primary text-xs font-bold">22 Out</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="size-8 rounded-full bg-cover bg-center" data-alt="Man profile photo"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcbFNmOk60ELpC9Sc61jgx4RoNN5Hqru9Z3LwIzypVxNcxsy-hNjSpWBPb3tNZqC3Hy-dQzPteYkUUobdar0N5txp1Fe0Shz5MUwvSy7_Knc_H-IH7juUOWN9JgVuU_KVLTMCBQYrFpKjtzS7aXO1rRQ-IfInOiaOxJ8dIN34JaJI9eNUp3cqU533royk_Q4QsskesKFm6aiHAYoo7OPkA7zyZRIZC40_MuFb2asSojT-kgnVCsafmD7TpAMh_gT58qSU8eLcQ6QJu");'>
+                            </div>
+                            <span class="text-white/80 text-sm">Gabriel Costa</span>
+                        </div>
+                        <span class="text-primary text-xs font-bold">28 Out</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Floating Parabenizar All Button (Simulated Mobile Action) -->
+        <div class="fixed bottom-6 right-6 z-50">
+            <button
+                class="flex h-14 items-center gap-2 px-6 rounded-full bg-primary text-vinho font-bold shadow-2xl shadow-primary/20 active:scale-95 transition-transform">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                <span>Parabenizar Todos</span>
+            </button>
+        </div>
+        <!-- iOS Bottom Tab Bar (Simulated) -->
+        <div
+            class="fixed bottom-0 left-0 right-0 h-16 bg-background-dark/80 backdrop-blur-xl border-t border-white/5 px-8 flex items-center justify-between z-40">
+            <a href="home-lider.html" class="flex flex-col items-center gap-1 text-white/40 no-underline">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px]">Início</span>
+            </a>
+            <a href="aniversariantes.html" class="flex flex-col items-center gap-1 text-primary no-underline">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cake</span>
+                <span class="text-[10px]">Datas</span>
+            </a>
+            <a href="checkin-celula.html" class="flex flex-col items-center gap-1 text-white/40 no-underline">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="text-[10px]">Célula</span>
+            </a>
+            <a href="perfil.html" class="flex flex-col items-center gap-1 text-white/40 no-underline">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px]">Perfil</span>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

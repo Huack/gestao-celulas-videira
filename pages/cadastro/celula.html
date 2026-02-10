@@ -41,8 +41,8 @@
     <!-- iOS Top Bar Navigation -->
     <header
         class="sticky top-0 z-50 bg-background-dark/80 ios-blur border-b border-primary/20 px-4 py-3 flex items-center justify-between">
-        <button class="text-primary font-medium flex items-center gap-1"><span
-                class="material-symbols-outlined !text-[24px]">chevron_left</span>Voltar</button>
+        <a href="javascript:history.back()" class="text-primary font-medium flex items-center gap-1 no-underline"><span
+                class="material-symbols-outlined !text-[24px]">chevron_left</span>Voltar</a>
         <h1 class="text-lg font-bold tracking-tight">Nova Célula</h1>
         <button
             class="bg-primary text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20">Salvar</button>
@@ -150,17 +150,18 @@
     <!-- Bottom Navigation -->
     <nav
         class="fixed bottom-0 left-0 right-0 bg-surface-dark/90 ios-blur border-t border-primary/20 px-6 py-2 pb-6 flex justify-between items-center">
-        <div class="flex flex-col items-center text-primary"><span
+        <a href="celula.html" class="flex flex-col items-center text-primary no-underline"><span
                 class="material-symbols-outlined">add_circle</span><span
-                class="text-[10px] font-bold mt-1">Cadastro</span></div>
-        <div class="flex flex-col items-center text-gray-400"><span class="material-symbols-outlined">groups</span><span
-                class="text-[10px] font-medium mt-1">Células</span></div>
-        <div class="flex flex-col items-center text-gray-400"><span
+                class="text-[10px] font-bold mt-1">Cadastro</span></a>
+        <a href="../checkin-celula.html" class="flex flex-col items-center text-gray-400 no-underline"><span
+                class="material-symbols-outlined">groups</span><span
+                class="text-[10px] font-medium mt-1">Células</span></a>
+        <a href="../painel/lider.html" class="flex flex-col items-center text-gray-400 no-underline"><span
                 class="material-symbols-outlined">description</span><span
-                class="text-[10px] font-medium mt-1">Relatórios</span></div>
-        <div class="flex flex-col items-center text-gray-400"><span
+                class="text-[10px] font-medium mt-1">Relatórios</span></a>
+        <a href="../perfil.html" class="flex flex-col items-center text-gray-400 no-underline"><span
                 class="material-symbols-outlined">settings</span><span
-                class="text-[10px] font-medium mt-1">Perfil</span></div>
+                class="text-[10px] font-medium mt-1">Perfil</span></a>
     </nav>
 </body>
 

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guia de Estilo Visual - App Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#800000",
+                        "accent": "#D4AF37",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#230f0f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Roboto", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-[430px] mx-auto bg-white dark:bg-zinc-900 shadow-2xl">
+        <!-- TopAppBar -->
+        <div
+            class="flex items-center bg-white dark:bg-zinc-900 p-4 pb-2 justify-between border-b border-slate-100 dark:border-zinc-800 sticky top-0 z-50">
+            <a href="javascript:history.back()"
+                class="text-primary dark:text-accent flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors no-underline">
+                <span class="material-symbols-outlined">arrow_back_ios_new</span>
+            </a>
+            <h2
+                class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">
+                Guia de Estilo</h2>
+        </div>
+        <div class="p-4 space-y-8">
+            <!-- Intro Section -->
+            <section>
+                <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">Identidade Visual</h1>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Manual técnico para o App de Gestão de Células da
+                    Igreja Videira.</p>
+            </section>
+            <!-- Color Palette Section -->
+            <section>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-primary">palette</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Paleta de Cores</h3>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Vinho Primary -->
+                    <div
+                        class="flex items-center p-3 rounded-xl border border-slate-100 dark:border-zinc-800 bg-white dark:bg-zinc-800/50 shadow-sm">
+                        <div
+                            class="size-14 rounded-lg bg-primary flex items-center justify-center text-white shadow-inner">
+                            <span class="text-[10px] font-bold">#800000</span>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="text-sm font-bold text-slate-900 dark:text-white">Vinho (Primary)</p>
+                            <p class="text-xs text-slate-500">Usado em botões, cabeçalhos e elementos de destaque.</p>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-300 text-sm">content_copy</span>
+                    </div>
+                    <!-- Dourado Accent -->
+                    <div
+                        class="flex items-center p-3 rounded-xl border border-slate-100 dark:border-zinc-800 bg-white dark:bg-zinc-800/50 shadow-sm">
+                        <div
+                            class="size-14 rounded-lg bg-accent flex items-center justify-center text-white shadow-inner">
+                            <span class="text-[10px] font-bold">#D4AF37</span>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="text-sm font-bold text-slate-900 dark:text-white">Dourado (Accent)</p>
+                            <p class="text-xs text-slate-500">Destaques secundários, ícones especiais e estados ativos.
+                            </p>
+                        </div>
+                        <span class="material-symbols-outlined text-slate-300 text-sm">content_copy</span>
+                    </div>
+                    <!-- Neutrals -->
+                    <div class="grid grid-cols-3 gap-2 mt-2">
+                        <div class="flex flex-col gap-1">
+                            <div
+                                class="h-8 rounded bg-slate-100 dark:bg-zinc-700 border border-slate-200 dark:border-zinc-600">
+                            </div>
+                            <span class="text-[10px] text-center font-mono text-slate-500">#F1F5F9</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <div class="h-8 rounded bg-slate-500 border border-slate-600"></div>
+                            <span class="text-[10px] text-center font-mono text-slate-500">#64748B</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <div class="h-8 rounded bg-slate-900 border border-black"></div>
+                            <span class="text-[10px] text-center font-mono text-slate-500">#0F172A</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Typography Section -->
+            <section>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-primary">text_fields</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Tipografia</h3>
+                </div>
+                <div
+                    class="space-y-4 p-4 rounded-xl bg-slate-50 dark:bg-zinc-800/30 border border-slate-100 dark:border-zinc-800">
+                    <div class="font-roboto">
+                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Roboto Bold</span>
+                        <p class="text-2xl font-bold text-slate-900 dark:text-white">Título de Seção</p>
+                    </div>
+                    <div class="font-roboto">
+                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Roboto Regular</span>
+                        <p class="text-base text-slate-700 dark:text-slate-300">Este é o corpo do texto usado para
+                            descrições de células, relatórios e informações gerais.</p>
+                    </div>
+                    <div class="font-roboto border-t border-slate-200 dark:border-zinc-700 pt-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-slate-500">Legenda de Dados</span>
+                            <span class="text-xs text-slate-400 italic">12px Roboto</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Buttons Section -->
+            <section>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-primary">smart_button</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Componentes: Botões</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-tighter">Contained (Primary)
+                        </p>
+                        <button
+                            class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:opacity-90 active:scale-[0.98] transition-all">
+                            CONFIRMAR PRESENÇA
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-tighter">Outlined (Secondary)
+                        </p>
+                        <button
+                            class="w-full bg-transparent border-2 border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/5 active:scale-[0.98] transition-all">
+                            CANCELAR AÇÃO
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-tighter">Ghost / Text</p>
+                        <button
+                            class="text-primary font-bold py-2 px-4 rounded-lg hover:bg-primary/5 transition-all flex items-center gap-2">
+                            Ver mais detalhes <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Iconography Section -->
+            <section class="pb-10">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-primary">grid_view</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Iconografia Padrão</h3>
+                </div>
+                <div
+                    class="grid grid-cols-4 gap-4 p-4 rounded-xl bg-white dark:bg-zinc-800 border border-slate-100 dark:border-zinc-800 shadow-sm">
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Célula</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Agenda</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">menu_book</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Bíblia</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Mapa</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">person_add</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Novo</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">analytics</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Relatório</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">volunteer_activism</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Oferta</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="size-10 flex items-center justify-center text-primary bg-primary/10 rounded-lg">
+                            <span class="material-symbols-outlined">settings</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Ajustes</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Footer Reference -->
+        <div class="mt-auto p-6 bg-slate-50 dark:bg-zinc-950/50 border-t border-slate-100 dark:border-zinc-800">
+            <div class="flex items-center justify-between mb-4">
+                <img alt="Logo Videira" class="rounded-full" data-alt="Logotipo circular da Igreja Videira vinho"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjrze30oNGs9J57eBLckMD5CwLlsGzrqkLhzCIqnpOLE6647apyscQBBwsuCXq59c5z_yZqw-bNZyMxrHAChUxlAe1ZFYFqFudIn78iO7eA0RiWC9Nmkqsaz7FoE_Dh0cjjNOQhAXfYzgrMqK4gD3jB_0pQnAM2O1hGMvdd-n1DtFyZAx1uUps0FsHMrix50YnoOlr2fr66F6KYc2b8kJ26Zjp5oGnTCjuHI7KDecer3LNe6qwYdl0LdScay3JVdcFm75pHGtDSRhO" />
+                <span class="text-[10px] font-mono text-slate-400">v1.0.4 build-2023</span>
+            </div>
+            <p class="text-[10px] text-slate-400 leading-relaxed">
+                Este guia de estilo é confidencial e destinado exclusivamente ao desenvolvimento das plataformas
+                digitais da Igreja Videira.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

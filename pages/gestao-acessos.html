@@ -37,8 +37,8 @@
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-50 bg-background-dark/80 ios-blur border-b border-primary/10 px-4 pt-12 pb-4">
         <div class="flex items-center justify-between">
-            <button class="p-2 -ml-2 text-primary"><span
-                    class="material-symbols-outlined text-[28px]">arrow_back_ios_new</span></button>
+            <a href="javascript:history.back()" class="p-2 -ml-2 text-primary no-underline"><span
+                    class="material-symbols-outlined text-[28px]">arrow_back_ios_new</span></a>
             <h1 class="text-lg font-bold tracking-tight text-white">Gestão de Acessos</h1>
             <button class="p-2 -mr-2 text-primary"><span
                     class="material-symbols-outlined text-[28px]">person_add</span></button>
@@ -66,7 +66,8 @@
                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDK2g-JugrftWONYqO23-dcukCWUX3pxFkC3LnmqePTyI1IzGfIMaBPXJt6oZnPnUkcR7KphEn_-tnONsME4uF07iacD7ylR3uQS18SH9L1n94TMM2DnL4f-3Z78brXQxSLooGy17ABITXkRA4ChgJ76VP9CkmdvTQMWcv0noUy-zjj8_8ZKuV5r1YgNAWsz5fQvrwmAYWK7J8A2pZ6RsLaUBZRS2a2xWLJVXtsVeosDLLbIp2f1HR6xPwdNoLNsyz3riwihLxdOLlQ')">
                     </div>
                     <div class="absolute -bottom-1 -right-1 bg-gold rounded-full p-1 border-2 border-background-dark">
-                        <span class="material-symbols-outlined text-[10px] text-white block">verified</span></div>
+                        <span class="material-symbols-outlined text-[10px] text-white block">verified</span>
+                    </div>
                 </div>
                 <div class="flex-1">
                     <p class="font-bold text-white">André Silveira</p>
@@ -196,6 +197,21 @@
             </div>
         </div>
     </div>
+    <!-- Bottom Navigation -->
+    <nav
+        class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-[#1a0b0f]/90 backdrop-blur-md border-t border-white/10 flex justify-around items-center py-2 pb-6 px-4 z-50">
+        <a href="home-lider-governo.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
+                class="material-symbols-outlined">home</span><span class="text-[10px] font-medium">Início</span></a>
+        <a href="gestao-acessos.html" class="flex flex-col items-center gap-1 text-primary no-underline"><span
+                class="material-symbols-outlined"
+                style="font-variation-settings: 'FILL' 1">admin_panel_settings</span><span
+                class="text-[10px] font-bold">Acessos</span></a>
+        <a href="painel/lider-governo.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
+                class="material-symbols-outlined">assignment</span><span
+                class="text-[10px] font-medium">Relatórios</span></a>
+        <a href="perfil.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
+                class="material-symbols-outlined">person</span><span class="text-[10px] font-medium">Perfil</span></a>
+    </nav>
 </body>
 
 </html>

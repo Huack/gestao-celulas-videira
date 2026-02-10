@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bem-vindo à Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41111",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 min-h-screen flex items-center justify-center p-4">
+    <!-- iOS Phone Mockup Container -->
+    <div
+        class="max-w-[390px] w-full bg-background-light dark:bg-background-dark shadow-2xl rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 relative flex flex-col h-[844px]">
+        <!-- Status Bar Mockup -->
+        <div class="px-6 py-4 flex justify-between items-center bg-transparent">
+            <span class="text-xs font-semibold">9:41</span>
+            <div class="flex items-center gap-1">
+                <span class="material-icons text-[14px]">signal_cellular_alt</span>
+                <span class="material-icons text-[14px]">wifi</span>
+                <span class="material-icons text-[14px]">battery_full</span>
+            </div>
+        </div>
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto px-6 pt-2 pb-10">
+            <!-- Header/Logo -->
+            <div class="flex flex-col items-center mb-8">
+                <div
+                    class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
+                    <span class="material-icons text-white text-4xl">church</span>
+                </div>
+                <h1 class="text-2xl font-bold text-slate-900 dark:text-white text-center">Bem-vindo à Videira</h1>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1 text-center">Sua jornada de fé e comunhão
+                    começa aqui</p>
+            </div>
+            <!-- Hero Image Card -->
+            <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-10 shadow-xl">
+                <img alt="Pessoas sorrindo em uma célula" class="w-full h-full object-cover"
+                    data-alt="Grupo de pessoas sorrindo abraçadas em uma sala"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6UrNJ1IXZzsVGno_iozfqKEf2rIvJAdlgsacIMGfWLqoYzIV8nRSEFx8GtJ93FaPxXSmck512ZzERyDvcVwEvjnM_voUMr1f7xBj7DEJ4swHViy3edsONcJqf0skNn9hILcK4V-74cxlIq__XMGbZ0Q72Ey4FabsiUt1HT7JoaF7HQ-60cwLuAEdLMlYxUPErcjn24sRF_vMfM-GmCAm1scDlzPvWkWQaSwNm60EgpuYnT71M3apLOiNeOFfG30aAqp0Vbf2OuK9v" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                    <span class="text-white text-lg font-medium">Onde a vida acontece.</span>
+                </div>
+            </div>
+            <!-- Guide Steps Section -->
+            <div class="space-y-6 mb-12">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">Primeiros Passos</h2>
+                <!-- Step 1 -->
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary font-bold">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Encontre sua Célula</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Localize o grupo de comunhão mais próximo
+                            da sua casa.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary font-bold">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Faça o seu Check-in</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Avise que você chegou para podermos te
+                            acolher melhor.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex gap-4">
+                    <div
+                        class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary font-bold">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 dark:text-white">Receba uma palavra</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Uma mensagem especial de fé preparada para
+                            o seu coração.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer / Action Area -->
+        <div
+            class="px-6 pb-8 pt-4 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-white/5">
+            <a href="../encontrar-celula.html"
+                class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-colors no-underline">
+                Começar minha jornada
+                <span class="material-icons">arrow_forward</span>
+            </a>
+            <a href="../../index.html"
+                class="w-full mt-4 text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors py-2 block text-center no-underline">
+                Já sou membro da Videira
+            </a>
+        </div>
+        <!-- Home Indicator Mockup -->
+        <div class="flex justify-center pb-2">
+            <div class="w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+        </div>
+    </div>
+</body>
+
+</html>

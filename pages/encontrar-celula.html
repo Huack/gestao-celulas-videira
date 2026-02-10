@@ -43,9 +43,10 @@
         <!-- TopAppBar -->
         <header class="sticky top-0 z-20 flex flex-col bg-background-dark pt-6 px-4 pb-2 border-b border-white/5">
             <div class="flex items-center justify-between">
-                <div class="text-white flex size-10 shrink-0 items-center justify-center cursor-pointer">
+                <a href="javascript:history.back()"
+                    class="text-white flex size-10 shrink-0 items-center justify-center cursor-pointer no-underline">
                     <span class="material-symbols-outlined">arrow_back_ios</span>
-                </div>
+                </a>
                 <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
                     Encontrar uma Célula</h2>
             </div>
@@ -155,10 +156,10 @@
                             </div>
                         </div>
                         <div class="mt-5">
-                            <button
-                                class="w-full flex items-center justify-center rounded-full h-12 px-6 bg-primary text-white text-base font-bold transition-all active:scale-95 shadow-lg shadow-primary/20">
+                            <a href="boas-vindas/mensagem.html"
+                                class="w-full flex items-center justify-center rounded-full h-12 px-6 bg-primary text-white text-base font-bold transition-all active:scale-95 shadow-lg shadow-primary/20 no-underline">
                                 <span class="material-symbols-outlined mr-2">chat</span><span>Quero Visitar</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -166,19 +167,20 @@
         </main>
         <!-- BottomNavBar -->
         <nav class="flex gap-2 border-t border-white/10 bg-background-dark px-4 pb-8 pt-2 z-30">
-            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="#"><span
-                    class="material-symbols-outlined">home</span>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500"
+                href="home-visitante.html"><span class="material-symbols-outlined">home</span>
                 <p class="text-[10px] font-medium uppercase tracking-widest">Início</p>
             </a>
-            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#"><span
-                    class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">map</span>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary"
+                href="encontrar-celula.html"><span class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 1">map</span>
                 <p class="text-[10px] font-medium uppercase tracking-widest">Mapa</p>
             </a>
             <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="#"><span
                     class="material-symbols-outlined">calendar_today</span>
                 <p class="text-[10px] font-medium uppercase tracking-widest">Eventos</p>
             </a>
-            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="#"><span
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-500" href="perfil.html"><span
                     class="material-symbols-outlined">person</span>
                 <p class="text-[10px] font-medium uppercase tracking-widest">Perfil</p>
             </a>

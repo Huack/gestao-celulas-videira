@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mensagem de Boas-vindas - Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#D4AF37",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .ios-blur {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Status Bar Spacer (iOS Style) -->
+    <div class="h-12 w-full"></div>
+    <!-- Header Navigation -->
+    <nav class="px-6 flex items-center justify-between mb-6">
+        <a href="../encontrar-celula.html"
+            class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow-sm no-underline">
+            <span class="material-icons text-primary">arrow_back_ios_new</span>
+        </a>
+        <h1 class="text-lg font-semibold dark:text-white">Boas-vindas</h1>
+        <button class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow-sm">
+            <span class="material-icons text-primary">share</span>
+        </button>
+    </nav>
+    <main class="px-6 pb-12">
+        <!-- Leader Profile Section -->
+        <div class="flex flex-col items-center mb-8">
+            <div class="relative mb-4">
+                <div class="w-24 h-24 rounded-full border-4 border-accent-gold p-1">
+                    <img alt="Foto do Líder" class="w-full h-full rounded-full object-cover"
+                        data-alt="Close up portrait of a friendly smiling male cell leader"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-d0E0RXBM-EwUQfkxIHf75C0ZC9mZWLrfNPYfpF89TGahCRIWGGqXkaBZyfVkyifXjZlMJnztvRN-AK4HhQv8_QudKCbwZYRPQlV-Bs1VDhbc2hMK_QTKPOJ59saw0TUNQEwNUDqNMVUSwjssDk3mibqR9B6zhrNETJYxuEMQVr9nEPuySIlLE8Nbgb-zmqHfWd-v1j7x-3Iq00Kvxac_pntG3FJ0MRDA7HEc9VIvQWUScRBOiXX3eVvr317fKIlmGyzs8qALwsQF" />
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 bg-accent-gold text-white rounded-full p-1 border-2 border-white dark:border-background-dark">
+                    <span class="material-icons text-xs">verified</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <h2 class="text-2xl font-bold tracking-tight">Pr. Ricardo Alves</h2>
+                <p class="text-primary font-medium text-sm">Líder da Célula Videira Central</p>
+            </div>
+        </div>
+        <!-- Video Presentation Section -->
+        <div class="relative group mb-8">
+            <div class="aspect-video w-full rounded-xl overflow-hidden shadow-xl relative">
+                <img alt="Vídeo de Apresentação" class="w-full h-full object-cover"
+                    data-alt="Cozy living room with people gathering for a small group meeting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvvstXVY6z231kgx6_4oiq9RbAxyBoK-hYT4gfkSh3hyWUpQyMrp4Gj5XwcLkE0ScWhsiDDsLsJj4tGd1EYGoOOYBz5zz6qoNZx90nIHZYnpFGftThTQhFV1leVkx436QGgcZpkErRSc1FGCJ-Xv4irk-mPA6H0WUAD6_G2XzETRk1SsM7fBiqKFOctzAsbbZYFsX1goSsIeDh0sQEF3Zl5Lj5XHkxW8RrQI2lUGOXlSA5u7n9vjkkDJGA3oLw-sD-4cYQBvvUpPQy" />
+                <!-- Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <!-- Play Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <button
+                        class="w-16 h-16 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform">
+                        <span class="material-icons text-4xl">play_arrow</span>
+                    </button>
+                </div>
+                <!-- Badge -->
+                <div
+                    class="absolute top-4 left-4 bg-accent-gold/90 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">
+                    Vídeo de Boas-vindas
+                </div>
+            </div>
+        </div>
+        <!-- Welcome Message Card -->
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm mb-6 border-l-4 border-primary">
+            <h3 class="text-lg font-bold mb-2 flex items-center">
+                <span class="material-icons text-accent-gold mr-2">auto_awesome</span>
+                Ficamos felizes com sua busca!
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
+                "Olá! É um privilégio saber que você está interessado em conhecer nossa célula. Preparamos um lugar
+                especial para você. Assista o vídeo acima para conhecer um pouco mais da nossa família."
+            </p>
+        </div>
+        <!-- Next Meeting Card -->
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Próxima Reunião</span>
+                <span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full">Sábado,
+                    19:30</span>
+            </div>
+            <div class="flex items-start gap-4 mb-4">
+                <div
+                    class="w-12 h-12 bg-background-light dark:bg-slate-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span class="material-icons text-primary">place</span>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm">Rua das Videiras, 450</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Setor Bueno, Goiânia - GO</p>
+                </div>
+            </div>
+            <a href="../encontrar-celula.html"
+                class="w-full py-3 border-2 border-primary/20 text-primary font-bold rounded-lg text-sm flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors no-underline">
+                <span class="material-icons text-sm">map</span>
+                VER NO MAPA
+            </a>
+        </div>
+        <!-- Floating Bottom Actions -->
+        <div class="sticky bottom-4 left-0 right-0 space-y-3">
+            <a href="https://wa.me/5562999999999?text=Ol%C3%A1%2C%20vim%20pelo%20app%20da%20Videira%20e%20gostaria%20de%20conhecer%20a%20c%C3%A9lula!"
+                target="_blank" rel="noopener noreferrer"
+                class="w-full bg-primary text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-primary/30 no-underline">
+                <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                    <path
+                        d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-1.157-.459-2.016-1.247-1.114-.943-1.845-2.072-2.064-2.451-.219-.379-.017-.585.178-.781.171-.171.379-.441.57-.662.191-.221.253-.379.379-.63.126-.252.063-.472-.031-.662-.095-.19-.844-2.035-1.158-2.792-.308-.744-.622-.643-.844-.654-.216-.011-.466-.014-.717-.014s-.66.094-1.004.472c-.344.379-1.313 1.282-1.313 3.125 0 1.844 1.344 3.623 1.531 3.875.188.252 2.645 4.039 6.408 5.665.895.387 1.593.619 2.138.791.899.285 1.716.245 2.361.148.72-.108 2.214-.905 2.526-1.782.313-.876.313-1.626.219-1.782-.094-.156-.344-.25-.719-.438z">
+                    </path>
+                </svg>
+                FALAR COM O LÍDER NO WHATSAPP
+            </a>
+        </div>
+    </main>
+    <!-- Map Element (Hidden metadata as requested) -->
+    <div class="hidden" data-location="Goiania, Brazil" style=""></div>
+</body>
+
+</html>

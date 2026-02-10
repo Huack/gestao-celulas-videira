@@ -42,8 +42,9 @@
         <!-- Top Navigation Bar -->
         <div
             class="sticky top-0 z-50 flex items-center bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-800">
-            <div class="text-primary flex size-10 shrink-0 items-center justify-center cursor-pointer"><span
-                    class="material-symbols-outlined">arrow_back_ios</span></div>
+            <a href="javascript:history.back()"
+                class="text-primary flex size-10 shrink-0 items-center justify-center cursor-pointer no-underline"><span
+                    class="material-symbols-outlined">arrow_back_ios</span></a>
             <h2 class="text-primary text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Novo Membro
             </h2>
         </div>
@@ -151,18 +152,18 @@
         <!-- Bottom Tab Bar -->
         <div
             class="sticky bottom-0 bg-background-dark/95 backdrop-blur-md border-t border-gray-800 flex justify-around py-3 px-6 ios-shadow">
-            <div class="flex flex-col items-center gap-1 text-gray-400"><span
+            <a href="../home-lider.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
                     class="material-symbols-outlined">home</span><span class="text-[10px] font-medium">Início</span>
-            </div>
-            <div class="flex flex-col items-center gap-1 text-primary"><span class="material-symbols-outlined"
-                    style="font-variation-settings: 'FILL' 1">group_add</span><span
-                    class="text-[10px] font-bold">Cadastro</span></div>
-            <div class="flex flex-col items-center gap-1 text-gray-400"><span
+            </a>
+            <a href="membro.html" class="flex flex-col items-center gap-1 text-primary no-underline"><span
+                    class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">group_add</span><span
+                    class="text-[10px] font-bold">Cadastro</span></a>
+            <a href="../checkin-celula.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
                     class="material-symbols-outlined">groups</span><span class="text-[10px] font-medium">Células</span>
-            </div>
-            <div class="flex flex-col items-center gap-1 text-gray-400"><span
+            </a>
+            <a href="../perfil.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline"><span
                     class="material-symbols-outlined">person</span><span class="text-[10px] font-medium">Perfil</span>
-            </div>
+            </a>
         </div>
     </div>
 </body>

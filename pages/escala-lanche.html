@@ -35,9 +35,9 @@
 <body class="bg-background-dark text-gray-100 min-h-screen">
     <div class="h-12 w-full"></div>
     <div class="flex items-center px-6 py-4 justify-between bg-background-dark sticky top-0 z-50">
-        <div class="flex items-center gap-2"><span
+        <a href="javascript:history.back()" class="flex items-center gap-2 no-underline"><span
                 class="material-symbols-outlined text-primary cursor-pointer">chevron_left</span><span
-                class="text-sm font-semibold tracking-wider uppercase text-primary/80">Voltar</span></div>
+                class="text-sm font-semibold tracking-wider uppercase text-primary/80">Voltar</span></a>
         <h1 class="text-xl font-bold text-white">Escala de Lanche</h1>
         <div class="flex items-center gap-4"><span class="material-symbols-outlined gold-icon">notifications</span><span
                 class="material-symbols-outlined gold-icon">more_vert</span></div>
@@ -85,7 +85,8 @@
                 <div
                     class="flex flex-col items-center justify-center bg-primary/10 rounded-lg min-w-[60px] h-16 border border-primary/20">
                     <span class="text-primary text-xs font-bold uppercase">Out</span><span
-                        class="text-white text-xl font-bold leading-none">27</span></div>
+                        class="text-white text-xl font-bold leading-none">27</span>
+                </div>
                 <div class="flex-1 flex flex-col">
                     <div class="flex items-center gap-2">
                         <p class="text-white text-lg font-semibold line-clamp-1">Ricardo Oliveira</p><span
@@ -104,7 +105,8 @@
                 <div
                     class="flex flex-col items-center justify-center bg-gray-800/50 rounded-lg min-w-[60px] h-16 border border-gray-700">
                     <span class="text-gray-500 text-xs font-bold uppercase">Nov</span><span
-                        class="text-gray-300 text-xl font-bold leading-none">03</span></div>
+                        class="text-gray-300 text-xl font-bold leading-none">03</span>
+                </div>
                 <div class="flex-1 flex flex-col">
                     <p class="text-gold text-lg font-semibold italic opacity-80">Vaga Disponível</p>
                     <p class="text-gray-500 text-sm">Seja o anfitrião do lanche!</p>
@@ -118,7 +120,8 @@
                 <div
                     class="flex flex-col items-center justify-center bg-gray-800/50 rounded-lg min-w-[60px] h-16 border border-gray-700">
                     <span class="text-gray-500 text-xs font-bold uppercase">Nov</span><span
-                        class="text-gray-300 text-xl font-bold leading-none">10</span></div>
+                        class="text-gray-300 text-xl font-bold leading-none">10</span>
+                </div>
                 <div class="flex-1 flex flex-col">
                     <p class="text-gold text-lg font-semibold italic opacity-80">Vaga Disponível</p>
                     <p class="text-gray-500 text-sm">Aguardando voluntário</p>
@@ -132,7 +135,8 @@
                 <div
                     class="flex flex-col items-center justify-center bg-primary/10 rounded-lg min-w-[60px] h-16 border border-primary/20">
                     <span class="text-primary text-xs font-bold uppercase">Nov</span><span
-                        class="text-white text-xl font-bold leading-none">17</span></div>
+                        class="text-white text-xl font-bold leading-none">17</span>
+                </div>
                 <div class="flex-1 flex flex-col">
                     <p class="text-white text-lg font-semibold line-clamp-1">Família Souza</p>
                     <p class="text-gray-400 text-sm flex items-center gap-1"><span
@@ -157,24 +161,25 @@
     <!-- Bottom Navigation Bar -->
     <div
         class="fixed bottom-0 left-0 right-0 h-20 bg-[#1a0c11] border-t border-white/5 px-8 flex justify-between items-center z-50">
-        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+        <a href="home-anfitriao.html" class="flex flex-col items-center gap-1 group cursor-pointer no-underline"><span
                 class="material-symbols-outlined text-gray-500 group-hover:text-primary">home</span><span
-                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Início</span></div>
-        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Início</span></a>
+        <a href="escala-lanche.html" class="flex flex-col items-center gap-1 group cursor-pointer no-underline"><span
                 class="material-symbols-outlined text-primary"
                 style="font-variation-settings: 'FILL' 1;">restaurant</span><span
-                class="text-[10px] font-bold text-primary uppercase tracking-tighter">Lanche</span></div>
+                class="text-[10px] font-bold text-primary uppercase tracking-tighter">Lanche</span></a>
         <div class="relative -top-6">
             <div
                 class="size-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 border-4 border-background-dark">
-                <span class="material-symbols-outlined text-white text-3xl">add</span></div>
+                <span class="material-symbols-outlined text-white text-3xl">add</span>
+            </div>
         </div>
-        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+        <a href="checkin-celula.html" class="flex flex-col items-center gap-1 group cursor-pointer no-underline"><span
                 class="material-symbols-outlined text-gray-500 group-hover:text-primary">groups</span><span
-                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Célula</span></div>
-        <div class="flex flex-col items-center gap-1 group cursor-pointer"><span
+                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Célula</span></a>
+        <a href="perfil.html" class="flex flex-col items-center gap-1 group cursor-pointer no-underline"><span
                 class="material-symbols-outlined text-gray-500 group-hover:text-primary">settings</span><span
-                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Ajustes</span></div>
+                class="text-[10px] font-bold text-gray-500 uppercase tracking-tighter">Ajustes</span></a>
     </div>
 </body>
 
