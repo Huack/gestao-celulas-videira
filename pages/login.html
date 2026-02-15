@@ -276,7 +276,7 @@
         <div class="text-center">
             <p class="text-xs text-gray-500">
                 Novo por aqui?
-                <a href="boas-vindas/bem-vindo.html"
+                <a href="cadastro-visitante.html"
                     class="text-primary font-semibold hover:text-primary/80 no-underline transition-colors">Criar
                     conta</a>
             </p>
@@ -335,6 +335,9 @@
         <p class="text-center text-[10px] text-gray-600 mt-6">Igreja Videira © 2025</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/data-service.js"></script>
     <script>
         let selectedProfile = null;
 
@@ -375,9 +378,24 @@
             const email = document.getElementById('email').value || 'demo@videira.com';
             const password = document.getElementById('password').value;
 
-            // Store user profile in sessionStorage for future use
-            sessionStorage.setItem('userProfile', selectedProfile);
-            sessionStorage.setItem('userEmail', email);
+            // Store user profile via DataService
+            DataService.user.setProfile(selectedProfile);
+            DataService.user.setEmail(email);
+
+            // Visitor flow: check if first access or returning
+            if (selectedProfile === 'visitante') {
+                DataService.user.isOnboardingComplete().then(done => {
+                    if (!done) {
+                        // First access: go to onboarding
+                        DataService.user.setFirstAccess(true);
+                        window.location.href = 'onboarding.html';
+                    } else {
+                        // Returning visitor: go to home
+                        window.location.href = 'home-visitante.html';
+                    }
+                });
+                return;
+            }
 
             // Navigate to the correct home page
             const targetPage = profileRoutes[selectedProfile];

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Criar Conta - Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "gold": "#D4AF37",
+                        "background-dark": "#0a0506",
+                        "surface-dark": "#1a0a0c",
+                        "card-dark": "#221013",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #d41132;
+            box-shadow: 0 0 0 3px rgba(212, 17, 50, 0.15);
+        }
+
+        .register-btn:not(:disabled):hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(212, 17, 50, 0.4);
+        }
+
+        .register-btn:not(:disabled):active {
+            transform: scale(0.98);
+        }
+
+        .strength-bar {
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-[400px] fade-in">
+        <!-- Back Button -->
+        <a href="login.html"
+            class="inline-flex items-center gap-1 text-gray-400 hover:text-white transition-colors mb-6 no-underline text-sm">
+            <span class="material-symbols-outlined text-lg">arrow_back_ios</span>
+            Voltar ao login
+        </a>
+
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div
+                class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-3xl">person_add</span>
+            </div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">Criar sua conta</h1>
+            <p class="text-sm text-gray-500 mt-1">Comece sua jornada na Videira</p>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="bg-card-dark rounded-2xl border border-white/5 p-6 mb-6 shadow-xl">
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <!-- Name -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="name">Nome completo</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">person</span>
+                        <input id="name" type="text" placeholder="Seu nome completo" required
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-4 text-sm text-white placeholder-gray-600" />
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="email">E-mail</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">mail</span>
+                        <input id="email" type="email" placeholder="seu@email.com" required
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-4 text-sm text-white placeholder-gray-600" />
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="phone">Telefone <span class="text-gray-600 normal-case">(opcional)</span></label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">phone</span>
+                        <input id="phone" type="tel" placeholder="(62) 99999-9999"
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-4 text-sm text-white placeholder-gray-600" />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="password">Senha</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">lock</span>
+                        <input id="password" type="password" placeholder="Mínimo 6 caracteres" required
+                            oninput="checkPasswordStrength()"
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-11 text-sm text-white placeholder-gray-600" />
+                        <button type="button" onclick="togglePassword('password', 'toggleIcon1')"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
+                            <span id="toggleIcon1" class="material-symbols-outlined text-xl">visibility_off</span>
+                        </button>
+                    </div>
+                    <!-- Password Strength -->
+                    <div class="mt-2 h-1 bg-white/5 rounded-full overflow-hidden">
+                        <div id="strengthBar" class="strength-bar h-full w-0 rounded-full"></div>
+                    </div>
+                    <p id="strengthText" class="text-[10px] text-gray-600 mt-1"></p>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-6">
+                    <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+                        for="confirmPassword">Confirmar senha</label>
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xl">lock</span>
+                        <input id="confirmPassword" type="password" placeholder="Repita sua senha" required
+                            class="w-full bg-surface-dark border border-white/10 rounded-xl py-3 pl-11 pr-11 text-sm text-white placeholder-gray-600" />
+                        <button type="button" onclick="togglePassword('confirmPassword', 'toggleIcon2')"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
+                            <span id="toggleIcon2" class="material-symbols-outlined text-xl">visibility_off</span>
+                        </button>
+                    </div>
+                    <p id="matchError" class="text-[10px] text-red-400 mt-1 hidden">As senhas não coincidem</p>
+                </div>
+
+                <!-- Terms -->
+                <div class="flex items-start gap-3 mb-6">
+                    <input type="checkbox" id="terms" required
+                        class="mt-0.5 w-4 h-4 rounded border-white/20 bg-surface-dark text-primary focus:ring-primary/30" />
+                    <label for="terms" class="text-xs text-gray-400 leading-relaxed">
+                        Li e concordo com os <a href="#" class="text-primary no-underline">Termos de Uso</a> e a
+                        <a href="#" class="text-primary no-underline">Política de Privacidade</a>
+                    </label>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit"
+                    class="register-btn w-full bg-primary text-white font-bold py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 transition-all">
+                    <span class="material-symbols-outlined text-lg">how_to_reg</span>
+                    Criar minha conta
+                </button>
+            </form>
+        </div>
+
+        <!-- Login Link -->
+        <div class="text-center">
+            <p class="text-xs text-gray-500">
+                Já tem uma conta?
+                <a href="login.html"
+                    class="text-primary font-semibold hover:text-primary/80 no-underline transition-colors">Fazer
+                    login</a>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <p class="text-center text-[10px] text-gray-600 mt-6">Igreja Videira © 2025</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/data-service.js"></script>
+    <script>
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const bar = document.getElementById('strengthBar');
+            const text = document.getElementById('strengthText');
+            let strength = 0;
+
+            if (password.length >= 6) strength++;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            const levels = [
+                { width: '0%', color: '', label: '' },
+                { width: '20%', color: '#ef4444', label: 'Muito fraca' },
+                { width: '40%', color: '#f97316', label: 'Fraca' },
+                { width: '60%', color: '#eab308', label: 'Média' },
+                { width: '80%', color: '#22c55e', label: 'Forte' },
+                { width: '100%', color: '#16a34a', label: 'Muito forte' },
+            ];
+
+            const level = levels[strength];
+            bar.style.width = level.width;
+            bar.style.backgroundColor = level.color;
+            text.textContent = level.label;
+            text.style.color = level.color;
+        }
+
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility_off';
+            }
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const matchError = document.getElementById('matchError');
+
+            if (password !== confirmPassword) {
+                matchError.classList.remove('hidden');
+                return;
+            }
+            matchError.classList.add('hidden');
+
+            if (password.length < 6) {
+                alert('A senha deve ter no mínimo 6 caracteres.');
+                return;
+            }
+
+            // Store user info via DataService
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            DataService.user.saveRegistration({
+                name, email, phone, profile: 'visitante'
+            });
+
+            // Navigate to onboarding
+            window.location.href = 'onboarding.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bíblia - Igreja Videira</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41152",
+                        "accent-gold": "#C5A059",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: 100dvh;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .ios-tab-bar {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Clamp text to N lines */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Contain overscroll on search results */
+        .overscroll-contain {
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Mobile: bigger touch targets */
+        @media (max-width: 380px) {
+            .version-btn {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1b0d12] dark:text-[#fcf8f9] antialiased">
+    <div class="relative flex h-screen w-full flex-col overflow-x-hidden">
+
+        <!-- Header -->
+        <header
+            class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 justify-between border-b border-gray-200 dark:border-white/10">
+            <button id="backBtn" onclick="goBack()"
+                class="text-primary flex size-10 shrink-0 items-center justify-center invisible">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <div class="flex flex-col items-center">
+                <h2 id="headerTitle"
+                    class="text-[#1b0d12] dark:text-[#fcf8f9] text-sm font-bold leading-tight tracking-tight uppercase">
+                    Bíblia</h2>
+            </div>
+            <div class="flex size-10 shrink-0 items-center justify-center">
+                <!-- placeholder for alignment -->
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="flex-1 overflow-y-auto px-4 pt-4 pb-28" id="content">
+            <!-- Dynamic content rendered by biblia.js -->
+        </main>
+
+        <!-- Loading overlay -->
+        <div id="loadingOverlay"
+            class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[90]">
+            <div class="bg-white dark:bg-background-dark rounded-2xl p-6 flex flex-col items-center gap-3 shadow-2xl">
+                <div class="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin"></div>
+                <span class="text-sm text-gray-500">Carregando Bíblia...</span>
+            </div>
+        </div>
+
+        <!-- Error message -->
+        <div id="errorMsg"
+            class="hidden fixed top-20 left-4 right-4 bg-red-500 text-white text-sm font-medium p-3 rounded-xl text-center z-[95] shadow-xl">
+        </div>
+
+        <!-- Bottom Navigation removed by bottom-nav.js -->
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="../js/supabase-config.js"></script>
+        <script src="../js/data-service.js"></script>
+        <script src="../js/biblia.js"></script>
+        <script src="../js/bottom-nav.js"></script>
+</body>
+
+</html>

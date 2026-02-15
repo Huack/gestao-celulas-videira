@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bem-vindo à Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "gold": "#D4AF37",
+                        "background-dark": "#0a0506",
+                        "surface-dark": "#1a0a0c",
+                        "card-dark": "#221013",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+            overflow: hidden;
+        }
+
+        .slide {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+        }
+
+        .dot {
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            width: 24px;
+            background-color: #d41132;
+        }
+
+        .fade-up {
+            animation: fadeUp 0.7s ease-out both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up-delay-1 {
+            animation-delay: 0.15s;
+        }
+
+        .fade-up-delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .fade-up-delay-3 {
+            animation-delay: 0.45s;
+        }
+
+        .fade-up-delay-4 {
+            animation-delay: 0.6s;
+        }
+
+        .icon-float {
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .glow-primary {
+            box-shadow: 0 0 40px rgba(212, 17, 50, 0.2), 0 0 80px rgba(212, 17, 50, 0.1);
+        }
+
+        .glow-gold {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2), 0 0 80px rgba(212, 175, 55, 0.1);
+        }
+
+        .glow-green {
+            box-shadow: 0 0 40px rgba(34, 197, 94, 0.2), 0 0 80px rgba(34, 197, 94, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen flex flex-col">
+    <!-- Slides Container -->
+    <div id="slidesContainer" class="flex-1 relative overflow-hidden">
+
+        <!-- Slide 1: Bem-vindo à Videira -->
+        <div id="slide-0" class="slide absolute inset-0 flex flex-col items-center justify-center px-8">
+            <div class="text-center max-w-sm">
+                <!-- Icon -->
+                <div
+                    class="w-24 h-24 mx-auto mb-8 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center glow-primary icon-float fade-up">
+                    <span class="material-symbols-outlined text-primary text-5xl"
+                        style="font-variation-settings: 'FILL' 1">church</span>
+                </div>
+                <!-- Title -->
+                <h1 class="text-3xl font-extrabold text-white tracking-tight mb-3 fade-up fade-up-delay-1">
+                    Bem-vindo à <span class="text-primary">Videira</span>
+                </h1>
+                <!-- Subtitle -->
+                <p class="text-gray-400 text-base leading-relaxed mb-8 fade-up fade-up-delay-2">
+                    Somos uma igreja que acredita no poder da comunhão. Aqui, cada pessoa é família e cada vida importa.
+                </p>
+                <!-- Feature Cards -->
+                <div class="space-y-3 fade-up fade-up-delay-3">
+                    <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-xl p-4 text-left">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-primary text-xl">favorite</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Amor e Acolhimento</p>
+                            <p class="text-xs text-gray-500">Uma comunidade que recebe de braços abertos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-xl p-4 text-left">
+                        <div class="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-gold text-xl">auto_stories</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Palavra e Crescimento</p>
+                            <p class="text-xs text-gray-500">Ensinamentos que transformam vidas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: O que é uma Célula? -->
+        <div id="slide-1" class="slide absolute inset-0 flex flex-col items-center justify-center px-8"
+            style="transform: translateX(100%); opacity: 0;">
+            <div class="text-center max-w-sm">
+                <!-- Icon -->
+                <div
+                    class="w-24 h-24 mx-auto mb-8 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center glow-gold icon-float">
+                    <span class="material-symbols-outlined text-gold text-5xl">groups</span>
+                </div>
+                <!-- Title -->
+                <h1 class="text-3xl font-extrabold text-white tracking-tight mb-3">
+                    O que é uma <span class="text-gold">Célula</span>?
+                </h1>
+                <!-- Subtitle -->
+                <p class="text-gray-400 text-base leading-relaxed mb-8">
+                    Uma célula é um pequeno grupo que se reúne semanalmente em casas para compartilhar a vida e a fé.
+                </p>
+                <!-- Features -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-xl p-4 text-left">
+                        <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-red-400 text-xl">home</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Reuniões em casas</p>
+                            <p class="text-xs text-gray-500">Ambiente acolhedor e familiar</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-xl p-4 text-left">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-blue-400 text-xl">menu_book</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Estudo bíblico</p>
+                            <p class="text-xs text-gray-500">Crescimento espiritual em comunidade</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-xl p-4 text-left">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-purple-400 text-xl">diversity_3</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Amizades verdadeiras</p>
+                            <p class="text-xs text-gray-500">Relações que vão além do domingo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Sua jornada começa aqui -->
+        <div id="slide-2" class="slide absolute inset-0 flex flex-col items-center justify-center px-8"
+            style="transform: translateX(100%); opacity: 0;">
+            <div class="text-center max-w-sm">
+                <!-- Icon -->
+                <div
+                    class="w-24 h-24 mx-auto mb-8 rounded-full bg-green-500/10 border-2 border-green-500/30 flex items-center justify-center glow-green icon-float">
+                    <span class="material-symbols-outlined text-green-400 text-5xl"
+                        style="font-variation-settings: 'FILL' 1">rocket_launch</span>
+                </div>
+                <!-- Title -->
+                <h1 class="text-3xl font-extrabold text-white tracking-tight mb-3">
+                    Sua jornada <span class="text-green-400">começa aqui</span>
+                </h1>
+                <!-- Subtitle -->
+                <p class="text-gray-400 text-base leading-relaxed mb-8">
+                    Agora você pode encontrar uma célula pertinho de você e começar a viver essa experiência incrível!
+                </p>
+                <!-- Steps -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-left">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">
+                            1
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Encontre uma célula</p>
+                            <p class="text-xs text-gray-500">Escolha uma perto de você</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-left">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">
+                            2
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Visite e conheça</p>
+                            <p class="text-xs text-gray-500">Vá a um primeiro encontro sem compromisso</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-left">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 text-white font-bold text-sm">
+                            3
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-white">Faça parte</p>
+                            <p class="text-xs text-gray-500">Cresça na fé junto com sua nova família</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="px-6 pb-10 pt-4 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent">
+        <!-- Progress Dots -->
+        <div class="flex justify-center gap-2 mb-6">
+            <div class="dot active h-2 w-6 rounded-full bg-primary"></div>
+            <div class="dot h-2 w-2 rounded-full bg-white/20"></div>
+            <div class="dot h-2 w-2 rounded-full bg-white/20"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex gap-3">
+            <button id="skipBtn" onclick="skipToChooseCell()"
+                class="flex-1 py-3.5 rounded-xl text-sm font-semibold text-gray-400 bg-white/[0.03] border border-white/10 transition-all hover:bg-white/5">
+                Pular
+            </button>
+            <button id="nextBtn" onclick="nextSlide()"
+                class="flex-[2] py-3.5 rounded-xl text-sm font-bold text-white bg-primary transition-all hover:bg-primary/90 active:scale-[0.98] flex items-center justify-center gap-2">
+                Próximo
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/data-service.js"></script>
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                    dot.style.width = '24px';
+                    dot.style.backgroundColor = '#d41132';
+                } else {
+                    dot.classList.remove('active');
+                    dot.style.width = '8px';
+                    dot.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                }
+            });
+        }
+
+        function showSlide(index) {
+            for (let i = 0; i < totalSlides; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                if (i === index) {
+                    slide.style.transform = 'translateX(0)';
+                    slide.style.opacity = '1';
+                } else if (i < index) {
+                    slide.style.transform = 'translateX(-100%)';
+                    slide.style.opacity = '0';
+                } else {
+                    slide.style.transform = 'translateX(100%)';
+                    slide.style.opacity = '0';
+                }
+            }
+            updateDots();
+
+            // Update button text on last slide
+            const nextBtn = document.getElementById('nextBtn');
+            const skipBtn = document.getElementById('skipBtn');
+            if (index === totalSlides - 1) {
+                nextBtn.innerHTML = 'Continuar <span class="material-symbols-outlined text-lg">arrow_forward</span>';
+                skipBtn.style.display = 'none';
+            } else {
+                nextBtn.innerHTML = 'Próximo <span class="material-symbols-outlined text-lg">arrow_forward</span>';
+                skipBtn.style.display = 'block';
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            } else {
+                // Last slide — go to choose cell
+                DataService.user.setOnboardingComplete(true);
+                window.location.href = 'escolher-celula.html';
+            }
+        }
+
+        function skipToChooseCell() {
+            DataService.user.setOnboardingComplete(true);
+            window.location.href = 'escolher-celula.html';
+        }
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('slidesContainer').addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.getElementById('slidesContainer').addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (diff > 50 && currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            } else if (diff < -50 && currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Init
+        showSlide(0);
+    </script>
+</body>
+
+</html>

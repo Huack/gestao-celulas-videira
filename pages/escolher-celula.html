@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Escolher Célula - Videira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "gold": "#D4AF37",
+                        "background-dark": "#0a0506",
+                        "surface-dark": "#1a0a0c",
+                        "card-dark": "#221013",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100dvh;
+        }
+
+        .cell-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cell-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .cell-card.selected {
+            border-color: #d41132;
+            background: rgba(212, 17, 50, 0.08);
+            box-shadow: 0 0 20px rgba(212, 17, 50, 0.15);
+        }
+
+        .cell-card.selected .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .check-icon {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #1a0a0c 0%, #221013 50%, #1a0a0c 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-20 bg-background-dark/90 backdrop-blur-lg border-b border-white/5 px-4 py-4">
+        <div class="max-w-[430px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white">Encontre sua célula</h1>
+                    <p class="text-xs text-gray-500">Escolha um grupo perto de você</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto pb-44">
+        <div class="max-w-[430px] mx-auto">
+            <!-- Map Placeholder -->
+            <div
+                class="map-placeholder h-48 relative flex items-center justify-center mx-4 mt-4 rounded-xl border border-white/5 overflow-hidden">
+                <div class="absolute inset-0 opacity-20">
+                    <div class="absolute top-4 left-8 w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                    <div class="absolute top-12 right-16 w-2 h-2 rounded-full bg-primary animate-pulse"
+                        style="animation-delay: 0.5s;"></div>
+                    <div class="absolute bottom-8 left-20 w-2 h-2 rounded-full bg-primary animate-pulse"
+                        style="animation-delay: 1s;"></div>
+                    <div class="absolute top-20 left-1/2 w-2 h-2 rounded-full bg-gold animate-pulse"
+                        style="animation-delay: 0.3s;"></div>
+                    <div class="absolute bottom-16 right-12 w-2 h-2 rounded-full bg-primary animate-pulse"
+                        style="animation-delay: 0.7s;"></div>
+                </div>
+                <div class="text-center z-10">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-2 block"
+                        style="font-variation-settings: 'FILL' 1">pin_drop</span>
+                    <p class="text-sm text-gray-400">Células próximas a você</p>
+                    <p class="text-xs text-gray-600 mt-1">Goiânia, GO</p>
+                </div>
+            </div>
+
+            <!-- Section Title -->
+            <div class="px-4 mt-6 mb-3 flex items-center justify-between">
+                <h2 class="text-sm font-bold uppercase tracking-wider text-gray-400">Células disponíveis</h2>
+                <span class="text-xs text-gray-600">5 resultados</span>
+            </div>
+
+            <!-- Cell Cards -->
+            <div class="px-4 space-y-3 fade-in" id="cellList">
+                <!-- Cell 1 -->
+                <div class="cell-card bg-card-dark border border-white/5 rounded-xl p-4 cursor-pointer relative"
+                    onclick="selectCell(this, 'celula-setor-bueno')">
+                    <div class="check-icon absolute top-3 right-3">
+                        <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-sm">check</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-primary text-2xl">groups</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-sm font-bold text-white mb-0.5">Célula Setor Bueno</h3>
+                            <p class="text-xs text-gray-500 mb-2">Líder: João Silva</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">calendar_today</span>
+                                    Terça, 19h30
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">location_on</span>
+                                    1.2 km
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gold bg-gold/5 px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">group</span>
+                                    12 membros
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cell 2 -->
+                <div class="cell-card bg-card-dark border border-white/5 rounded-xl p-4 cursor-pointer relative"
+                    onclick="selectCell(this, 'celula-jardim-america')">
+                    <div class="check-icon absolute top-3 right-3">
+                        <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-sm">check</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-gold text-2xl">groups</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-sm font-bold text-white mb-0.5">Célula Jardim América</h3>
+                            <p class="text-xs text-gray-500 mb-2">Líder: Maria Oliveira</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">calendar_today</span>
+                                    Quarta, 20h
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">location_on</span>
+                                    2.5 km
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gold bg-gold/5 px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">group</span>
+                                    8 membros
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cell 3 -->
+                <div class="cell-card bg-card-dark border border-white/5 rounded-xl p-4 cursor-pointer relative"
+                    onclick="selectCell(this, 'celula-alto-da-gloria')">
+                    <div class="check-icon absolute top-3 right-3">
+                        <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-sm">check</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-green-400 text-2xl">groups</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-sm font-bold text-white mb-0.5">Célula Alto da Glória</h3>
+                            <p class="text-xs text-gray-500 mb-2">Líder: Pedro Santos</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">calendar_today</span>
+                                    Sexta, 19h30
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">location_on</span>
+                                    3.8 km
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gold bg-gold/5 px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">group</span>
+                                    15 membros
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cell 4 -->
+                <div class="cell-card bg-card-dark border border-white/5 rounded-xl p-4 cursor-pointer relative"
+                    onclick="selectCell(this, 'celula-marista')">
+                    <div class="check-icon absolute top-3 right-3">
+                        <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-sm">check</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-purple-400 text-2xl">groups</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-sm font-bold text-white mb-0.5">Célula Setor Marista</h3>
+                            <p class="text-xs text-gray-500 mb-2">Líder: Ana Costa</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">calendar_today</span>
+                                    Quinta, 20h
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">location_on</span>
+                                    4.1 km
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gold bg-gold/5 px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">group</span>
+                                    10 membros
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cell 5 -->
+                <div class="cell-card bg-card-dark border border-white/5 rounded-xl p-4 cursor-pointer relative"
+                    onclick="selectCell(this, 'celula-nova-suica')">
+                    <div class="check-icon absolute top-3 right-3">
+                        <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-sm">check</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined text-blue-400 text-2xl">groups</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-sm font-bold text-white mb-0.5">Célula Nova Suíça</h3>
+                            <p class="text-xs text-gray-500 mb-2">Líder: Lucas Ferreira</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">calendar_today</span>
+                                    Terça, 20h
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gray-400 bg-white/[0.03] px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">location_on</span>
+                                    5.2 km
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1 text-[10px] text-gold bg-gold/5 px-2 py-1 rounded-full">
+                                    <span class="material-symbols-outlined text-xs">group</span>
+                                    7 membros
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Action Area -->
+    <div
+        class="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background-dark via-background-dark to-transparent px-4 pb-8 pt-6 z-30">
+        <div class="max-w-[430px] mx-auto space-y-3">
+            <button id="chooseCellBtn" onclick="confirmCell()" disabled
+                class="w-full bg-primary text-white font-bold py-4 rounded-xl text-sm flex items-center justify-center gap-2 transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:not-disabled:bg-primary/90 active:not-disabled:scale-[0.98]">
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+                <span id="chooseBtnText">Selecione uma célula</span>
+            </button>
+            <button onclick="skipToHome()"
+                class="w-full py-3 rounded-xl text-sm font-semibold text-gray-400 bg-white/[0.03] border border-white/10 transition-all hover:bg-white/5 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-lg">schedule</span>
+                Escolher mais tarde
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/data-service.js"></script>
+    <script>
+        let selectedCellId = null;
+        let selectedCellName = null;
+
+        function selectCell(el, cellId) {
+            // Remove previous selection
+            document.querySelectorAll('.cell-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+
+            // Apply selection
+            el.classList.add('selected');
+            selectedCellId = cellId;
+            selectedCellName = el.querySelector('h3').textContent;
+
+            // Enable button
+            const btn = document.getElementById('chooseCellBtn');
+            btn.disabled = false;
+            document.getElementById('chooseBtnText').textContent = `Quero visitar esta célula`;
+        }
+
+        function confirmCell() {
+            if (!selectedCellId) return;
+
+            // Store selected cell info via DataService
+            const cellData = {
+                id: selectedCellId,
+                name: selectedCellName,
+                leader: document.querySelector('.cell-card.selected .text-gray-500').textContent,
+                tags: []
+            };
+            const tags = document.querySelectorAll('.cell-card.selected .text-\\[10px\\]');
+            tags.forEach(tag => cellData.tags.push(tag.textContent.trim()));
+
+            DataService.cell.saveSelection(cellData);
+
+            // Navigate to home
+            window.location.href = 'home-visitante.html';
+        }
+
+        function skipToHome() {
+            DataService.cell.setSkippedChoice(true);
+            window.location.href = 'home-visitante.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -56,48 +56,133 @@
             </a>
         </header>
         <main class="flex-1 pb-24 overflow-y-auto">
-            <div class="@container px-4 py-4">
-                <div class="relative bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] shadow-lg group"
-                    style='background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP1hl5mIilLcNXvWZEt3ZOlerBVLaOyvO8fx6m8u6HNeobkPiCrWOcbCYavd5S-8au8IImHDg0KmMEQjLdeZk-OgdJ-6zySA8apSVKBXGINe8KugsV-Co1w0zqEWDQ_lIblly4U6RBlemjB_kaOBXMsqmDIQK24tyMPoJE29L9JnB4xaN0AZ2Nl8f7uQjwdEwW4xbuihakw33ERBkUOCi-w-Evq6oOVfTas4A9z7oZZTxsZSi2U7BZZR7An_G7NBYaiY6wEX3iFTmP");'>
-                    <div class="p-6">
-                        <p class="text-accent-gold text-xs font-bold uppercase tracking-[0.2em] mb-1">Seja Bem-vindo</p>
-                        <h1 class="text-white text-3xl font-bold leading-tight mb-2">Sua nova família começa aqui.</h1>
-                        <p class="text-white/80 text-sm font-medium">Conecte-se com pessoas que amam a Deus.</p>
+            <!-- Dynamic greeting based on user name -->
+            <div id="greetingSection" class="px-4 pt-4 pb-2 hidden">
+                <h2 class="text-[#1b0d12] dark:text-[#fcf8f9] text-xl font-bold">
+                    Olá, <span id="userName" class="text-primary"></span> 👋
+                </h2>
+                <p class="text-gray-500 text-sm">Que bom ter você de volta!</p>
+            </div>
+
+            <!-- RETURNING VISITOR: Last visited cell card -->
+            <div id="returnVisitorCard" class="px-4 py-3 hidden">
+                <div class="bg-white dark:bg-white/5 border border-primary/20 rounded-xl overflow-hidden shadow-lg">
+                    <!-- Header -->
+                    <div
+                        class="bg-primary/5 dark:bg-primary/10 px-5 py-3 flex items-center gap-3 border-b border-primary/10">
+                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-lg">replay</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-primary uppercase tracking-wider">Visite novamente</p>
+                            <p class="text-[10px] text-gray-500">Sua última célula visitada</p>
+                        </div>
+                    </div>
+                    <!-- Cell Info -->
+                    <div class="p-5">
+                        <h3 id="lastCellName" class="text-[#1b0d12] dark:text-[#fcf8f9] text-lg font-bold mb-1"></h3>
+                        <p id="lastCellLeader" class="text-gray-500 text-sm mb-3"></p>
+                        <div id="lastCellTags" class="flex flex-wrap gap-2 mb-4"></div>
+                        <div class="flex gap-3">
+                            <a href="encontrar-celula.html"
+                                class="flex-1 py-3 rounded-xl text-sm font-bold text-white bg-primary flex items-center justify-center gap-2 no-underline transition-all hover:bg-primary/90 active:scale-[0.98]">
+                                <span class="material-symbols-outlined text-lg">directions</span>
+                                Quero visitar de novo
+                            </a>
+                            <a href="encontrar-celula.html"
+                                class="py-3 px-4 rounded-xl text-sm font-semibold text-gray-500 border border-gray-200 dark:border-white/10 flex items-center justify-center no-underline hover:bg-gray-50 dark:hover:bg-white/5">
+                                <span class="material-symbols-outlined text-lg">explore</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="px-4 py-2">
-                <a href="encontrar-celula.html"
-                    class="w-full flex items-center justify-between bg-primary hover:bg-primary/90 text-white rounded-xl p-5 shadow-md transition-all active:scale-[0.98] no-underline">
-                    <div class="flex items-center gap-4">
-                        <div class="bg-white/20 p-2 rounded-lg">
-                            <span class="material-symbols-outlined text-white">map</span>
-                        </div>
-                        <div class="text-left">
-                            <span class="block text-lg font-bold">Localizar Célula</span>
-                            <span class="block text-xs text-white/70">Encontre um grupo perto de você</span>
+
+            <!-- NEW VISITOR: Hero banner -->
+            <div id="newVisitorSection">
+                <div class="@container px-4 py-4">
+                    <div class="relative bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[280px] shadow-lg group"
+                        style='background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP1hl5mIilLcNXvWZEt3ZOlerBVLaOyvO8fx6m8u6HNeobkPiCrWOcbCYavd5S-8au8IImHDg0KmMEQjLdeZk-OgdJ-6zySA8apSVKBXGINe8KugsV-Co1w0zqEWDQ_lIblly4U6RBlemjB_kaOBXMsqmDIQK24tyMPoJE29L9JnB4xaN0AZ2Nl8f7uQjwdEwW4xbuihakw33ERBkUOCi-w-Evq6oOVfTas4A9z7oZZTxsZSi2U7BZZR7An_G7NBYaiY6wEX3iFTmP");'>
+                        <div class="p-6">
+                            <p class="text-accent-gold text-xs font-bold uppercase tracking-[0.2em] mb-1">Seja Bem-vindo
+                            </p>
+                            <h1 class="text-white text-3xl font-bold leading-tight mb-2">Sua nova família começa aqui.
+                            </h1>
+                            <p class="text-white/80 text-sm font-medium">Conecte-se com pessoas que amam a Deus.</p>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined">chevron_right</span>
-                </a>
+                </div>
+
+                <!-- CHOSEN CELL CARD (shown when user chose a cell on first access) -->
+                <div id="chosenCellCard" class="px-4 py-2 hidden">
+                    <div
+                        class="bg-white dark:bg-white/5 border border-green-500/20 rounded-xl overflow-hidden shadow-md">
+                        <div
+                            class="bg-green-500/5 dark:bg-green-500/10 px-5 py-3 flex items-center gap-3 border-b border-green-500/10">
+                            <div class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-green-600 dark:text-green-400 text-lg"
+                                    style="font-variation-settings: 'FILL' 1">check_circle</span>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-wider">
+                                    Sua Célula</p>
+                                <p class="text-[10px] text-gray-500">Você escolheu participar desta célula</p>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 id="chosenCellName" class="text-[#1b0d12] dark:text-[#fcf8f9] text-lg font-bold mb-1">
+                            </h3>
+                            <p id="chosenCellLeader" class="text-gray-500 text-sm mb-3"></p>
+                            <div id="chosenCellTags" class="flex flex-wrap gap-2 mb-4"></div>
+                            <div class="flex gap-3">
+                                <a href="encontrar-celula.html"
+                                    class="flex-1 py-3 rounded-xl text-sm font-bold text-white bg-primary flex items-center justify-center gap-2 no-underline transition-all hover:bg-primary/90 active:scale-[0.98]">
+                                    <span class="material-symbols-outlined text-lg">directions</span>
+                                    Como chegar
+                                </a>
+                                <a href="escolher-celula.html"
+                                    class="py-3 px-4 rounded-xl text-sm font-semibold text-gray-500 border border-gray-200 dark:border-white/10 flex items-center justify-center no-underline hover:bg-gray-50 dark:hover:bg-white/5">
+                                    <span class="material-symbols-outlined text-lg">swap_horiz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOCALIZAR CELULA (shown only when user skipped cell choice) -->
+                <div id="localizarCelula" class="px-4 py-2">
+                    <a href="encontrar-celula.html"
+                        class="w-full flex items-center justify-between bg-primary hover:bg-primary/90 text-white rounded-xl p-5 shadow-md transition-all active:scale-[0.98] no-underline">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white/20 p-2 rounded-lg">
+                                <span class="material-symbols-outlined text-white">map</span>
+                            </div>
+                            <div class="text-left">
+                                <span class="block text-lg font-bold">Localizar Célula</span>
+                                <span class="block text-xs text-white/70">Encontre um grupo perto de você</span>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </a>
+                </div>
             </div>
+
             <div class="px-4 py-4">
                 <div
                     class="bg-white dark:bg-white/5 border border-accent-gold/30 rounded-xl p-6 shadow-sm relative overflow-hidden">
-                    <div class="absolute -top-4 -right-4 text-accent-gold/10 pointer-events-none">
-                        <span class="material-symbols-outlined !text-8xl">format_quote</span>
-                    </div>
+                    <div class="absolute top-3 right-4 text-accent-gold/20 pointer-events-none font-bold text-2xl tracking-tight"
+                        id="diaDoAnoLabel"></div>
                     <div class="flex items-center gap-2 mb-4">
                         <span class="material-symbols-outlined text-accent-gold text-xl">auto_stories</span>
                         <h3 class="text-[#1b0d12] dark:text-[#fcf8f9] text-sm font-bold uppercase tracking-wider">
                             Versículo do Dia</h3>
                     </div>
-                    <p class="text-lg italic font-medium leading-relaxed text-[#1b0d12] dark:text-[#fcf8f9] mb-4">
-                        "Eu sou a videira, vós, as varas; quem está em mim, e eu nele, este dá muito fruto..."
-                    </p>
+                    <p id="versiculoTexto"
+                        class="text-lg italic font-medium leading-relaxed text-[#1b0d12] dark:text-[#fcf8f9] mb-4"></p>
                     <div class="flex items-center justify-between">
-                        <span class="text-primary font-bold text-sm">João 15:5</span>
-                        <button
+                        <span id="versiculoRef" class="text-primary font-bold text-sm"></span>
+                        <button onclick="compartilharVersiculo()"
                             class="flex items-center gap-1 text-accent-gold font-semibold text-xs border border-accent-gold/30 px-3 py-1 rounded-full">
                             <span class="material-symbols-outlined text-sm">share</span> Compartilhar
                         </button>
@@ -107,8 +192,8 @@
             <div class="px-4 py-2">
                 <h3 class="text-[#1b0d12] dark:text-[#fcf8f9] text-lg font-bold mb-4 px-1">Próximos Passos</h3>
                 <div class="grid grid-cols-2 gap-4">
-                    <a href="boas-vindas/mensagem.html"
-                        class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col gap-3 shadow-sm no-underline">
+                    <a id="falarComLider" href="boas-vindas/mensagem.html"
+                        class="bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/5 flex flex-col gap-3 shadow-sm no-underline hidden">
                         <div class="bg-primary/10 size-10 rounded-lg flex items-center justify-center text-primary">
                             <span class="material-symbols-outlined">chat_bubble</span>
                         </div>
@@ -138,32 +223,110 @@
                         </p>
                         <p class="text-gray-500 text-xs mt-1">Av. T-7, Setor Bueno</p>
                     </div>
-                    <div class="bg-white dark:bg-white/10 p-2 rounded-full text-accent-gold shadow-sm">
-                        <span class="material-symbols-outlined">directions</span>
-                    </div>
                 </div>
-            </div>
         </main>
-        <nav
-            class="ios-tab-bar fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 border-t border-gray-200 dark:border-white/10 pb-6 pt-2 px-6 flex justify-between items-center z-50">
-            <a href="home-visitante.html" class="flex flex-col items-center gap-1 text-primary no-underline">
-                <span class="material-symbols-outlined">home</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Início</span>
-            </a>
-            <a href="#" class="flex flex-col items-center gap-1 text-gray-400 no-underline">
-                <span class="material-symbols-outlined">event</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Eventos</span>
-            </a>
-            <a href="encontrar-celula.html" class="flex flex-col items-center gap-1 text-gray-400 no-underline">
-                <span class="material-symbols-outlined">location_on</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Células</span>
-            </a>
-            <a href="#" class="flex flex-col items-center gap-1 text-gray-400 no-underline">
-                <span class="material-symbols-outlined">menu_book</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Bíblia</span>
-            </a>
-        </nav>
+        <!-- Bottom Navigation removed by bottom-nav.js -->
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/data-service.js"></script>
+    <script src="../js/versiculos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ── Versículo do Dia ──
+            const versiculo = getVersiculoDoDia();
+            document.getElementById('versiculoTexto').textContent = '"' + versiculo.texto + '"';
+            document.getElementById('versiculoRef').textContent = versiculo.ref;
+
+            // Day of year counter
+            const hoje = new Date();
+            const inicioAno = new Date(hoje.getFullYear(), 0, 0);
+            const diaDoAno = Math.floor((hoje - inicioAno) / (1000 * 60 * 60 * 24));
+            const isLeap = (y) => (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+            const totalDias = isLeap(hoje.getFullYear()) ? 366 : 365;
+            document.getElementById('diaDoAnoLabel').textContent = diaDoAno + '/' + totalDias;
+
+            // ── Visitor flow logic (async via DataService) ──
+            (async function () {
+                const lastCell = await DataService.cell.getLastVisited();
+                const userName = await DataService.user.getName();
+                const isFirstAccess = await DataService.user.isFirstAccess();
+                const skippedCell = await DataService.cell.hasSkippedChoice();
+
+                // Show personalized greeting if we have a name
+                if (userName) {
+                    document.getElementById('greetingSection').classList.remove('hidden');
+                    document.getElementById('userName').textContent = userName;
+                }
+
+                if (isFirstAccess) {
+                    // ── FIRST ACCESS ──
+                    if (lastCell && !skippedCell) {
+                        // User CHOSE a cell → show "Sua Célula" card, hide "Localizar"
+                        try {
+                            const cellData = lastCell; // already parsed by DataService
+                            document.getElementById('chosenCellCard').classList.remove('hidden');
+                            document.getElementById('localizarCelula').classList.add('hidden');
+                            document.getElementById('chosenCellName').textContent = cellData.name;
+                            document.getElementById('chosenCellLeader').textContent = cellData.leader;
+                            populateTags('chosenCellTags', cellData.tags);
+                        } catch (e) {
+                            console.error('Error parsing cell data:', e);
+                        }
+                    }
+                    // User SKIPPED → "Localizar Célula" stays visible (default)
+
+                    // Clear first access flag so next login → returning flow
+                    DataService.user.setFirstAccess(false);
+                    DataService.cell.setSkippedChoice(false);
+
+                } else if (lastCell) {
+                    // ── RETURNING VISITOR ──
+                    try {
+                        const cellData = lastCell; // already parsed by DataService
+                        document.getElementById('returnVisitorCard').classList.remove('hidden');
+                        document.getElementById('newVisitorSection').classList.add('hidden');
+                        document.getElementById('lastCellName').textContent = cellData.name;
+                        document.getElementById('lastCellLeader').textContent = cellData.leader;
+                        populateTags('lastCellTags', cellData.tags);
+                    } catch (e) {
+                        console.error('Error parsing cell data:', e);
+                    }
+                }
+
+                // Show "Falar com Líder" only when user has a cell linked
+                if (lastCell) {
+                    document.getElementById('falarComLider').classList.remove('hidden');
+                }
+
+                function populateTags(containerId, tags) {
+                    const container = document.getElementById(containerId);
+                    if (tags && tags.length > 0) {
+                        tags.forEach(tag => {
+                            const span = document.createElement('span');
+                            span.className = 'inline-flex items-center gap-1 text-[10px] text-gray-500 bg-gray-100 dark:bg-white/5 px-2.5 py-1 rounded-full';
+                            span.textContent = tag;
+                            container.appendChild(span);
+                        });
+                    }
+                }
+            })();
+
+            function compartilharVersiculo() {
+                const v = getVersiculoDoDia();
+                const texto = `"${v.texto}" — ${v.ref}`;
+                if (navigator.share) {
+                    navigator.share({ title: 'Versículo do Dia', text: texto });
+                } else {
+                    navigator.clipboard.writeText(texto).then(() => {
+                        alert('Versículo copiado!');
+                    });
+                }
+            }
+        });
+    </script>
+    <script src="../js/bottom-nav.js"></script>
 </body>
 
 </html>
